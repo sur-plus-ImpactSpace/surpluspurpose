@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Wertermittlungs- und Übergabeprotokoll für Sachspenden (Spendersicht) | sur.plus</title>
+<!--
+  sur.plus — App-Asset, NICHT für den öffentlichen Ratgeber bestimmt.
+  Ablage: docs/templates/ (nicht deployt). Bereitstellung erfolgt über die App.
+  Entscheidung Flo, 2026-08-09: Vorlagen nur in der App zugänglich machen;
+  Ratgeber/LP erwähnen die Bereitstellung, verlinken aber keinen freien Download.
+  Rechtsstand: August 2026. Quellen am Dokumentende.
+-->
+<style>
+  :root{--brand:#1A5C4A;--brand-mid:#2C7A5B;--dark:#0A2318;--text:#15241D;--text-mid:#4A5F55;
+    --text-lt:#8AA197;--border:#D9E5DE;--brand-xs:#F0F7F3;--accent:#C77E3A;--accent-xs:#FBF3EA;--white:#fff}
+  *{box-sizing:border-box}
+  body{font-family:"DM Sans","Segoe UI",system-ui,sans-serif;font-size:12.5px;line-height:1.5;
+    color:var(--text);margin:0;background:#f4f6f5}
+  .sheet{max-width:860px;margin:0 auto;background:var(--white);padding:34px 40px 44px}
+  header{display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-bottom:2.5px solid var(--brand);
+    padding-bottom:12px;margin-bottom:6px}
+  .wm{font-size:19px;font-weight:700;color:var(--dark);letter-spacing:-.01em}
+  .wm b{color:var(--brand)}
+  .doc-k{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand)}
+  h1{font-size:21px;line-height:1.25;color:var(--dark);margin:16px 0 4px}
+  .lead{font-size:12.5px;color:var(--text-mid);max-width:72ch;margin:0 0 14px}
+  h2{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--brand);
+    border-bottom:1.5px solid var(--border);padding-bottom:5px;margin:26px 0 10px}
+  h2 .no{display:inline-block;min-width:20px;height:20px;line-height:20px;text-align:center;background:var(--brand);
+    color:#fff;border-radius:6px;margin-right:8px;font-size:11px;letter-spacing:0}
+  table{width:100%;border-collapse:collapse;margin:6px 0 2px}
+  th{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-lt);text-align:left;
+    font-weight:700;padding:5px 7px;border-bottom:1.5px solid var(--border)}
+  td{border:1px solid var(--border);padding:7px;vertical-align:top;min-height:22px}
+  td.lbl{width:230px;background:var(--brand-xs);font-weight:600;color:var(--dark);border-left:0;border-right:0}
+  td.in{border-left:0;border-right:0;min-width:120px}
+  .fill{color:var(--text-lt);font-style:italic}
+  .pos th:nth-child(1){width:26px}
+  .note{border-left:3px solid var(--brand-mid);background:var(--brand-xs);padding:9px 12px;margin:12px 0;
+    font-size:11.5px;color:var(--text-mid)}
+  .note.amber{border-left-color:var(--accent);background:var(--accent-xs)}
+  .note b{color:var(--dark)}
+  .sig{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
+  .sig div{border-top:1.5px solid var(--dark);padding-top:5px;font-size:11px;color:var(--text-mid)}
+  .legal{margin-top:30px;padding-top:12px;border-top:1.5px solid var(--border);font-size:10.5px;
+    line-height:1.55;color:var(--text-mid)}
+  .legal p{margin:0 0 6px}
+  footer{margin-top:22px;font-size:10.5px;color:var(--text-lt);display:flex;justify-content:space-between;gap:10px}
+  .chk{display:inline-block;width:13px;height:13px;border:1.5px solid var(--text-mid);border-radius:3px;
+    vertical-align:-2px;margin-right:6px}
+  @media print{
+    body{background:#fff}
+    .sheet{max-width:none;padding:0 6mm}
+    h2{break-after:avoid}
+    table,.note{break-inside:avoid}
+    .pagebreak{break-before:page}
+    @page{size:A4;margin:14mm 12mm}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header>
+  <span class="wm">sur<span style="color:var(--accent)">.</span><b>plus</b></span>
+  <span class="doc-k">Vorlage · Spendersicht · Rechtsstand August 2026</span>
+</header>
+
+<h1>Wertermittlungs- und Übergabeprotokoll für Sachspenden</h1>
+<p class="lead">Zwei Protokolle, ein Vorgang: Teil A belegt, <em>wie</em> der Wert der gespendeten Gegenstände ermittelt wurde — je Position, mit Quelle, Datum und Belegart. Teil B dokumentiert die Übergabe an den Empfänger einschließlich der Prüfung seiner Steuerbegünstigung. Beides zusammen, mit nummerierten Anlagen, ist die Akte, die Betriebsprüfung und Zuwendungsbestätigung tragen muss. Aus Sicht des <strong>spendenden Unternehmens</strong> — die im Netz verfügbaren Vorlagen decken durchweg nur die Empfängerseite ab.</p>
+
+<h2><span class="no">A</span>Wertermittlungsprotokoll</h2>
+
+<table>
+  <tr><td class="lbl">Spendendes Unternehmen (Firma, Rechtsform, Sitz)</td><td class="in"><span class="fill">&nbsp;</span></td></tr>
+  <tr><td class="lbl">Verantwortlich für die Wertermittlung (Name, Funktion)</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Anlass der Spende</td><td class="in"><span class="fill">z. B. IT-Refresh, Standortauflösung, Überbestand</span></td></tr>
+  <tr><td class="lbl">Datum der Wertermittlung</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Gewählter Wertansatz bei der Entnahme</td><td class="in"><span class="chk"></span>Buchwert (§ 6 Abs. 1 Nr. 4 Satz 4 EStG) &nbsp;&nbsp; <span class="chk"></span>Teilwert (Satz 1) — Abstimmung mit dem steuerlichen Berater am: ______</td></tr>
+</table>
+
+<h3 style="font-size:12px;margin:16px 0 2px;color:var(--dark)">A.1 &nbsp;Positionen</h3>
+<table class="pos">
+  <thead><tr>
+    <th>#</th><th>Artikel / Modell</th><th>Anzahl</th><th>Zustand</th><th>Restbuchwert je Stück</th>
+    <th>Gebrauchtmarkt-Vergleich (von–bis)</th><th>Quelle + Abrufdatum</th><th>Belegart*</th><th>Ansatz je Stück</th><th>Anlage-Nr.</th>
+  </tr></thead>
+  <tbody>
+    <tr><td>1</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>2</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+    <tr><td>5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  </tbody>
+</table>
+<p style="font-size:10.5px;color:var(--text-mid);margin:4px 0 0">* Belegart: <b>B</b> = Gebrauchtmarkt-Beleg (Screenshot mit sichtbarem Datum als Anlage) · <b>A</b> = Annahme (z.&nbsp;B. Neu-/Open-Box-Preis abzüglich pauschalem Abschlag — Abschlag und Begründung vermerken) · <b>E</b> = Einzelbewertung (kein Marktpreis auffindbar; Bewertungsweg als Anlage)</p>
+
+<table style="margin-top:12px">
+  <tr><td class="lbl">Summe Ansatz (alle Positionen)</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Umrechnungskurs bei Fremdwährungsbelegen (Kurs, Datum, Quelle)</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Umsatzsteuer auf die unentgeltliche Wertabgabe (Satz, Betrag)</td><td class="in">&nbsp;</td></tr>
+</table>
+
+<div class="note amber"><b>Der Fehler, der die Bewertung entwertet:</b> Ein Link genügt nicht. Gebrauchtmarkt-Angebote verschwinden — bei der Prüfung Jahre später muss der <b>Screenshot mit sichtbarem Datum</b> in der Anlage liegen. Ebenso dokumentieren: Zustand des konkreten Geräts und jede Abweichung vom Vergleichsobjekt. Der Ansatz gehört an das <b>untere Ende</b> der belegten Spanne; Annahmen (Belegart A/E) niemals als Feststellungen ausgeben.</div>
+
+<h2 class="pagebreak"><span class="no">B</span>Übergabeprotokoll</h2>
+
+<table>
+  <tr><td class="lbl">Empfänger (Name, Rechtsform, Anschrift)</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Steuerbegünstigung des Empfängers geprüft anhand</td><td class="in"><span class="chk"></span>Freistellungsbescheid vom ______ &nbsp;&nbsp; <span class="chk"></span>Feststellungsbescheid nach § 60a AO vom ______ &nbsp;&nbsp; <span class="chk"></span>juristische Person des öffentlichen Rechts<br><span style="font-size:10.5px;color:var(--text-mid)">Kopie als Anlage-Nr.: ______ · geprüft durch / am: ______</span></td></tr>
+  <tr><td class="lbl">Verwendungszweck beim Empfänger (steuerbegünstigter Zweck)</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Übergabedatum und -ort</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Übergebene Positionen</td><td class="in"><span class="chk"></span>alle Positionen aus Teil A &nbsp;&nbsp; <span class="chk"></span>abweichend (Liste als Anlage-Nr. ______ )</td></tr>
+  <tr><td class="lbl">Zustand bei Übergabe / festgestellte Abweichungen</td><td class="in">&nbsp;</td></tr>
+  <tr><td class="lbl">Transport durch</td><td class="in"><span class="chk"></span>Spender &nbsp;&nbsp; <span class="chk"></span>Empfänger &nbsp;&nbsp; <span class="chk"></span>Dienstleister: ______</td></tr>
+  <tr><td class="lbl">Bei IT-Geräten: Datenlöschung</td><td class="in"><span class="chk"></span>durchgeführt, Nachweis als Anlage-Nr. ______ &nbsp;&nbsp; <span class="chk"></span>nicht einschlägig</td></tr>
+  <tr><td class="lbl">Zuwendungsbestätigung nach amtlichem Muster</td><td class="in"><span class="chk"></span>angefordert am ______ &nbsp;&nbsp; <span class="chk"></span>erhalten am ______ (Anlage-Nr. ______ )<br><span style="font-size:10.5px;color:var(--text-mid)">Herkunft „aus dem Betriebsvermögen" und Entnahmewert müssen zur Buchung passen.</span></td></tr>
+  <tr><td class="lbl">Anlagenverzeichnis (Anzahl, fortlaufend nummeriert)</td><td class="in">&nbsp;</td></tr>
+</table>
+
+<div class="note"><b>Warum die Empfängerprüfung vor die Übergabe gehört:</b> Das Buchwertprivileg setzt eine nach § 5 Abs. 1 Nr. 9 KStG steuerbefreite Körperschaft oder eine juristische Person des öffentlichen Rechts voraus und die Verwendung für steuerbegünstigte Zwecke. Fehlt eine Voraussetzung, bleibt es beim Teilwert-Ansatz — mit Entnahmegewinn, aber ohne Spendenabzug. Der teuerste aller Fälle entsteht nach der Übergabe, nicht davor.</div>
+
+<div class="sig">
+  <div>Ort, Datum, Unterschrift — spendendes Unternehmen<br>(Name in Druckbuchstaben, Funktion)</div>
+  <div>Ort, Datum, Unterschrift — Empfänger<br>(Name in Druckbuchstaben, Funktion)</div>
+</div>
+
+<div class="legal">
+  <p><b>Rechtsgrundlagen (Stand August 2026):</b> Entnahme grundsätzlich zum Teilwert, Wahlrecht auf den Buchwert bei unmittelbarer unentgeltlicher Überlassung an steuerbegünstigte Empfänger: § 6 Abs. 1 Nr. 4 Sätze 1 und 4 EStG. Spendenwert = bei der Entnahme angesetzter Wert zuzüglich der darauf entfallenden Umsatzsteuer: § 10b Abs. 3 Satz 2 EStG. Umsatzsteuer auf die unentgeltliche Wertabgabe: § 3 Abs. 1b UStG (sofern Vorsteuerabzug bestand); Bemessungsgrundlage ist der Einkaufspreis für einen gleichartigen Gegenstand im Zeitpunkt der Zuwendung, die Umsatzsteuer selbst gehört nicht dazu: § 10 Abs. 4 Satz 1 Nr. 1 und Satz 2 UStG. Zuwendungsbestätigung nach amtlichem Muster: § 50 EStDV. Aufbewahrung der Belege: § 147 AO.</p>
+  <p><b>Kein Ersatz für Steuerberatung.</b> Diese Vorlage strukturiert die Dokumentation; die Wahl des Wertansatzes, die umsatzsteuerliche Würdigung und Sonderfälle (Verlustjahr, Höchstbetrag, eingeschränkte Verkehrsfähigkeit nach den BMF-Schreiben vom 18.03.2021) gehören zum steuerlichen Berater.</p>
+</div>
+
+<footer>
+  <span>sur.plus (surpluspurpose.com) · Every surplus has a purpose. We find it.</span>
+  <span>Vorlage V1 · 2026-08</span>
+</footer>
+
+</div>
+</body>
+</html>

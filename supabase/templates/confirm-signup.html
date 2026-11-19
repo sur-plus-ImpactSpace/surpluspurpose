@@ -1,0 +1,55 @@
+<!-- sur.plus · Confirm signup. Table layout + inline styles: e-mail HTML, not web HTML. -->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#EEF4F1;padding:32px 16px;">
+  <tr>
+    <td align="center">
+      <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;">
+        <!-- Header: text wordmark, images are blocked by default in most clients -->
+        <tr>
+          <td style="background-color:#0A2318;border-radius:12px 12px 0 0;padding:22px 32px;">
+            <span style="font-family:Georgia,'Times New Roman',serif;font-size:22px;color:#FFFFFF;">sur<span style="color:#D4712A;">.</span>plus</span>
+            <span style="font-family:Helvetica,Arial,sans-serif;font-size:11px;letter-spacing:2px;color:#4DB896;text-transform:uppercase;">&nbsp;&nbsp;Workspace</span>
+          </td>
+        </tr>
+        <!-- Body -->
+        <tr>
+          <td style="background-color:#FFFFFF;padding:36px 32px 28px;border-left:1px solid #E2E9E6;border-right:1px solid #E2E9E6;">
+            <h1 style="margin:0 0 14px;font-family:Georgia,'Times New Roman',serif;font-weight:normal;font-size:26px;line-height:1.25;color:#13241D;">Willkommen bei sur.plus</h1>
+            <p style="margin:0 0 10px;font-family:Helvetica,Arial,sans-serif;font-size:15px;line-height:1.6;color:#13241D;">
+              Danke f&uuml;r Ihre Registrierung. Ein Klick best&auml;tigt Ihre E-Mail-Adresse &mdash; danach &ouml;ffnet sich Ihr Workspace.
+            </p>
+            <p style="margin:0 0 26px;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.6;color:#4A6B5A;">
+              Thanks for registering. One click confirms your e-mail address &mdash; your workspace opens right after.
+            </p>
+            <table role="presentation" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="background-color:#1A5C4A;border-radius:8px;">
+                  <a href="{{ .ConfirmationURL }}" style="display:inline-block;padding:13px 28px;font-family:Helvetica,Arial,sans-serif;font-size:15px;font-weight:bold;color:#FFFFFF;text-decoration:none;">E-Mail best&auml;tigen&nbsp;&middot;&nbsp;Confirm e-mail</a>
+                </td>
+              </tr>
+            </table>
+            <p style="margin:26px 0 0;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.6;color:#7A9E8E;">
+              Falls der Button nicht funktioniert: {{ .ConfirmationURL }}
+            </p>
+          </td>
+        </tr>
+        <!-- What happens next -->
+        <tr>
+          <td style="background-color:#E8F5F0;padding:18px 32px;border-left:1px solid #E2E9E6;border-right:1px solid #E2E9E6;">
+            <p style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:13px;line-height:1.6;color:#14503F;">
+              <strong>Wie es weitergeht:</strong> Unternehmen sehen sofort, was verifizierte NGOs gerade brauchen. NGO-Konten pr&uuml;fen wir innerhalb von 3&ndash;5 Werktagen &mdash; danach ist Ihr Bedarfsprofil im Netzwerk sichtbar.
+            </p>
+          </td>
+        </tr>
+        <!-- Footer -->
+        <tr>
+          <td style="background-color:#FFFFFF;border-radius:0 0 12px 12px;padding:20px 32px;border:1px solid #E2E9E6;border-top:none;">
+            <p style="margin:0;font-family:Helvetica,Arial,sans-serif;font-size:11px;line-height:1.7;color:#7A9E8E;">
+              Sie erhalten diese E-Mail, weil sich jemand mit dieser Adresse bei sur.plus registriert hat. Falls Sie das nicht waren, k&ouml;nnen Sie diese Nachricht ignorieren &mdash; ohne Best&auml;tigung passiert nichts.<br><br>
+              sur.plus &middot; Florian Lechner &middot; Landsberger Stra&szlig;e 57, 82266 Inning am Ammersee &middot; <a href="mailto:service@surpluspurpose.com" style="color:#1A5C4A;">service@surpluspurpose.com</a> &middot; <a href="https://surpluspurpose.com" style="color:#1A5C4A;">surpluspurpose.com</a>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>

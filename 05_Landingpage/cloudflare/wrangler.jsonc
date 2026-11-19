@@ -1,0 +1,19 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "surplus-lp",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-09-01",
+  // node:crypto (timingSafeEqual im Chat-Token-Vergleich) und node:buffer.
+  "compatibility_flags": ["nodejs_compat"],
+
+  // `dist` entsteht aus build.mjs: Kopie von ../Online, aber ohne den
+  // netlify/-Ordner und mit einer fuer Cloudflare gueltigen _redirects.
+  "assets": {
+    "directory": "dist",
+    "binding": "ASSETS",
+    // 404.html ausliefern statt der Worker-Standardseite.
+    "not_found_handling": "404-page"
+  },
+
+  "observability": { "enabled": true }
+}

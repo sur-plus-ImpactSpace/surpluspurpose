@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Büroauflösungs-Rechner: entsorgen oder spenden | sur.plus</title>
+<meta name="description" content="Büroauflösung durchrechnen: Entsorgungskosten gegen das Spenden-Szenario – mit Ihren Angeboten statt erfundener Durchschnittspreise. Rechnet im Browser.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="icon" type="image/svg+xml" href="/surplus_icon.svg">
+<link rel="alternate icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A2318">
+<meta name="application-name" content="sur.plus">
+<meta name="apple-mobile-web-app-title" content="sur.plus">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html">
+<meta property="og:title" content="Büroauflösungs-Rechner: entsorgen oder spenden | sur.plus">
+<meta property="og:description" content="Büroauflösung durchrechnen: Entsorgungskosten gegen das Spenden-Szenario – mit Ihren Angeboten statt erfundener Durchschnittspreise. Rechnet im Browser.">
+<meta property="og:image" content="https://surpluspurpose.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="sur.plus">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Büroauflösungs-Rechner: entsorgen oder spenden | sur.plus">
+<meta name="twitter:description" content="Büroauflösung durchrechnen: Entsorgungskosten gegen das Spenden-Szenario – mit Ihren Angeboten statt erfundener Durchschnittspreise. Rechnet im Browser.">
+<meta name="twitter:image" content="https://surpluspurpose.com/og-image.png">
+
+<link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html">
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-mid:#2E8B6A;--brand-lt:#4DB896;--brand-xs:#E8F5F0;
+  --accent:#D4712A;--accent-lt:#E8935A;--accent-xs:#FDF3EA;
+  --white:#FFFFFF;--offwhite:#F7FAF8;--text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;
+  --border:rgba(26,92,74,0.12);
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:rgba(77,184,150,.3)}
+
+/* header */
+.rg-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--brand-xs)}
+.rg-head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.rg-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.rg-logo svg{width:32px;height:32px;flex:none}
+.rg-logo .wm{font-size:20px;letter-spacing:-.4px;color:var(--brand);font-weight:700;line-height:1}
+.rg-logo .wm .d{color:var(--accent)}.rg-logo .wm b{color:var(--brand);font-weight:700}
+.rg-nav{display:flex;align-items:center;gap:16px;font-size:13.5px}
+.rg-nav a{color:var(--text-mid);text-decoration:none;font-weight:600}
+.rg-nav a:hover{color:var(--brand)}
+.rg-nav .rg-lang{border:1px solid var(--brand-xs);border-radius:8px;padding:3px 9px;color:var(--brand)}
+@media(max-width:560px){.rg-nav .hide-s{display:none}}
+
+.rg-wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.rg-wrap.wide{max-width:1000px}
+
+/* breadcrumb */
+.rg-crumb{padding:18px 0 0;font-size:12.5px;color:var(--text-lt)}
+.rg-crumb a{color:var(--text-mid);text-decoration:none}
+.rg-crumb a:hover{color:var(--brand)}
+.rg-crumb span{margin:0 6px;opacity:.5}
+
+/* hero */
+.rg-hero{padding-top:22px;padding-bottom:6px}
+.rg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.rg-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.6vw,43px);line-height:1.12;color:var(--dark);margin:13px 0 0;letter-spacing:-.01em}
+.rg-lead{margin:16px 0 0;font-size:18px;line-height:1.62;color:var(--text)}
+.rg-meta{margin:18px 0 0;padding:12px 0;border-top:1px solid var(--brand-xs);border-bottom:1px solid var(--brand-xs);font-size:12.5px;color:var(--text-lt);display:flex;flex-wrap:wrap;gap:6px 18px}
+.rg-meta b{color:var(--text-mid);font-weight:600}
+
+/* TOC */
+.rg-toc{margin:26px 0 0;background:var(--offwhite);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.rg-toc h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-toc ol{margin:0;padding-left:20px;font-size:14.5px;line-height:1.85;color:var(--text-mid)}
+.rg-toc a,.rg-crumb a{text-decoration:none}
+.rg-toc a:hover{color:var(--brand);text-decoration:underline}
+
+/* body copy */
+.rg-body{padding-top:8px}
+.rg-body h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.2vw,31px);line-height:1.2;color:var(--dark);margin:44px 0 0;letter-spacing:-.01em}
+.rg-body h3{font-size:18px;font-weight:700;color:var(--dark);margin:30px 0 0}
+.rg-body p{margin:14px 0 0;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body ul,.rg-body ol{margin:14px 0 0;padding-left:22px;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body li{margin:7px 0 0}
+.rg-body li::marker{color:var(--brand-mid)}
+.rg-body a{color:var(--brand);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.rg-body a:hover{color:var(--accent)}
+.rg-body strong{font-weight:700;color:var(--dark)}
+.rg-body em{font-style:italic}
+.rg-body figure{margin:22px 0 0}
+.rg-body figcaption{margin:8px 0 0;font-size:12.5px;color:var(--text-lt)}
+
+/* table */
+.rg-tw{margin:22px 0 0;overflow-x:auto;border:1px solid var(--border);border-radius:12px}
+.rg-body table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+.rg-body th{text-align:left;background:var(--brand-xs);color:var(--dark);font-weight:700;padding:11px 14px;font-size:13px;letter-spacing:.01em}
+.rg-body td{padding:11px 14px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.55}
+.rg-body tbody tr:nth-child(even){background:var(--offwhite)}
+
+/* callouts */
+.rg-note{margin:24px 0 0;border-left:3px solid var(--brand-mid);background:var(--brand-xs);border-radius:0 12px 12px 0;padding:16px 20px}
+.rg-note p{margin:0;font-size:15.5px;line-height:1.65}
+.rg-note p + p{margin-top:10px}
+.rg-note .rg-note-t{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 7px}
+.rg-note.amber{border-left-color:var(--accent);background:var(--accent-xs)}
+.rg-note.amber .rg-note-t{color:var(--accent)}
+
+/* key figures */
+.rg-stats{display:grid;gap:12px;grid-template-columns:1fr;margin:26px 0 0}
+@media(min-width:620px){.rg-stats{grid-template-columns:repeat(3,1fr)}}
+.rg-stat{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.rg-stat-v{font-family:var(--serif);font-size:28px;line-height:1.05;color:var(--brand)}
+.rg-stat-l{margin:7px 0 0;font-size:12.5px;line-height:1.5;color:var(--text-lt)}
+
+/* steps */
+.rg-steps{counter-reset:s;margin:24px 0 0;padding:0;list-style:none}
+.rg-steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:18px 0 0}
+.rg-steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.rg-steps b{display:block;color:var(--dark);font-size:16.5px}
+.rg-steps span{display:block;margin:4px 0 0;font-size:15.5px;line-height:1.65;color:var(--text-mid)}
+
+/* FAQ */
+.rg-faq{margin:44px 0 0}
+.rg-faq h2{margin-top:0}
+.rg-faq-item{border-top:1px solid var(--brand-xs);padding:17px 0}
+.rg-faq-item h3{font-size:16.5px;font-weight:700;color:var(--dark);margin:0}
+.rg-faq-item p{margin:9px 0 0;font-size:15.5px;line-height:1.68;color:var(--text-mid)}
+
+/* sources */
+.rg-src{margin:40px 0 0;padding:20px 22px;background:var(--offwhite);border:1px solid var(--border);border-radius:14px}
+.rg-src h2{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-src ol{margin:0;padding-left:20px;font-size:13.5px;line-height:1.7;color:var(--text-mid)}
+.rg-src a{color:var(--brand)}
+
+/* CTA */
+.rg-cta{margin:44px 0 0;background:var(--brand-xs);border-radius:18px;padding:30px 28px;text-align:center}
+.rg-cta h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--dark);margin:0 0 8px;line-height:1.2}
+.rg-cta p{margin:0 0 20px;color:var(--text-mid);font-size:15.5px;line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto}
+.rg-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.rg-btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+.rg-btn.p{background:var(--brand);color:#fff}
+.rg-btn.p:hover{background:var(--dark)}
+.rg-btn.s{background:#fff;color:var(--brand);border:1px solid var(--brand-lt)}
+.rg-btn.s:hover{border-color:var(--brand)}
+
+/* related */
+.rg-rel{margin:44px 0 0}
+.rg-rel h2{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--dark);margin:0 0 4px}
+.rg-grid{display:grid;gap:14px;grid-template-columns:1fr;margin:18px 0 0}
+@media(min-width:620px){.rg-grid{grid-template-columns:1fr 1fr}}
+.rg-body a.rg-card,.rg-body a.rg-card:hover,.rg-card,.rg-card:hover{text-decoration:none}
+.rg-card{display:block;border:1px solid var(--brand-xs);border-radius:14px;padding:20px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.rg-body a.rg-card:hover{color:inherit}
+.rg-card:hover{border-color:var(--brand-lt);box-shadow:0 6px 20px rgba(26,92,74,.08);transform:translateY(-1px)}
+.rg-card .rg-card-k{font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.rg-card h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25;color:var(--dark);margin:9px 0 0}
+.rg-card p{margin:9px 0 0;font-size:14px;line-height:1.55;color:var(--text-mid)}
+.rg-card .rg-card-go{display:inline-block;margin:12px 0 0;font-size:13px;font-weight:700;color:var(--brand)}
+
+/* footer */
+.rg-foot{margin-top:56px;border-top:1px solid var(--brand-xs);padding:26px 0 34px;font-size:13px;line-height:1.9;color:var(--text-lt);text-align:center}
+.rg-foot a{color:var(--text-mid);text-decoration:none}
+.rg-foot a:hover{color:var(--brand)}
+.rg-foot .rg-foot-claim{display:block;font-family:var(--serif);font-size:15px;color:var(--brand);margin:0 0 6px}
+/* sp-mobile-v1 */
+.cs-nav a{padding:6px 0;display:inline-flex;align-items:center;min-height:34px}
+.cs-nav .cs-nav-s{display:none}
+@media(max-width:640px){
+  .cs-wrap,.rg-wrap{padding-left:18px;padding-right:18px}
+  .rg-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .rg-logo svg{width:29px;height:29px}
+  .rg-logo .wm{font-size:18px}
+  .rg-nav{gap:13px;font-size:13.5px}
+  .cs-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .cs-logo svg{width:29px;height:29px}
+  .cs-logo .wm{font-size:18px}
+  .cs-nav{gap:13px;font-size:13.5px}
+  .cs-nav .cs-nav-l{display:none}
+  .cs-nav .cs-nav-s{display:inline}
+  .cs-nav .cs-lang{padding:4px 8px;font-size:12.5px}
+  .cs-hero{padding-top:34px}
+  .cs-lead{font-size:17px}
+  .cs-cta{padding:24px 18px;margin-bottom:44px}
+  .cs-btns{flex-direction:column}
+  .cs-btn{width:100%;padding:14px 18px;text-align:center}
+  .gd-body p,.gd-body li{font-size:16px}
+  .gd-lead{font-size:17.5px}
+  .gd-body h2{font-size:23px}
+  .gd-body h3{font-size:18.5px}
+  .gd-meta{gap:6px 12px;font-size:12.5px}
+  .gd-key,.gd-warn{padding:16px 16px}
+  .gd-prod{padding:20px 18px}
+  .gd-toc{padding:18px 18px}
+  .gd-table{font-size:14px;min-width:420px}
+  .gd-table th,.gd-table td{padding:10px 12px}
+  .gd-src li{font-size:13.5px}
+}
+@media(max-width:420px){
+  .cs-nav{gap:11px;font-size:13px}
+  .cs-nav .cs-nav-home{display:none}
+}
+@media(max-width:360px){
+  .cs-wrap,.rg-wrap{padding-left:15px;padding-right:15px}
+  .cs-logo .wm,.rg-logo .wm{font-size:17px}
+  .cs-nav{gap:9px;font-size:12.5px}
+}
+
+/* calculator */
+[hidden]{display:none!important}
+.calc{border:1.5px solid var(--brand);border-radius:16px;overflow:hidden;margin:26px 0 30px;background:var(--white)}
+.calc-form{padding:24px 22px 6px;background:var(--offwhite)}
+.calc-fs{border:0;padding:0;margin:0 0 20px}
+.calc-fs legend{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);padding:0 0 10px}
+.calc-seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc-seg label{display:block;cursor:pointer}
+.calc-seg input{position:absolute;opacity:0;width:0;height:0}
+.calc-seg span{display:block;border:1.5px solid var(--border);border-radius:11px;padding:11px 13px;background:var(--white);font-size:14px;font-weight:600;color:var(--text);line-height:1.35}
+.calc-seg small{display:block;font-weight:400;font-size:12px;color:var(--text-lt);margin-top:3px}
+.calc-seg input:checked + span{border-color:var(--brand);background:var(--brand-xs);box-shadow:0 0 0 1px var(--brand) inset}
+.calc-seg input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.calc-row{margin:0 0 14px}
+.calc-row > label{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin:0 0 6px}
+.calc-in{display:flex;align-items:stretch;max-width:340px}
+.calc-in input{flex:1;min-width:0;font:inherit;font-size:16px;font-variant-numeric:tabular-nums;padding:9px 11px;border:1.5px solid var(--border);border-right:0;border-radius:10px 0 0 10px;background:var(--white);color:var(--text)}
+.calc-in input:focus{outline:0;border-color:var(--brand)}
+.calc-unit{display:flex;align-items:center;padding:0 13px;border:1.5px solid var(--border);border-left:0;border-radius:0 10px 10px 0;background:var(--brand-xs);color:var(--brand);font-weight:700;font-size:14px}
+.calc-in-sub{margin-top:8px}
+.calc-hint{font-size:12.5px;line-height:1.55;color:var(--text-mid);margin:6px 0 0;max-width:62ch}
+.calc-chk{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer}
+.calc-chk input{width:17px;height:17px;accent-color:var(--brand)}
+.calc-row-chk{margin-bottom:12px}
+.calc-out{padding:22px;border-top:1.5px solid var(--brand)}
+.calc-verdict{border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6;margin:0 0 18px}
+.calc-verdict.ok{background:var(--brand-xs);color:var(--text);border-left:3px solid var(--brand-mid)}
+.calc-verdict.warn{background:var(--accent-xs);color:var(--text);border-left:3px solid var(--accent)}
+.calc-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:0 0 18px}
+.calc-kpi{border:1px solid var(--border);border-radius:11px;padding:12px 13px;background:var(--white)}
+.calc-kpi.hi{border-color:var(--brand);background:var(--brand-xs)}
+.calc-kpi-l{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-lt)}
+.calc-kpi-v{display:block;font-family:var(--serif);font-size:clamp(20px,3.1vw,26px);color:var(--dark);margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.calc-kpi.hi .calc-kpi-v{color:var(--brand)}
+.calc-kpi-s{display:block;font-size:12px;color:var(--text-mid)}
+.calc-tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.calc-tbl td{padding:9px 2px;border-bottom:1px solid var(--border)}
+.calc-tbl td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.calc-tbl-sum td{font-weight:700;color:var(--brand);border-bottom:2px solid var(--brand)}
+.calc-gewst{margin-top:22px;padding-top:16px;border-top:1px dashed var(--border)}
+.calc-gewst h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:0 0 8px}
+.calc-disc{font-size:12px;line-height:1.6;color:var(--text-lt);margin:16px 0 0}
+@media(max-width:640px){
+  .calc-seg{grid-template-columns:1fr}
+  .calc-kpis{grid-template-columns:1fr}
+  .calc-in{max-width:none}
+}
+@media print{.calc-form{background:#fff}.calc{break-inside:avoid}}
+
+
+/* Referenzliste und Vergleichstabelle */
+.dev-tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px 0 2px;border:1px solid var(--border);
+  border-radius:12px;background:var(--white)}
+#listeWrap .dev-tw{max-height:430px;overflow-y:auto}
+.dev-tbl{width:100%;border-collapse:collapse;font-size:13.5px;min-width:620px}
+.dev-tbl thead th{position:sticky;top:0;z-index:1;background:var(--white);text-align:left;
+  font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:var(--text-lt);font-weight:700;
+  padding:10px 12px;border-bottom:1.5px solid var(--border);white-space:nowrap}
+.dev-tbl td{padding:9px 12px;border-bottom:1px solid var(--brand-xs);vertical-align:top;line-height:1.45}
+.dev-tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.dev-tbl thead th.num{text-align:right}
+.dev-tbl tr.dev-kat td{background:var(--offwhite);font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+  font-weight:700;color:var(--brand);padding:8px 12px}
+.dev-tbl tfoot td{font-weight:700;color:var(--brand);border-top:2px solid var(--brand);padding:11px 12px;
+  background:var(--white);position:sticky;bottom:0}
+.dev-m{display:block;font-weight:600;color:var(--dark)}
+.dev-src{display:block;font-size:11px;color:var(--text-lt);margin-top:2px}
+.dev-open{color:var(--text-lt);font-style:italic;font-size:12.5px}
+.dev-q{width:62px;font:inherit;font-size:14px;font-variant-numeric:tabular-nums;text-align:right;
+  padding:5px 7px;border:1.5px solid var(--border);border-radius:8px;background:var(--white);color:var(--text)}
+.dev-q:focus{outline:0;border-color:var(--brand)}
+b.bB,b.bA,b.bX{display:inline-block;width:19px;height:19px;line-height:19px;text-align:center;border-radius:5px;
+  font-size:11px;font-weight:700;cursor:help}
+b.bB{background:var(--brand-xs);color:var(--brand)}
+b.bA{background:var(--accent-xs);color:var(--accent)}
+b.bX{background:var(--offwhite);color:var(--text-lt)}
+.dev-legend{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.dev-legend span{display:inline-flex;align-items:center;gap:6px}
+.cmp-tbl{min-width:520px}
+.cmp-tbl thead th{text-align:left;font-size:11px;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--text-lt);font-weight:700;padding:10px 12px 9px;border-bottom:1.5px solid var(--border)}
+.cmp-tbl thead th.num{text-align:right}
+.cmp-tbl td{padding:9px 12px}
+.cmp-tbl td:last-child{text-align:right}
+.cmp-tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;font-weight:600}
+.calc-out .dev-tw{margin-top:0}
+@media(max-width:640px){.dev-legend{gap:10px;font-size:12px}}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "@id": "https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html#article",
+  "headline": "Büroauflösungs-Rechner: entsorgen oder spenden – gerechnet mit Ihren Zahlen",
+  "description": "Büroauflösung durchrechnen: Entsorgungskosten gegen das Spenden-Szenario – mit Ihren Angeboten statt erfundener Durchschnittspreise. Rechnet im Browser.",
+  "inLanguage": "de",
+  "datePublished": "2026-08-26",
+  "dateModified": "2026-08-26",
+  "author": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surpluspurpose.com/icon-512.png"
+    }
+  },
+  "mainEntityOfPage": "https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html",
+  "citation": [
+    "§ 6 Abs. 1 KrWG – Rangfolge der Abfallhierarchie: Vermeidung, Vorbereitung zur Wiederverwendung, Recycling, sonstige Verwertung, Beseitigung",
+    "§ 6 Abs. 1 Nr. 4 Satz 4 EStG – Buchwertprivileg bei unentgeltlicher Überlassung an steuerbefreite Körperschaften",
+    "§ 10b Abs. 3 Satz 2 EStG – Bemessung der Zuwendung nach dem bei der Entnahme angesetzten Wert zuzüglich Umsatzsteuer",
+    "§ 3 Abs. 1b UStG – Gleichstellung der unentgeltlichen Zuwendung mit einer Lieferung gegen Entgelt"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Gibt es einen Durchschnittspreis für die Entsorgung von Büromöbeln?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Belastbare bundesweite Durchschnittspreise für gewerbliche Büromöbelentsorgung existieren nicht – die Kosten hängen von Menge, Demontageaufwand, Etage, Zugänglichkeit und Region ab. Genau deshalb arbeitet dieser Rechner mit Ihrem eigenen Angebot oder mit editierbaren Stückkosten, die als Beispielwerte gekennzeichnet sind, statt einen Marktpreis zu behaupten. Die einzige belastbare Zahl ist ein konkretes Angebot für Ihren Bestand – besser drei."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum rechnet der Rechner keinen Steuervorteil in die Spendenersparnis ein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil er bei abgeschriebenen Möbeln klein ist und eine pauschale Einrechnung die Ersparnis überzeichnen würde. Wer zum Buchwert entnimmt (§ 6 Abs. 1 Nr. 4 Satz 4 EStG), bekommt nach § 10b Abs. 3 Satz 2 EStG auch nur den Buchwert zuzüglich Umsatzsteuer als Zuwendung bescheinigt – bei Buchwert 0 € bleibt eine Entlastung in Höhe des Steuersatzes auf die Umsatzsteuer. Die Ersparnis einer Möbelspende liegt in den vermiedenen Entsorgungskosten, nicht im Spendenabzug. Die genaue Rechnung zeigt der Buchwert-Teilwert-Rechner."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wer zahlt die Logistik, wenn Büromöbel gespendet werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das ist Vereinbarungssache. Kleinere Mengen holen viele Empfänger selbst ab – dann fallen auf Spenderseite keine Transportkosten an. Bei ganzen Etagen beauftragt in der Regel die spendende Seite eine Spedition, weil gemeinnützige Empfänger selten Kapazität für Demontage und Abtransport ganzer Flächen haben. Der Rechner bildet beide Fälle ab: Abholung durch den Empfänger mit 0 € oder ein editierbarer Speditionsbetrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich das komplette Inventar spenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Praktisch nie. Empfänger übernehmen als Arbeitgeber Prüfpflichten für übernommene Arbeitsmittel und lehnen beschädigte oder unvollständige Möbel ab – Spenden scheitern regelmäßig an der Tür, nicht am Willen. Sichten Sie den Bestand vor der Anfrage und setzen Sie den spendenfähigen Anteil im Rechner nach dieser Sichtung an, nicht nach Hoffnung. Was Empfänger konkret prüfen, steht im Beitrag zu den Anforderungen der Empfänger."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum stehen Monitore und Rechner nicht in der Möbelrechnung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weil ausgemusterte IT einen eigenen Entsorgungs- und Spendenpfad hat: Elektro- und Elektronikgeräte unterliegen dem ElektroG und gehören nicht in den Sperrmüllcontainer, und datentragende Geräte verlangen vor jeder Abgabe eine DSGVO-konforme Datenlöschung. Beides folgt anderen Regeln und anderen Kosten als die Möbelentsorgung – der Beitrag zur IT-Spende mit Datenlöschung behandelt diesen Pfad vollständig."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Start", "item": "https://surpluspurpose.com/de/" },
+    { "@type": "ListItem", "position": 2, "name": "Ratgeber", "item": "https://surpluspurpose.com/de/ratgeber/" },
+    { "@type": "ListItem", "position": 3, "name": "Büroauflösungs-Rechner", "item": "https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Büroauflösungs-Rechner",
+  "url": "https://surpluspurpose.com/de/ratgeber/bueroaufloesung-rechner.html",
+  "inLanguage": "de",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Alle (browserbasiert)",
+  "browserRequirements": "JavaScript",
+  "description": "Vergleicht bei einer Büroauflösung das Komplett-Entsorgen mit dem Spenden-Szenario: Entsorgungskosten aus einem echten Angebot oder aus editierbaren Stückkosten, spendenfähiger Anteil nach eigener Sichtung, Logistik durch Abholung oder Spedition. Ohne erfundene Durchschnittspreise – jede Annahme ist gekennzeichnet und editierbar. Alle Eingaben bleiben im Browser.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/"
+  }
+}
+</script>
+</head>
+<body>
+<header class="rg-head"><div class="rg-wrap wide rg-head-in">
+  <a class="rg-logo" href="/de/" aria-label="sur.plus – Startseite"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#1A5C4A"/><path d="M44 98 A56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M100 42 A56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M156 110 A56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><path d="M100 166 A56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><circle cx="100" cy="104" r="22" fill="#FFFFFF"/><circle cx="100" cy="104" r="10" fill="#1A5C4A"/></svg><span class="wm">sur<span class="d">.</span><b>plus</b></span></a>
+  <nav class="rg-nav" aria-label="Hauptnavigation">
+    <a href="/de/">Start</a>
+    <a href="/de/ratgeber/">Ratgeber</a>
+    <a class="hide-s" href="/de/case-studies/">Fallstudien</a>
+    <a class="hide-s" href="/de/rechner/">Rechner</a>
+
+    <a href="#search">Suche</a>
+  </nav>
+</div></header>
+<main>
+  <div class="rg-wrap">
+    <nav class="rg-crumb" aria-label="Brotkrumennavigation">
+      <a href="/de/">Start</a><span>›</span><a href="/de/ratgeber/">Ratgeber</a><span>›</span>Büroauflösung
+    </nav>
+  </div>
+  <article>
+  <section class="rg-wrap rg-hero">
+    <span class="rg-kicker">Rechner · Büroauflösung</span>
+    <h1>Büroauflösungs-Rechner: entsorgen oder spenden – gerechnet mit Ihren Zahlen</h1>
+    <p class="rg-lead">Belastbare Durchschnittspreise für gewerbliche Büromöbelentsorgung gibt es nicht – die Kosten hängen von Menge, Demontageaufwand, Etage und Region ab. Dieser Rechner erfindet deshalb keinen Marktpreis: Er vergleicht das Komplett-Entsorgen mit dem Spenden-Szenario auf Basis <strong>Ihres Angebots</strong> oder Ihrer eigenen Stückkosten-Annahmen. Jede Zahl ist editierbar, jede Annahme gekennzeichnet.</p>
+    <div class="rg-meta">
+      <span><b>Stand:</b> 26. August 2026</span>
+      <span><b>Rechnet im Browser</b> – keine Übertragung, keine Speicherung</span>
+      <span><b>Für:</b> Facility Management, Einkauf, Verwaltung</span>
+    </div>
+  </section>
+
+  <section class="rg-wrap rg-body">
+
+    <p>Wer eine Fläche räumt, bekommt für die Möbel drei Sorten von Zahlen: Anbieterangaben in Ab-Preisen, die den eigenen Fall selten treffen; Pauschalversprechen, die erst nach der Besichtigung real werden; und das konkrete Angebot, das als einzige dieser Zahlen trägt. Der <a href="/de/ratgeber/bueroaufloesung-entsorgung-kosten-alternativen.html">Grundlagenbeitrag zur Büroauflösung</a> zeigt, warum bei einer kompletten Etage schnell ein vierstelliger Betrag steht – und dass die eigentliche Entscheidung vorher fällt: Was davon muss überhaupt entsorgt werden?</p>
+
+    <p>Denn jedes Möbelstück, das gespendet statt entsorgt wird, verlässt die Kostenrechnung. Das ist der ökonomische Kern der Möbelspende – nicht der Steuerabzug, der bei abgeschriebenen Möbeln <a href="#steuer">klein ist</a>. Der Rechner stellt beide Szenarien nebeneinander: alles entsorgen gegen spenden plus Rest entsorgen.</p>
+
+    <div class="rg-toc">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="#rechner">Der Rechner</a></li>
+        <li><a href="#methodik">Woher die Zahlen kommen – und woher nicht</a></li>
+        <li><a href="#entsorgung">Die Entsorgungsseite der Rechnung</a></li>
+        <li><a href="#spende">Die Spendenseite: was sich wirklich ändert</a></li>
+        <li><a href="#steuer">Warum der Steuereffekt nicht eingerechnet ist</a></li>
+        <li><a href="#it">Warum IT-Geräte nicht in der Möbelrechnung stehen</a></li>
+        <li><a href="#grenzen">Was der Rechner nicht abbildet</a></li>
+        <li><a href="#faq">Häufige Fragen</a></li>
+      </ol>
+    </div>
+
+    <div class="calc" id="rechner">
+      <form class="calc-form" id="baForm" autocomplete="off">
+
+        <fieldset class="calc-fs">
+          <legend>1 · Inventar</legend>
+          <p class="calc-hint" style="margin-bottom:12px">Stückzahlen aus der Flächenbegehung. Monitore, Rechner und Drucker gehören <a href="#it">nicht in diese Rechnung</a>.</p>
+          <div class="dev-tw">
+            <table class="dev-tbl" style="min-width:420px">
+              <thead><tr><th>Möbelstück</th><th class="num">Anzahl</th></tr></thead>
+              <tbody>
+                <tr><td><span class="dev-m">Schreibtische</span></td><td class="num"><input class="dev-q inv" type="number" id="invTische" min="0" step="1" value="20" inputmode="numeric"></td></tr>
+                <tr><td><span class="dev-m">Bürodrehstühle</span></td><td class="num"><input class="dev-q inv" type="number" id="invStuehle" min="0" step="1" value="20" inputmode="numeric"></td></tr>
+                <tr><td><span class="dev-m">Rollcontainer</span></td><td class="num"><input class="dev-q inv" type="number" id="invContainer" min="0" step="1" value="15" inputmode="numeric"></td></tr>
+                <tr><td><span class="dev-m">Aktenschränke und Regale</span></td><td class="num"><input class="dev-q inv" type="number" id="invSchraenke" min="0" step="1" value="10" inputmode="numeric"></td></tr>
+                <tr><td><span class="dev-m">Besprechungs- und Konferenztische</span></td><td class="num"><input class="dev-q inv" type="number" id="invKonf" min="0" step="1" value="3" inputmode="numeric"></td></tr>
+                <tr><td><span class="dev-m">Sonstige Möbelstücke</span><span class="dev-src">Sideboards, Trennwände, Garderoben, Loungemöbel</span></td><td class="num"><input class="dev-q inv" type="number" id="invSonst" min="0" step="1" value="10" inputmode="numeric"></td></tr>
+              </tbody>
+              <tfoot><tr><td>Summe</td><td class="num" id="invSum">78 Stück</td></tr></tfoot>
+            </table>
+          </div>
+        </fieldset>
+
+        <fieldset class="calc-fs">
+          <legend>2 · Entsorgungskosten</legend>
+          <div class="calc-seg" role="radiogroup" aria-label="Herkunft der Entsorgungskosten">
+            <label><input type="radio" name="kmodus" value="stueck" checked> <span>Aus Stückkosten schätzen<small>Orientierungsmodus mit editierbaren Beispielwerten</small></span></label>
+            <label><input type="radio" name="kmodus" value="angebot"> <span>Aus einem echten Angebot<small>Der belastbare Modus – sobald ein Angebot vorliegt</small></span></label>
+          </div>
+
+          <div id="stueckWrap">
+            <div class="calc-row">
+              <label for="kStueck">Kosten je Möbelstück – Demontage, Abtransport, Entsorgung</label>
+              <div class="calc-in"><input type="number" id="kStueck" min="0" step="5" value="25" inputmode="numeric"><span class="calc-unit">€</span></div>
+              <p class="calc-hint"><strong>Beispielwert, keine Marktdaten.</strong> Was ein Möbelstück wirklich kostet, hängt von Demontageaufwand, Etage und Region ab – ersetzen Sie diesen Wert durch die Stückkosten aus Ihrem Angebot.</p>
+            </div>
+            <div class="calc-row">
+              <label for="kPausch">Grundpauschale je Einsatz – Anfahrt, Personal, Containergestellung</label>
+              <div class="calc-in"><input type="number" id="kPausch" min="0" step="50" value="300" inputmode="numeric"><span class="calc-unit">€</span></div>
+              <p class="calc-hint"><strong>Beispielwert.</strong> Viele Anbieter rechnen eine Grundpauschale unabhängig von der Menge – sie steht im Angebot meist als eigene Position.</p>
+            </div>
+          </div>
+
+          <div class="calc-row" id="angebotWrap" hidden>
+            <label for="kAngebot">Angebotssumme für die Komplettentsorgung des Inventars</label>
+            <div class="calc-in"><input type="number" id="kAngebot" min="0" step="100" value="2250" inputmode="numeric"><span class="calc-unit">€</span></div>
+            <p class="calc-hint">Die Summe aus dem Angebot für die vollständige Räumung der Möbel. Der Rechner leitet daraus rechnerische Stückkosten für die Rest-Entsorgung im Spenden-Szenario ab.</p>
+          </div>
+        </fieldset>
+
+        <fieldset class="calc-fs">
+          <legend>3 · Spenden-Szenario</legend>
+          <div class="calc-row">
+            <label for="quote">Spendenfähiger Anteil nach Ihrer Sichtung</label>
+            <div class="calc-in"><input type="number" id="quote" min="0" max="100" step="5" value="50" inputmode="numeric"><span class="calc-unit">%</span></div>
+            <p class="calc-hint"><strong>Ihre Einschätzung, kein Erfahrungswert.</strong> Empfänger übernehmen nur, was funktionsfähig, vollständig und unbeschädigt ist – <a href="/de/ratgeber/bueromoebel-spende-anforderungen-empfaenger.html">was Empfänger konkret prüfen</a>. Sichten Sie vor der Anfrage, nicht danach.</p>
+          </div>
+          <div class="calc-seg" role="radiogroup" aria-label="Logistik der Spende">
+            <label><input type="radio" name="logistik" value="abholung" checked> <span>Empfänger holt ab<small>Üblich bei kleineren Mengen – 0 € auf Spenderseite</small></span></label>
+            <label><input type="radio" name="logistik" value="spedition"> <span>Spedition wird beauftragt<small>Üblich bei ganzen Etagen – Betrag editierbar</small></span></label>
+          </div>
+          <div class="calc-row" id="spedWrap" hidden>
+            <label for="kSped">Kosten der Spende-Logistik</label>
+            <div class="calc-in"><input type="number" id="kSped" min="0" step="50" value="400" inputmode="numeric"><span class="calc-unit">€</span></div>
+            <p class="calc-hint"><strong>Beispielwert.</strong> Demontage und Transport zum Empfänger – holen Sie auch hierfür ein Angebot ein; bei Vermittlung über sur.plus wird die Logistik im Match geklärt, bevor Sie zusagen.</p>
+          </div>
+          <div class="calc-row calc-row-chk">
+            <label class="calc-chk"><input type="checkbox" id="pauschRest" checked> <span>Grundpauschale fällt auch bei der Rest-Entsorgung an</span></label>
+            <p class="calc-hint">Solange überhaupt entsorgt wird, kommt der Anbieter trotzdem – die Grundpauschale entfällt nur, wenn alles gespendet wird. Im Angebots-Modus ohne Wirkung, dort steckt die Pauschale in den abgeleiteten Stückkosten.</p>
+          </div>
+        </fieldset>
+      </form>
+
+      <div class="calc-out" id="baOut" aria-live="polite">
+        <div class="calc-verdict" id="baVerdict"></div>
+        <div class="calc-kpis">
+          <div class="calc-kpi"><span class="calc-kpi-l">Alles entsorgen</span><span class="calc-kpi-v" id="kAlles">–</span><span class="calc-kpi-s">Szenario 1</span></div>
+          <div class="calc-kpi"><span class="calc-kpi-l">Spenden + Rest entsorgen</span><span class="calc-kpi-v" id="kSpende">–</span><span class="calc-kpi-s">Szenario 2</span></div>
+          <div class="calc-kpi hi"><span class="calc-kpi-l">Differenz</span><span class="calc-kpi-v" id="kDiff">–</span><span class="calc-kpi-s" id="kDiffS">zugunsten der Spende</span></div>
+        </div>
+
+        <div class="dev-tw">
+          <table class="calc-tbl cmp-tbl">
+            <thead><tr><th>Position</th><th class="num">Alles entsorgen</th><th class="num">Spenden + Rest</th></tr></thead>
+            <tbody>
+              <tr><td>Möbelstücke zur Entsorgung</td><td class="num" id="rMA">–</td><td class="num" id="rMS">–</td></tr>
+              <tr><td>Möbelstücke gespendet</td><td class="num">0</td><td class="num" id="rGesp">–</td></tr>
+              <tr><td>Entsorgung, Stückkosten</td><td class="num" id="rEA">–</td><td class="num" id="rES">–</td></tr>
+              <tr><td>Grundpauschale</td><td class="num" id="rPA">–</td><td class="num" id="rPS">–</td></tr>
+              <tr><td>Spende-Logistik</td><td class="num">0&nbsp;€</td><td class="num" id="rLS">–</td></tr>
+              <tr class="calc-tbl-sum"><td>Kosten des Szenarios</td><td class="num" id="rSA">–</td><td class="num" id="rSS">–</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="calc-disc">Überschlagsrechnung, keine Preisauskunft und keine Steuerberatung. Die vorbelegten Stückkosten und Pauschalen sind Beispielwerte ohne Marktdatenbasis – belastbar wird die Rechnung erst mit den Positionen aus einem echten Angebot. Der Steuereffekt der Spende ist bewusst nicht eingerechnet (<a href="#steuer">warum</a>), ein möglicher Verkaufserlös ebenfalls nicht. Alle Eingaben bleiben im Browser; es werden keine Daten übertragen.</p>
+      </div>
+    </div>
+
+    <h2 id="methodik">Woher die Zahlen kommen – und woher nicht</h2>
+
+    <p>Die meisten Kostenrechner im Netz beginnen mit einer Behauptung: einem Durchschnittspreis pro Quadratmeter, pro Arbeitsplatz oder pro Container. Recherchiert man diese Zahlen nach, landet man bei Ab-Preisen aus Anbieterwerbung – Untergrenzen, die den Auftrag attraktiv aussehen lassen und mit dem konkreten Fall wenig zu tun haben. Der <a href="/de/ratgeber/bueroaufloesung-entsorgung-kosten-alternativen.html">Grundlagenbeitrag</a> legt offen, welche kursierenden Preisangaben Anbieterangaben sind und welche belegt – und kommt zu dem Schluss, dass es einen belastbaren Bundesdurchschnitt schlicht nicht gibt.</p>
+
+    <p>Dieser Rechner zieht daraus die Konsequenz: Er behauptet keinen Marktpreis. Die vorbelegten Werte – 25&nbsp;€ je Möbelstück, 300&nbsp;€ Grundpauschale – sind <strong>Beispielwerte</strong>, damit die Rechnung beim ersten Aufruf nicht leer ist. Sie sind keine Preisauskunft und liegen je nach Region, Etage und Demontageaufwand daneben. Belastbar wird die Rechnung in dem Moment, in dem Sie die Beispielwerte durch die Positionen aus einem echten Angebot ersetzen – oder gleich in den Angebots-Modus wechseln.</p>
+
+    <div class="rg-note">
+      <span class="rg-note-t">Der belastbare Weg</span>
+      <p>Holen Sie <strong>drei Angebote</strong> für die Komplettentsorgung ein und achten Sie darauf, dass Demontage, Etagen-Zuschläge, Anfahrt, Containergestellung und der Entsorgungsnachweis als eigene Positionen ausgewiesen sind. Mit der Angebotssumme im Angebots-Modus rechnet der Rechner das Spenden-Szenario auf derselben Basis – und die Differenz ist keine Schätzung mehr, sondern eine Entscheidungsvorlage.</p>
+    </div>
+
+    <h2 id="entsorgung">Die Entsorgungsseite der Rechnung</h2>
+
+    <p>Entsorgen ist der teuerste und zugleich rechtlich nachrangigste Weg. Die Abfallhierarchie in <strong>§ 6 Abs. 1 KrWG</strong> ordnet die Maßnahmen in eine Rangfolge: Vermeidung, Vorbereitung zur Wiederverwendung, Recycling, sonstige Verwertung, Beseitigung. Ein funktionsfähiger Schreibtisch im Container ist die unterste Stufe dieser Rangfolge – bezahlt wird sie trotzdem, mit Demontage, Abtransport und Entsorgungskosten je Stück plus Grundkosten je Einsatz.</p>
+
+    <p>In der Praxis besteht ein Entsorgungsangebot aus mehr als dem Containerpreis: Personal für die Demontage, Etagen- und Trageweg-Zuschläge, Anfahrt, gegebenenfalls Halteverbotszone, und der Entsorgungsnachweis für die Unterlagen. Genau deshalb streuen die Kosten so stark – und genau deshalb rechnet dieser Rechner mit Ihren Positionen statt mit einem behaupteten Mittelwert. Was bei der Räumung einer kompletten Etage typischerweise zusammenkommt und welche Alternativen es neben Spende und Entsorgung gibt, steht im <a href="/de/ratgeber/bueroaufloesung-entsorgung-kosten-alternativen.html">Grundlagenbeitrag</a>.</p>
+
+    <h2 id="spende">Die Spendenseite: was sich wirklich ändert</h2>
+
+    <p>Die Spende verändert die Rechnung an zwei Stellen. Erstens verlässt der spendenfähige Anteil die Entsorgungsmenge – jedes übernommene Möbelstück spart seine Stückkosten vollständig ein. Zweitens kommt eine neue Position hinzu: die Logistik. Kleinere Mengen holen viele Empfänger selbst ab; bei ganzen Etagen beauftragt üblicherweise die spendende Seite eine Spedition, weil gemeinnützige Organisationen selten Kapazität für Demontage und Abtransport ganzer Flächen haben.</p>
+
+    <p>Die kritische Größe ist der <strong>spendenfähige Anteil</strong>. Er wird regelmäßig überschätzt: Empfänger übernehmen als Arbeitgeber Prüfpflichten für übernommene Arbeitsmittel und lehnen ab, was beschädigt, unvollständig oder nicht mehr sicher nutzbar ist – <a href="/de/ratgeber/bueromoebel-spende-anforderungen-empfaenger.html">Möbelspenden scheitern an der Tür</a>, nicht am Willen. Deshalb verlangt der Rechner Ihre Einschätzung nach einer Sichtung und gibt bewusst keinen „üblichen" Prozentsatz vor. Auch der Zeitfaktor gehört auf diese Seite der Rechnung: Eine Spende braucht Vorlauf für Anfrage, Zusage und Übergabe – <a href="/de/ratgeber/bueromoebel-spenden-unternehmen.html">warum Spenden in der Praxis an der Vorlaufzeit scheitern</a>, steht im Vergleichsbeitrag.</p>
+
+    <h2 id="steuer">Warum der Steuereffekt nicht eingerechnet ist</h2>
+
+    <p>Die naheliegende Erwartung – „gespendet ist abgesetzt, also rechnet sich das doppelt" – hält der Mechanik nicht stand. Wer ein Wirtschaftsgut aus dem Betriebsvermögen spendet, kann die Entnahme nach <strong>§ 6 Abs. 1 Nr. 4 Satz 4 EStG</strong> zum Buchwert ansetzen; nach <strong>§ 10b Abs. 3 Satz 2 EStG</strong> bemisst sich die Zuwendung dann aber auch nur nach diesem Buchwert zuzüglich der Umsatzsteuer auf die Entnahme. Büromöbel aus einer Auflösung sind regelmäßig vollständig abgeschrieben – Buchwert 0&nbsp;€. Übrig bleibt eine Entlastung in Höhe des Steuersatzes auf die Umsatzsteuer, die nach <strong>§ 3 Abs. 1b UStG</strong> auf die unentgeltliche Zuwendung anfällt, sofern die Möbel zum Vorsteuerabzug berechtigt haben.</p>
+
+    <p>Das ist kein Argument gegen die Spende – es ist ein Argument gegen falsche Erwartungen. Die Ersparnis der Möbelspende liegt in den <strong>vermiedenen Entsorgungskosten</strong>, und die stehen oben im Rechner. Wer den Steuereffekt exakt beziffern will, inklusive Teilwert-Alternative, Höchstbetrag und Umsatzsteuer: dafür gibt es den <a href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert-Teilwert-Rechner</a>. Ihn hier pauschal einzurechnen würde die Spendenersparnis überzeichnen – also bleibt er draußen.</p>
+
+    <p>Die Steuerlogik hinter dieser Entscheidung – warum die Entsorgung Betriebsausgabe ist, die Spende nicht, und ab wann die Spende trotzdem günstiger ist – steht ausführlich im Beitrag <a href="/de/ratgeber/entsorgen-oder-spenden-steuerlicher-vergleich.html">Entsorgen oder spenden: der steuerliche Vergleich</a>.</p>
+
+    <h2 id="it">Warum IT-Geräte nicht in der Möbelrechnung stehen</h2>
+
+    <p>Monitore, Rechner, Drucker und Konferenztechnik tauchen im Inventar oben bewusst nicht auf – und der Grund ist nicht nur, dass Elektroaltgeräte dem ElektroG unterliegen und datentragende Geräte vor jeder Abgabe eine DSGVO-konforme Löschung verlangen. Der Grund ist, dass bei IT <strong>die ganze Rechnung anders herum steht</strong>.</p>
+
+    <p>Bei Möbeln ist die Entsorgung teuer: Demontage, Volumen, Stückkosten. Jedes gespendete Stück verlässt diese Rechnung – das ist der Hebel, den der Rechner oben sichtbar macht. Bei Elektroaltgeräten wird die Verwertung dagegen <em>nach Gewicht</em> abgerechnet, im Bereich weniger Cent je Kilogramm. Ein ausgemustertes Notebook kostet in der Entsorgung damit weniger als einen Euro. Der Kostenblock sitzt woanders: bei der Behandlung der Datenträger, je Gerät statt je Kilo. Und der fällt in <em>beiden</em> Wegen an – wer spendet, muss genauso löschen wie der, der vernichten lässt.</p>
+
+    <p>Eine IT-Variante dieses Rechners würde deshalb eine Ersparnis ausweisen, die es nicht gibt. Der Grund, ausgemusterte IT zu spenden statt zu schreddern, ist kein Kostenargument – er liegt im Gerätewert, der erhalten bleibt, und in der Wirkung beim Empfänger. Was das für die Datenfrage bedeutet, steht im Beitrag <a href="/de/ratgeber/it-hardware-spenden-dsgvo.html">Firmen-IT spenden statt schreddern</a>.</p>
+
+    <div class="rg-note amber">
+      <span class="rg-note-t">Der Maßstab, der in die Irre führt</span>
+      <p>Wer entscheidet, was aus einem Bestand noch etwas wert ist, greift fast automatisch zum Marktwert: Was sich weiterverkaufen lässt, ist etwas wert – der Rest kann weg. Dieser Maßstab beantwortet aber eine andere Frage als die, um die es hier geht. <strong>Verwertbarkeit ist nicht Verwendbarkeit.</strong> Ein Händler fragt, ob sich ein Gerät mit Marge verkaufen lässt. Eine Organisation fragt, ob es ihr Problem löst. Diese beiden Antworten fallen regelmäßig auseinander – und dazwischen liegt genau das, was sonst geschreddert wird.</p>
+      <p>Sperrige Geräte wie Monitore und Arbeitsplatzrechner lehnen überregionale Versandnetzwerke ab, weil ihr Modell auf Paketformate ausgelegt ist – regional werden sie in Stückzahlen nachgefragt. Konferenz- und Audiotechnik gilt im Handel als kaum verwertbar; für eine Organisation, die hybride Sitzungen stemmen muss und sich neue Technik nicht leisten kann, ist dasselbe Mikrofon ein Volltreffer.</p>
+      <p>Für Ihre Räumung heißt das: Sortieren Sie den Bestand nicht vorab nach vermeintlicher Wertigkeit aus, sondern klären Sie, ob es dafür einen konkreten Bedarf gibt. Das ist keine Eigenschaft des Geräts, sondern eine Frage der Vermittlung – und was Sie vorab wegwerfen, kann niemand mehr anfragen.</p>
+    </div>
+
+    <p>Für diesen Pfad gibt es den eigenen Beitrag: <a href="/de/ratgeber/it-hardware-spenden-dsgvo.html">Firmen-IT spenden statt schreddern</a> – was die DSGVO tatsächlich verlangt, was ein Spendenprozess je Gerät nachweisen muss und warum der Schredder fast immer gewinnt, obwohl er nicht muss.</p>
+
+    <h2 id="grenzen">Was der Rechner nicht abbildet</h2>
+
+    <p>Keine Regional-, Etagen- oder Zugänglichkeitsfaktoren – die stecken in Ihrem Angebot, nicht in einer Formel. Kein Verkaufs-Szenario: Gebrauchtmöbelhändler zahlen für marktgängige Serien, aber ob Ihr Bestand dazugehört, entscheidet der Händler und nicht ein Rechner. Kein Steuereffekt, aus den <a href="#steuer">genannten Gründen</a>. Keine Terminlogik: Ob die Vorlaufzeit einer Spende zu Ihrem Räumungstermin passt, ist eine Planungsfrage. Und keine Zustandsbewertung – den spendenfähigen Anteil kennt nur, wer den Bestand gesichtet hat.</p>
+
+    <h3>Welche Arbeit sur.plus übernimmt – und welche nicht</h3>
+
+    <p>sur.plus (surpluspurpose.com) ist der Vermittler zwischen Unternehmensbeständen und verifizierten gemeinnützigen Empfängern. Ihr Überschuss trifft auf einen Bedarf, der bereits gemeldet ist; der Match kommt mit geprüftem Empfänger, koordinierter Übergabe und Impact-Dokumentation. Die Frage „wer nimmt 40 Schreibtische, und bis wann?" ist damit unsere Arbeit, nicht Ihre.</p>
+
+    <p>Aus denselben Dokumentationsdaten entsteht ab dem Tree-Tarif die <strong>vorausgefüllte Zuwendungsbestätigung</strong>: Wir stellen sie fertig bereit, sodass auf der Empfängerseite nur noch die Bestätigung bleibt. Ausstellen und unterschreiben muss sie die Empfängerorganisation selbst – das darf nach § 10b EStG ausschließlich sie, und nur, soweit sie dazu berechtigt ist; ohne Eintrag im <a href="/de/ratgeber/zuwendungsbestaetigung-sachspende.html">Zuwendungsempfängerregister</a> entfällt der Spendenabzug. Für Empfänger im EU-/EWR-Ausland ist das kein Ausschluss, sondern ein Schritt: Sie können den Registereintrag beim Bundeszentralamt für Steuern selbst beantragen und danach nach deutschem Muster bestätigen &ndash; außerhalb des EWR gibt es diesen Weg nicht. Für den nicht spendenfähigen Rest vermitteln wir, wo es einen gibt, an einen <strong>gemeinwohlorientierten Verwerter</strong> – einen Betrieb, der Wiederverwendung und Arbeitsintegration ernst nimmt, statt nur den günstigsten Container zu stellen. Belastbar ist dieser Weg bei uns bisher für <em>Elektroaltgeräte</em>; für Büromöbel bleibt in der Regel der reguläre Entsorgungsfachbetrieb zuständig, weil Sperrmüll nicht zum Leistungsbild sozialer Elektro-Verwerter gehört.</p>
+
+    <p>Was sur.plus ausdrücklich nicht leistet: keine Steuer- oder Rechtsberatung und keine Festsetzung des steuerlichen Wertansatzes. Die Zahl, die in die Bücher und in die Bestätigung geht, verantworten Spender, Empfänger und deren Beratung.</p>
+
+    <section class="rg-faq" id="faq" data-sp-section="faq">
+      <h2>Häufige Fragen</h2>
+      <div class="rg-faq-item"><h3>Gibt es einen Durchschnittspreis für die Entsorgung von Büromöbeln?</h3><p>Nein. Belastbare bundesweite Durchschnittspreise für gewerbliche Büromöbelentsorgung existieren nicht – die Kosten hängen von Menge, Demontageaufwand, Etage, Zugänglichkeit und Region ab. Genau deshalb arbeitet dieser Rechner mit Ihrem eigenen Angebot oder mit editierbaren Stückkosten, die als Beispielwerte gekennzeichnet sind, statt einen Marktpreis zu behaupten. Die einzige belastbare Zahl ist ein konkretes Angebot für Ihren Bestand – besser drei.</p></div>
+      <div class="rg-faq-item"><h3>Warum rechnet der Rechner keinen Steuervorteil in die Spendenersparnis ein?</h3><p>Weil er bei abgeschriebenen Möbeln klein ist und eine pauschale Einrechnung die Ersparnis überzeichnen würde. Wer zum Buchwert entnimmt (§ 6 Abs. 1 Nr. 4 Satz 4 EStG), bekommt nach § 10b Abs. 3 Satz 2 EStG auch nur den Buchwert zuzüglich Umsatzsteuer als Zuwendung bescheinigt – bei Buchwert 0&nbsp;€ bleibt eine Entlastung in Höhe des Steuersatzes auf die Umsatzsteuer. Die Ersparnis einer Möbelspende liegt in den vermiedenen Entsorgungskosten, nicht im Spendenabzug. Die genaue Rechnung zeigt der <a href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert-Teilwert-Rechner</a>.</p></div>
+      <div class="rg-faq-item"><h3>Wer zahlt die Logistik, wenn Büromöbel gespendet werden?</h3><p>Das ist Vereinbarungssache. Kleinere Mengen holen viele Empfänger selbst ab – dann fallen auf Spenderseite keine Transportkosten an. Bei ganzen Etagen beauftragt in der Regel die spendende Seite eine Spedition, weil gemeinnützige Empfänger selten Kapazität für Demontage und Abtransport ganzer Flächen haben. Der Rechner bildet beide Fälle ab: Abholung durch den Empfänger mit 0&nbsp;€ oder ein editierbarer Speditionsbetrag.</p></div>
+      <div class="rg-faq-item"><h3>Kann ich das komplette Inventar spenden?</h3><p>Praktisch nie. Empfänger übernehmen als Arbeitgeber Prüfpflichten für übernommene Arbeitsmittel und lehnen beschädigte oder unvollständige Möbel ab – Spenden scheitern regelmäßig an der Tür, nicht am Willen. Sichten Sie den Bestand vor der Anfrage und setzen Sie den spendenfähigen Anteil im Rechner nach dieser Sichtung an, nicht nach Hoffnung. Was Empfänger konkret prüfen, steht im Beitrag zu den <a href="/de/ratgeber/bueromoebel-spende-anforderungen-empfaenger.html">Anforderungen der Empfänger</a>.</p></div>
+      <div class="rg-faq-item"><h3>Warum stehen Monitore und Rechner nicht in der Möbelrechnung?</h3><p>Weil ausgemusterte IT einen eigenen Entsorgungs- und Spendenpfad hat: Elektro- und Elektronikgeräte unterliegen dem ElektroG und gehören nicht in den Sperrmüllcontainer, und datentragende Geräte verlangen vor jeder Abgabe eine DSGVO-konforme Datenlöschung. Beides folgt anderen Regeln und anderen Kosten als die Möbelentsorgung – der Beitrag zur <a href="/de/ratgeber/it-hardware-spenden-dsgvo.html">IT-Spende mit Datenlöschung</a> behandelt diesen Pfad vollständig.</p></div>
+    </section>
+
+    <section class="rg-src" data-sp-section="quellen">
+      <h2>Quellen</h2>
+      <ol>
+        <li><a href="https://lxgesetze.de/krwg/6" rel="noopener nofollow" target="_blank">§ 6 Abs. 1 KrWG</a> – Rangfolge der Abfallhierarchie: Vermeidung, Vorbereitung zur Wiederverwendung, Recycling, sonstige Verwertung, Beseitigung; i. d. F. v. 23.10.2020 (BGBl. I S. 2232). Abgerufen August 2026.</li>
+        <li><a href="https://lxgesetze.de/estg/6" rel="noopener nofollow" target="_blank">§ 6 Abs. 1 Nr. 4 EStG</a> – Satz 1: Entnahmen sind mit dem Teilwert anzusetzen. Satz 4: Buchwertansatz bei unentgeltlicher Überlassung an eine nach § 5 Abs. 1 Nr. 9 KStG befreite Körperschaft oder eine juristische Person des öffentlichen Rechts zur Verwendung für steuerbegünstigte Zwecke im Sinne des § 10b Abs. 1 Satz 1. Abgerufen August 2026.</li>
+        <li><a href="https://lxgesetze.de/estg/10b" rel="noopener nofollow" target="_blank">§ 10b Abs. 3 Satz 2 EStG</a> – Bei Wirtschaftsgütern unmittelbar nach der Entnahme bemisst sich die Zuwendung nach dem bei der Entnahme angesetzten Wert und nach der Umsatzsteuer, die auf die Entnahme entfällt. Abgerufen August 2026.</li>
+        <li><a href="https://lxgesetze.de/ustg/3" rel="noopener nofollow" target="_blank">§ 3 Abs. 1b UStG</a> – Die unentgeltliche Zuwendung eines Gegenstands wird einer Lieferung gegen Entgelt gleichgestellt; Voraussetzung ist, dass der Gegenstand oder seine Bestandteile zum vollen oder teilweisen Vorsteuerabzug berechtigt haben. Abgerufen August 2026.</li>
+      </ol>
+      <p style="margin:12px 0 0;font-size:13px;line-height:1.65;color:var(--text-lt)"><strong style="color:var(--text-mid)">Rechtsstand: 26. August 2026.</strong> Die vorbelegten Kostenwerte im Rechner sind Beispielwerte ohne Quellencharakter – maßgeblich sind die Positionen aus konkreten Angeboten für Ihren Bestand. Prüfen Sie vor Entscheidungen, ob neuere Verwaltungsanweisungen oder Gesetzesfassungen vorliegen; dieser Beitrag ersetzt keine Rechts- oder Steuerberatung.</p>
+    </section>
+
+    <section class="rg-cta" data-sp-section="cta">
+      <h2>Die Rechnung ist der leichte Teil</h2>
+      <p>Die Arbeit steckt in der anderen Hälfte: Empfänger finden, die 40 Schreibtische wirklich nehmen, ihre Gemeinnützigkeit prüfen, Übergabe und Nachweis dokumentieren – vor Ihrem Räumungstermin. Wenn bei Ihnen eine Fläche ansteht, zeigen wir in 30 Minuten, was davon wir übernehmen.</p>
+      <div class="rg-btns">
+        <a class="rg-btn p" href="https://calendly.com/florian_surplus/30min" rel="noopener" target="_blank">30 Minuten mit sur.plus</a>
+        <a class="rg-btn s" href="/de/surplus_impact_calculator.html">Impact-Potenzial in 60 Sekunden</a>
+        <a class="rg-btn s" href="/de/rechner/">Alle Rechner</a>
+      </div>
+    </section>
+
+    <section class="rg-rel" data-sp-section="weiterlesen">
+      <h2>Weiterlesen</h2>
+      <div class="rg-grid">
+        <a class="rg-card" href="/de/ratgeber/bueroaufloesung-entsorgung-kosten-alternativen.html"><span class="rg-card-k">Grundlagen</span><h3>Büroauflösung und Entsorgung: Kosten und Alternativen</h3><p>Entscheidungsmatrix, Entsorgungswege und ein durchgerechnetes Beispiel – der Beitrag, der offenlegt, welche Preisangaben Anbieterangaben sind und welche belegt.</p><span class="rg-card-go">Weiterlesen →</span></a>
+        <a class="rg-card" href="/de/ratgeber/bueromoebel-spende-anforderungen-empfaenger.html"><span class="rg-card-k">Vertiefung</span><h3>Büromöbel spenden: Anforderungen der Empfänger</h3><p>Prüfpflichten des Empfängers als Arbeitgeber, Flächenbedarf und Haftung des Schenkers – die Checkliste für die Sichtung, aus der Ihr spendenfähiger Anteil kommt.</p><span class="rg-card-go">Weiterlesen →</span></a>
+      </div>
+    </section>
+
+  </section>
+  </article>
+
+<section class="rg-wrap" data-editorial-note><div style="border-left:3px solid var(--brand-lt,#4DB896);background:var(--brand-xs,#E8F5F0);border-radius:0 8px 8px 0;padding:14px 16px;margin:26px 0 34px"><p style="margin:0 0 5px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand,#1A5C4A)">Redaktion</p><p style="margin:0;font-size:13px;line-height:1.66;color:#33453D">Redaktionell verantwortlich: Florian Lechner, sur.plus, Landsberger Stra&szlig;e 57, 82266 Inning am Ammersee-Stegen. Dieser Beitrag wurde KI-gest&uuml;tzt erstellt und vor der Ver&ouml;ffentlichung anhand der genannten Primärquellen redaktionell gepr&uuml;ft. Eine Pr&uuml;fung durch Rechtsanw&auml;lte, Steuerberater oder Wirtschaftspr&uuml;fer ist nicht erfolgt. <a href="/de/ratgeber/redaktionelle-grundsaetze.html" style="color:var(--brand,#1A5C4A);text-decoration:underline">Redaktionelle Grunds&auml;tze &rarr;</a></p></div></section>
+<section class="rg-wrap" data-preferred-source><div style="text-align:center;margin:-14px 0 40px"><a href="https://www.google.com/preferences/source?q=surpluspurpose.com" rel="noopener" target="_blank" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5A6B63;text-decoration:none;border:1px solid rgba(26,92,74,.15);border-radius:999px;padding:7px 14px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex:none"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.1-1.01z"/></svg>sur.plus in der Google Suche als bevorzugte Quelle speichern</a></div></section>
+</main>
+
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var form=$('baForm'); if(!form)return;
+  var eur=function(v){return Math.round(v).toLocaleString('de-DE')+' €'};
+  function num(id){var v=parseFloat($(id).value);return isFinite(v)&&v>0?v:0}
+  function calc(){
+    var n=num('invTische')+num('invStuehle')+num('invContainer')+num('invSchraenke')+num('invKonf')+num('invSonst');
+    $('invSum').textContent=n.toLocaleString('de-DE')+' Stück';
+    var modus=form.kmodus.value;
+    $('stueckWrap').hidden=modus!=='stueck';
+    $('angebotWrap').hidden=modus!=='angebot';
+    var q=Math.min(100,Math.max(0,num('quote')))/100;
+    var gesp=Math.round(n*q), rest=n-gesp;
+    var stk,pausch;
+    if(modus==='angebot'){
+      var ang=num('kAngebot');
+      stk=n>0?ang/n:0; pausch=0;
+    } else {
+      stk=num('kStueck'); pausch=num('kPausch');
+    }
+    var logistik=form.logistik.value;
+    $('spedWrap').hidden=logistik!=='spedition';
+    var sped=logistik==='spedition'?num('kSped'):0;
+    var pauschRest=(modus==='stueck'&&$('pauschRest').checked&&rest>0)?pausch:0;
+    var pauschAll=(modus==='stueck')?pausch:0;
+    var kostenAlles=n*stk+pauschAll;
+    var kostenSpende=rest*stk+pauschRest+sped;
+    var diff=kostenAlles-kostenSpende;
+    $('kAlles').textContent=eur(kostenAlles);
+    $('kSpende').textContent=eur(kostenSpende);
+    $('kDiff').textContent=eur(Math.abs(diff));
+    $('kDiffS').textContent=diff>=0?'zugunsten der Spende':'zugunsten der Entsorgung';
+    $('rMA').textContent=n.toLocaleString('de-DE');
+    $('rMS').textContent=rest.toLocaleString('de-DE');
+    $('rGesp').textContent=gesp.toLocaleString('de-DE');
+    $('rEA').textContent=eur(n*stk);
+    $('rES').textContent=eur(rest*stk);
+    $('rPA').textContent=eur(pauschAll);
+    $('rPS').textContent=eur(pauschRest);
+    $('rLS').textContent=eur(sped);
+    $('rSA').textContent=eur(kostenAlles);
+    $('rSS').textContent=eur(kostenSpende);
+    var v=$('baVerdict');
+    if(n===0){
+      v.className='calc-verdict warn';
+      v.textContent='Tragen Sie oben das Inventar aus der Flächenbegehung ein – ohne Stückzahlen gibt es nichts zu vergleichen.';
+    } else if(gesp===0){
+      v.className='calc-verdict warn';
+      v.textContent='Spendenfähiger Anteil 0 % – dann bleibt nur die Komplettentsorgung für '+eur(kostenAlles)+'. Prüfen Sie nach einer Sichtung, ob wirklich nichts übernahmefähig ist.';
+    } else if(diff>0){
+      v.className='calc-verdict ok';
+      v.innerHTML='Mit Ihren Werten spart das Spenden-Szenario <strong>'+eur(diff)+'</strong>: '+gesp.toLocaleString('de-DE')+' von '+n.toLocaleString('de-DE')+' Möbelstücken verlassen die Entsorgungsrechnung. Belastbar wird die Zahl mit den Positionen aus einem echten Angebot – der Steuereffekt käme noch hinzu, ist aber bewusst nicht eingerechnet.';
+    } else {
+      v.className='calc-verdict warn';
+      v.innerHTML='Mit Ihren Werten ist das Spenden-Szenario um '+eur(Math.abs(diff))+' teurer – die Spedition kostet hier mehr, als die Rest-Entsorgung einspart. Prüfen Sie, ob der Empfänger abholen kann, oder rechnen Sie mit den Logistikkosten aus einem konkreten Angebot.';
+    }
+  }
+  form.addEventListener('input',calc);
+  form.addEventListener('change',calc);
+  calc();
+})();
+</script>
+<script src="/search.js" defer></script>
+<footer class="rg-foot"><div class="rg-wrap wide">
+  <span class="rg-foot-claim">Every surplus has a purpose. We find it.</span>
+  sur.plus (surpluspurpose.com) ·
+  <a href="/de/">Start</a> ·
+  <a href="/de/ratgeber/">Ratgeber</a> ·
+  <a href="/de/case-studies/">Fallstudien</a> ·
+  <a href="/de/surplus_impact_calculator.html">Impact Calculator</a> ·
+  <a href="https://www.linkedin.com/company/surplus-purpose/" rel="noopener" target="_blank">LinkedIn</a>
+</div></footer>
+</body>
+</html>

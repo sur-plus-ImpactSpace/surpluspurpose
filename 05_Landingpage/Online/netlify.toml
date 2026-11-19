@@ -1,0 +1,7 @@
+# Netlify config for the sur.plus site (deploy base = this folder)
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

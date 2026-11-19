@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Redaktionelle Grunds&auml;tze: wie diese Inhalte entstehen | sur.plus</title>
+<meta name="description" content="Wie die Ratgeber-Inhalte von sur.plus entstehen: KI-gest&uuml;tzte Erstellung, redaktionelle Pr&uuml;fung gegen Prim&auml;rquellen, Verantwortlichkeit, Aktualisierung und Fehlerkorrektur.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="icon" type="image/svg+xml" href="/surplus_icon.svg">
+<link rel="alternate icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A2318">
+<meta name="application-name" content="sur.plus">
+<meta name="apple-mobile-web-app-title" content="sur.plus">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://surpluspurpose.com/de/ratgeber/redaktionelle-grundsaetze.html">
+<meta property="og:title" content="Redaktionelle Grunds&auml;tze: wie diese Inhalte entstehen | sur.plus">
+<meta property="og:description" content="Wie die Ratgeber-Inhalte von sur.plus entstehen: KI-gest&uuml;tzte Erstellung, redaktionelle Pr&uuml;fung gegen Prim&auml;rquellen, Verantwortlichkeit, Aktualisierung und Fehlerkorrektur.">
+<meta property="og:image" content="https://surpluspurpose.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="sur.plus">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Redaktionelle Grunds&auml;tze: wie diese Inhalte entstehen | sur.plus">
+<meta name="twitter:description" content="Wie die Ratgeber-Inhalte von sur.plus entstehen: KI-gest&uuml;tzte Erstellung, redaktionelle Pr&uuml;fung gegen Prim&auml;rquellen, Verantwortlichkeit, Aktualisierung und Fehlerkorrektur.">
+<meta name="twitter:image" content="https://surpluspurpose.com/og-image.png">
+
+<link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="alternate" hreflang="de" href="https://surpluspurpose.com/de/ratgeber/redaktionelle-grundsaetze.html">
+<link rel="alternate" hreflang="en" href="https://surpluspurpose.com/guides/editorial-standards.html">
+<link rel="alternate" hreflang="x-default" href="https://surpluspurpose.com/guides/editorial-standards.html">
+<link rel="canonical" href="https://surpluspurpose.com/de/ratgeber/redaktionelle-grundsaetze.html">
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-mid:#2E8B6A;--brand-lt:#4DB896;--brand-xs:#E8F5F0;
+  --accent:#D4712A;--accent-lt:#E8935A;--accent-xs:#FDF3EA;
+  --white:#FFFFFF;--offwhite:#F7FAF8;--text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;
+  --border:rgba(26,92,74,0.12);
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:rgba(77,184,150,.3)}
+
+/* header */
+.rg-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--brand-xs)}
+.rg-head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.rg-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.rg-logo svg{width:32px;height:32px;flex:none}
+.rg-logo .wm{font-size:20px;letter-spacing:-.4px;color:var(--brand);font-weight:700;line-height:1}
+.rg-logo .wm .d{color:var(--accent)}.rg-logo .wm b{color:var(--brand);font-weight:700}
+.rg-nav{display:flex;align-items:center;gap:16px;font-size:13.5px}
+.rg-nav a{color:var(--text-mid);text-decoration:none;font-weight:600}
+.rg-nav a:hover{color:var(--brand)}
+.rg-nav .rg-lang{border:1px solid var(--brand-xs);border-radius:8px;padding:3px 9px;color:var(--brand)}
+@media(max-width:560px){.rg-nav .hide-s{display:none}}
+
+.rg-wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.rg-wrap.wide{max-width:1000px}
+
+/* breadcrumb */
+.rg-crumb{padding:18px 0 0;font-size:12.5px;color:var(--text-lt)}
+.rg-crumb a{color:var(--text-mid);text-decoration:none}
+.rg-crumb a:hover{color:var(--brand)}
+.rg-crumb span{margin:0 6px;opacity:.5}
+
+/* hero */
+.rg-hero{padding-top:22px;padding-bottom:6px}
+.rg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.rg-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.6vw,43px);line-height:1.12;color:var(--dark);margin:13px 0 0;letter-spacing:-.01em}
+.rg-lead{margin:16px 0 0;font-size:18px;line-height:1.62;color:var(--text)}
+.rg-meta{margin:18px 0 0;padding:12px 0;border-top:1px solid var(--brand-xs);border-bottom:1px solid var(--brand-xs);font-size:12.5px;color:var(--text-lt);display:flex;flex-wrap:wrap;gap:6px 18px}
+.rg-meta b{color:var(--text-mid);font-weight:600}
+
+/* TOC */
+.rg-toc{margin:26px 0 0;background:var(--offwhite);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.rg-toc h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-toc ol{margin:0;padding-left:20px;font-size:14.5px;line-height:1.85;color:var(--text-mid)}
+.rg-toc a,.rg-crumb a{text-decoration:none}
+.rg-toc a:hover{color:var(--brand);text-decoration:underline}
+
+/* body copy */
+.rg-body{padding-top:8px}
+.rg-body h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.2vw,31px);line-height:1.2;color:var(--dark);margin:44px 0 0;letter-spacing:-.01em}
+.rg-body h3{font-size:18px;font-weight:700;color:var(--dark);margin:30px 0 0}
+.rg-body p{margin:14px 0 0;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body ul,.rg-body ol{margin:14px 0 0;padding-left:22px;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body li{margin:7px 0 0}
+.rg-body li::marker{color:var(--brand-mid)}
+.rg-body a{color:var(--brand);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.rg-body a:hover{color:var(--accent)}
+.rg-body strong{font-weight:700;color:var(--dark)}
+.rg-body em{font-style:italic}
+.rg-body figure{margin:22px 0 0}
+.rg-body figcaption{margin:8px 0 0;font-size:12.5px;color:var(--text-lt)}
+
+/* table */
+.rg-tw{margin:22px 0 0;overflow-x:auto;border:1px solid var(--border);border-radius:12px}
+.rg-body table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+.rg-body th{text-align:left;background:var(--brand-xs);color:var(--dark);font-weight:700;padding:11px 14px;font-size:13px;letter-spacing:.01em}
+.rg-body td{padding:11px 14px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.55}
+.rg-body tbody tr:nth-child(even){background:var(--offwhite)}
+
+/* callouts */
+.rg-note{margin:24px 0 0;border-left:3px solid var(--brand-mid);background:var(--brand-xs);border-radius:0 12px 12px 0;padding:16px 20px}
+.rg-note p{margin:0;font-size:15.5px;line-height:1.65}
+.rg-note p + p{margin-top:10px}
+.rg-note .rg-note-t{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 7px}
+.rg-note.amber{border-left-color:var(--accent);background:var(--accent-xs)}
+.rg-note.amber .rg-note-t{color:var(--accent)}
+
+/* key figures */
+.rg-stats{display:grid;gap:12px;grid-template-columns:1fr;margin:26px 0 0}
+@media(min-width:620px){.rg-stats{grid-template-columns:repeat(3,1fr)}}
+.rg-stat{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.rg-stat-v{font-family:var(--serif);font-size:28px;line-height:1.05;color:var(--brand)}
+.rg-stat-l{margin:7px 0 0;font-size:12.5px;line-height:1.5;color:var(--text-lt)}
+
+/* steps */
+.rg-steps{counter-reset:s;margin:24px 0 0;padding:0;list-style:none}
+.rg-steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:18px 0 0}
+.rg-steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.rg-steps b{display:block;color:var(--dark);font-size:16.5px}
+.rg-steps span{display:block;margin:4px 0 0;font-size:15.5px;line-height:1.65;color:var(--text-mid)}
+
+/* FAQ */
+.rg-faq{margin:44px 0 0}
+.rg-faq h2{margin-top:0}
+.rg-faq-item{border-top:1px solid var(--brand-xs);padding:17px 0}
+.rg-faq-item h3{font-size:16.5px;font-weight:700;color:var(--dark);margin:0}
+.rg-faq-item p{margin:9px 0 0;font-size:15.5px;line-height:1.68;color:var(--text-mid)}
+
+/* sources */
+.rg-src{margin:40px 0 0;padding:20px 22px;background:var(--offwhite);border:1px solid var(--border);border-radius:14px}
+.rg-src h2{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-src ol{margin:0;padding-left:20px;font-size:13.5px;line-height:1.7;color:var(--text-mid)}
+.rg-src a{color:var(--brand)}
+
+/* CTA */
+.rg-cta{margin:44px 0 0;background:var(--brand-xs);border-radius:18px;padding:30px 28px;text-align:center}
+.rg-cta h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--dark);margin:0 0 8px;line-height:1.2}
+.rg-cta p{margin:0 0 20px;color:var(--text-mid);font-size:15.5px;line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto}
+.rg-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.rg-btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+.rg-btn.p{background:var(--brand);color:#fff}
+.rg-btn.p:hover{background:var(--dark)}
+.rg-btn.s{background:#fff;color:var(--brand);border:1px solid var(--brand-lt)}
+.rg-btn.s:hover{border-color:var(--brand)}
+
+/* related */
+.rg-rel{margin:44px 0 0}
+.rg-rel h2{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--dark);margin:0 0 4px}
+.rg-grid{display:grid;gap:14px;grid-template-columns:1fr;margin:18px 0 0}
+@media(min-width:620px){.rg-grid{grid-template-columns:1fr 1fr}}
+.rg-body a.rg-card,.rg-body a.rg-card:hover,.rg-card,.rg-card:hover{text-decoration:none}
+.rg-card{display:block;border:1px solid var(--brand-xs);border-radius:14px;padding:20px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.rg-body a.rg-card:hover{color:inherit}
+.rg-card:hover{border-color:var(--brand-lt);box-shadow:0 6px 20px rgba(26,92,74,.08);transform:translateY(-1px)}
+.rg-card .rg-card-k{font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.rg-card h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25;color:var(--dark);margin:9px 0 0}
+.rg-card p{margin:9px 0 0;font-size:14px;line-height:1.55;color:var(--text-mid)}
+.rg-card .rg-card-go{display:inline-block;margin:12px 0 0;font-size:13px;font-weight:700;color:var(--brand)}
+
+/* footer */
+.rg-foot{margin-top:56px;border-top:1px solid var(--brand-xs);padding:26px 0 34px;font-size:13px;line-height:1.9;color:var(--text-lt);text-align:center}
+.rg-foot a{color:var(--text-mid);text-decoration:none}
+.rg-foot a:hover{color:var(--brand)}
+.rg-foot .rg-foot-claim{display:block;font-family:var(--serif);font-size:15px;color:var(--brand);margin:0 0 6px}
+/* sp-mobile-v1 */
+.cs-nav a{padding:6px 0;display:inline-flex;align-items:center;min-height:34px}
+.cs-nav .cs-nav-s{display:none}
+@media(max-width:640px){
+  .cs-wrap,.rg-wrap{padding-left:18px;padding-right:18px}
+  .rg-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .rg-logo svg{width:29px;height:29px}
+  .rg-logo .wm{font-size:18px}
+  .rg-nav{gap:13px;font-size:13.5px}
+  .cs-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .cs-logo svg{width:29px;height:29px}
+  .cs-logo .wm{font-size:18px}
+  .cs-nav{gap:13px;font-size:13.5px}
+  .cs-nav .cs-nav-l{display:none}
+  .cs-nav .cs-nav-s{display:inline}
+  .cs-nav .cs-lang{padding:4px 8px;font-size:12.5px}
+  .cs-hero{padding-top:34px}
+  .cs-lead{font-size:17px}
+  .cs-cta{padding:24px 18px;margin-bottom:44px}
+  .cs-btns{flex-direction:column}
+  .cs-btn{width:100%;padding:14px 18px;text-align:center}
+  .gd-body p,.gd-body li{font-size:16px}
+  .gd-lead{font-size:17.5px}
+  .gd-body h2{font-size:23px}
+  .gd-body h3{font-size:18.5px}
+  .gd-meta{gap:6px 12px;font-size:12.5px}
+  .gd-key,.gd-warn{padding:16px 16px}
+  .gd-prod{padding:20px 18px}
+  .gd-toc{padding:18px 18px}
+  .gd-table{font-size:14px;min-width:420px}
+  .gd-table th,.gd-table td{padding:10px 12px}
+  .gd-src li{font-size:13.5px}
+}
+@media(max-width:420px){
+  .cs-nav{gap:11px;font-size:13px}
+  .cs-nav .cs-nav-home{display:none}
+}
+@media(max-width:360px){
+  .cs-wrap,.rg-wrap{padding-left:15px;padding-right:15px}
+  .cs-logo .wm,.rg-logo .wm{font-size:17px}
+  .cs-nav{gap:9px;font-size:12.5px}
+}
+
+/* template sheet */
+.tpl{border:1.5px solid var(--brand);border-radius:14px;padding:26px 24px;margin:22px 0;background:var(--offwhite)}
+.tpl-h{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;border-bottom:2px solid var(--brand);padding-bottom:12px;margin-bottom:8px}
+.tpl-title{font-weight:700;color:var(--brand);font-size:14.5px}
+.tpl-no{font-size:12.5px;color:var(--text-mid)}
+.tpl h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:22px 0 8px}
+.tpl-hint{font-size:12.5px;color:var(--text-mid);margin:0 0 8px}
+.tpl-t{width:100%;border-collapse:collapse;font-size:13.5px}
+.tpl-t td,.tpl-t th{border:1px solid var(--border);padding:8px 10px;vertical-align:top;text-align:left}
+.tpl-t td.lbl{width:34%;color:var(--text-mid);font-weight:600;background:var(--white)}
+.tpl-grid td{height:30px}
+.fill{display:inline-block;border-bottom:1px solid var(--text-lt);height:16px;vertical-align:bottom}
+.w-xs{width:34px}.w-s{width:110px}.w-m{width:210px}.w-l{width:100%;min-width:240px}
+@media print{
+  .rg-head,.rg-crumb,.rg-btns,.rg-cta,.rg-rel,.rg-foot,.rg-meta{display:none!important}
+  .tpl{break-inside:avoid-page;background:#fff}
+  body{background:#fff}
+  .rg-hero h1{font-size:26px}
+}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Redaktionelle Grundsätze: wie die Ratgeber-Inhalte von sur.plus entstehen",
+  "description": "Wie die Ratgeber-Inhalte von sur.plus entstehen: KI-gestützte Erstellung, redaktionelle Prüfung gegen Primärquellen, Verantwortlichkeit, Aktualisierung und Fehlerkorrektur.",
+  "inLanguage": "de-DE",
+  "datePublished": "2026-08-12",
+  "dateModified": "2026-08-12",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://surpluspurpose.com/de/ratgeber/redaktionelle-grundsaetze.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "Florian Lechner",
+    "url": "https://www.linkedin.com/in/florian-lechner-206434107",
+    "jobTitle": "Gründer, sur.plus"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surpluspurpose.com/icon-512.png"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/surplus-purpose/"
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://surpluspurpose.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ratgeber",
+      "item": "https://surpluspurpose.com/de/ratgeber/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Redaktionelle Grundsätze",
+      "item": "https://surpluspurpose.com/de/ratgeber/redaktionelle-grundsaetze.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="rg-head"><div class="rg-wrap wide rg-head-in">
+  <a class="rg-logo" href="/de/" aria-label="sur.plus – Startseite"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#1A5C4A"/><path d="M44 98 A56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M100 42 A56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M156 110 A56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><path d="M100 166 A56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><circle cx="100" cy="104" r="22" fill="#FFFFFF"/><circle cx="100" cy="104" r="10" fill="#1A5C4A"/></svg><span class="wm">sur<span class="d">.</span><b>plus</b></span></a>
+  <nav class="rg-nav" aria-label="Hauptnavigation">
+    <a href="/de/">Start</a>
+    <a href="/de/ratgeber/">Ratgeber</a>
+    <a class="hide-s" href="/de/case-studies/">Fallstudien</a>
+    <a class="hide-s" href="/de/rechner/">Rechner</a>
+  
+    <a href="#search">Suche</a>
+  </nav>
+</div></header>
+<main>
+  <div class="rg-wrap">
+    <nav class="rg-crumb" aria-label="Brotkrumennavigation">
+      <a href="/de/">Start</a><span>&rsaquo;</span><a href="/de/ratgeber/">Ratgeber</a><span>&rsaquo;</span>Redaktionelle Grunds&auml;tze
+    </nav>
+  </div>
+  <article>
+  <section class="rg-wrap rg-hero">
+    <span class="rg-kicker">Transparenz &middot; Redaktion</span>
+    <h1>Redaktionelle Grunds&auml;tze: wie diese Inhalte entstehen</h1>
+    <p class="rg-lead">Die Ratgeber-Artikel auf dieser Seite werden <strong>KI-gest&uuml;tzt erstellt</strong> und vor der Ver&ouml;ffentlichung <strong>redaktionell gepr&uuml;ft</strong>. Diese Seite erkl&auml;rt, was das konkret hei&szlig;t: wer verantwortet, woher die Aussagen stammen, was gepr&uuml;ft wird &ndash; und was ausdr&uuml;cklich <em>nicht</em> gepr&uuml;ft ist.</p>
+    <div class="rg-meta">
+      <span><b>Stand:</b> 12. August 2026</span>
+      <span><b>Verantwortlich:</b> Florian Lechner</span>
+      <span><b>Gilt f&uuml;r:</b> alle Ratgeber- und Guide-Seiten</span>
+    </div>
+  </section>
+  <section class="rg-wrap rg-body">
+
+<h2 id="verantwortung">Wer verantwortet diese Inhalte</h2>
+<p>Redaktionell verantwortlich f&uuml;r s&auml;mtliche Ratgeber- und Guide-Inhalte auf surpluspurpose.com ist <strong>Florian Lechner</strong>, sur.plus, Landsberger Stra&szlig;e 57, 82266 Inning am Ammersee-Stegen, erreichbar unter <a href="mailto:service@surpluspurpose.com">service@surpluspurpose.com</a>. Die redaktionelle Verantwortung f&uuml;r die Ver&ouml;ffentlichung liegt damit bei einer benannten nat&uuml;rlichen Person &ndash; nicht bei einem Werkzeug und nicht bei einer Redaktion ohne Gesicht.</p>
+
+<h2 id="entstehung">Wie ein Artikel entsteht</h2>
+<p>Jeder Beitrag durchl&auml;uft denselben Ablauf:</p>
+<ol>
+<li><strong>Themenwahl.</strong> Themen kommen aus konkreten Fragen von Unternehmen und NGOs, aus Suchdaten der Google Search Console und aus regulatorischen Fristen, die absehbar relevant werden.</li>
+<li><strong>Quellenrecherche.</strong> Recherchiert wird gegen <strong>Prim&auml;rquellen</strong>: Gesetzestexte, EU-Verordnungen im Wortlaut &uuml;ber EUR-Lex, BMF-Schreiben, amtliche Muster und Ver&ouml;ffentlichungen der zust&auml;ndigen Beh&ouml;rden. Sekund&auml;rliteratur dient der Einordnung, nicht als Beleg.</li>
+<li><strong>Entwurf.</strong> Der Textentwurf entsteht <strong>KI-gest&uuml;tzt</strong>. Struktur, Argumentation und Formulierung werden dabei maschinell vorgeschlagen.</li>
+<li><strong>Redaktionelle Pr&uuml;fung.</strong> Vor der Ver&ouml;ffentlichung wird jede tragende Aussage gegen die angegebene Quelle zur&uuml;ckgelesen. Aussagen ohne belegf&auml;hige Quelle werden gestrichen oder als Einsch&auml;tzung gekennzeichnet.</li>
+<li><strong>Ver&ouml;ffentlichung mit Quellenapparat.</strong> Jeder Artikel f&uuml;hrt seine Quellen am Ende auf und nennt den Rechtsstand, auf den er sich bezieht.</li>
+</ol>
+
+<div class="rg-note amber"><span class="rg-note-t">Was nicht gepr&uuml;ft ist</span>
+<p>Die Inhalte sind <strong>nicht</strong> durch Rechtsanw&auml;lte, Steuerberater oder Wirtschaftspr&uuml;fer gepr&uuml;ft. Sie ersetzen keine Rechts- oder Steuerberatung im Einzelfall. Bewertung, Buchung, Umsatzsteuer und Nachweisf&uuml;hrung sind mit der eigenen Beratung abzustimmen &ndash; das gilt besonders au&szlig;erhalb Deutschlands, wo die Regeln abweichen. Eine fachliche Pr&uuml;fung ist in Vorbereitung; sobald sie vorliegt, wird sie hier und im jeweiligen Beitrag ausgewiesen.</p></div>
+
+<h2 id="ki">Wie KI eingesetzt wird &ndash; und wie nicht</h2>
+<p>KI wird f&uuml;r Recherche-Unterst&uuml;tzung, Strukturierung und Textentwurf eingesetzt. Sie entscheidet nicht dar&uuml;ber, was ver&ouml;ffentlicht wird. Kein Beitrag geht ungelesen online.</p>
+<p>Ausdr&uuml;cklich <strong>nicht</strong> maschinell erzeugt werden: Zahlenangaben aus Prim&auml;rquellen, Zitate, Paragrafenverweise und Fristen &ndash; diese werden einzeln gegen die Quelle gepr&uuml;ft. Wo Bildmaterial KI-generiert ist, steht das am Bild.</p>
+<p>Diese Seite dokumentiert zugleich die menschliche &Uuml;berpr&uuml;fung und redaktionelle Verantwortung im Sinne von <strong>Art. 50 Abs. 4 der Verordnung (EU) 2024/1689 (KI-Verordnung)</strong>, deren Transparenzpflichten seit dem 2. August 2026 gelten.</p>
+
+<h2 id="aktualitaet">Aktualit&auml;t und Korrekturen</h2>
+<p>Jeder Beitrag nennt einen <strong>Rechtsstand</strong>. &Auml;ndert sich die Rechtslage, wird der Beitrag &uuml;berarbeitet und das Datum angepasst; bei inhaltlich relevanten &Auml;nderungen wird die &Auml;nderung im Text kenntlich gemacht statt still ersetzt.</p>
+<p>Wenn Ihnen ein Fehler auff&auml;llt: <a href="mailto:service@surpluspurpose.com">service@surpluspurpose.com</a>. Belegte Korrekturhinweise werden zeitnah eingearbeitet.</p>
+
+<h2 id="unabhaengigkeit">Unabh&auml;ngigkeit</h2>
+<p>Es gibt keine bezahlten Beitr&auml;ge, keine Advertorials und keine Affiliate-Links. Verlinkungen auf externe Quellen erfolgen redaktionell und ohne Gegenleistung. sur.plus betreibt eine Plattform f&uuml;r Sachspenden und hat damit ein erkennbares Eigeninteresse am Thema &ndash; wo ein Beitrag auf das eigene Angebot verweist, ist das als solches gekennzeichnet und vom redaktionellen Teil getrennt.</p>
+
+<section class="rg-src" data-sp-section="quellen">
+      <h2>Quellen</h2>
+      <ol><li><a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" rel="noopener nofollow" target="_blank">Verordnung (EU) 2024/1689 (KI-Verordnung) &ndash; Art. 50 Transparenzpflichten</a></li></ol>
+    </section>
+    <section class="rg-cta" data-sp-section="cta">
+      <h2>Fragen zu einem Beitrag?</h2>
+      <p>Wenn eine Aussage unklar ist oder Ihnen ein Fehler auff&auml;llt, schreiben Sie direkt &ndash; jede belegte R&uuml;ckmeldung verbessert den Bestand.</p>
+      <div class="rg-btns">
+        <a class="rg-btn p" href="mailto:service@surpluspurpose.com">Korrekturhinweis senden</a>
+        <a class="rg-btn s" href="/de/ratgeber/">Zur&uuml;ck zum Ratgeber</a>
+      </div>
+    </section>
+    <section class="rg-rel" data-sp-section="weiterlesen">
+      <h2>Weiterlesen</h2>
+      <div class="rg-grid">
+<a class="rg-card" href="/de/ratgeber/"><span class="rg-card-k">&Uuml;bersicht</span><h3>Alle Ratgeber-Beitr&auml;ge</h3><p>Steuer, EU-Regulierung, Nachhaltigkeitsberichterstattung und Facility &ndash; mit Rechnern und Vorlagen.</p><span class="rg-card-go">Weiterlesen &rarr;</span></a>
+<a class="rg-card" href="/guides/editorial-standards.html"><span class="rg-card-k">English</span><h3>Editorial standards</h3><p>The same statement in English, covering all guide pages.</p><span class="rg-card-go">Weiterlesen &rarr;</span></a>
+      </div>
+    </section>
+  </section>
+  </article>
+
+</main>
+<footer class="rg-foot"><div class="rg-wrap wide">
+  <span class="rg-foot-claim">Every surplus has a purpose. We find it.</span>
+  sur.plus (surpluspurpose.com) ·
+  <a href="/de/">Start</a> ·
+  <a href="/de/ratgeber/">Ratgeber</a> ·
+  <a href="/de/case-studies/">Fallstudien</a> ·
+  <a href="/de/surplus_impact_calculator.html">Impact Calculator</a> ·
+  <a href="https://www.linkedin.com/company/surplus-purpose/" rel="noopener" target="_blank">LinkedIn</a>
+</div></footer>
+<script src="/search.js" defer></script>
+</body>
+</html>

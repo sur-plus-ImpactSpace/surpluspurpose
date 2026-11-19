@@ -1,0 +1,22 @@
+-- 0014 — add the missing unpaid platform state to plan_tier.
+--
+-- Why this is its own migration:
+-- Postgres cannot USE a newly added enum value in the same transaction that
+-- ADDs it. Each Supabase migration file runs in one transaction, so the value
+-- has to land here and everything that references it goes in 0015.
+--
+-- Why 'registered' and not 'pulse':
+-- The landing page sells Pulse as "Assessment only - no platform access" — it
+-- is a funnel step with no login at all, so it is not a platform state. The
+-- FAQ describes a different thing: "Initial registration shows you anonymised
+-- NGO profiles - category, region and count. Names, contacts and direct
+-- matching are unlocked with Seed or Tree." That registered-but-unpaid state
+-- is what the schema is missing. Naming it 'pulse' would conflate a lead
+-- magnet with an access level.
+--
+-- The bug this fixes: companies.plan was `not null default 'seed'`, and
+-- plan_entitlements grants seed platform_access + 12 matches/year + CSRD docs.
+-- Every corporate provisioned without an explicit plan therefore became a
+-- paying-tier customer for free — the opposite of what the FAQ promises.
+
+alter type plan_tier add value if not exists 'registered' before 'seed';

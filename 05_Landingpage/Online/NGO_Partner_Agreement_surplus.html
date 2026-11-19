@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>sur.plus NGO Partner Agreement</title>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;src:url("fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;src:url("fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;src:url("fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;src:url("fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;src:url("fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-lt:#4DB896;--mint:#E8F5F0;--offwhite:#F7FAF8;
+  --text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;--border:rgba(26,92,74,.30);
+  --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',-apple-system,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:64px 0 52px 0;
+  @bottom-right{content:"Page " counter(page);margin-right:46px;vertical-align:middle;
+    font-family:'DM Sans',Arial,sans-serif;font-size:7.6pt;color:#7A9E8E;}
+}
+html{font-family:var(--sans);color:var(--text);font-size:9.4pt;line-height:1.5}
+
+.pg-head{position:fixed;top:-64px;left:0;right:0;height:64px;background:var(--dark);
+  display:flex;align-items:center;justify-content:space-between;padding:0 46px;color:#fff;}
+.pg-head .l b{font-weight:700;margin-right:8px}
+.pg-head .l span{color:rgba(255,255,255,.62);font-size:8.6pt}
+.pg-head .r{font-size:8pt;color:var(--brand-lt)}
+.pg-foot{position:fixed;bottom:-52px;left:0;right:0;height:52px;padding:0 46px;
+  display:flex;align-items:center;border-top:1px solid rgba(26,92,74,.18);color:var(--text-lt);font-size:7.6pt}
+
+main{padding:0 46px}
+.eyebrow{border:1px solid var(--border);background:var(--offwhite);border-radius:7px;
+  text-align:center;padding:7px;margin:14px 0 20px;color:var(--brand);
+  font-size:8pt;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+h1{font-family:var(--serif);font-size:25pt;color:var(--text);font-weight:400;margin-bottom:6px}
+.subtitle{color:var(--text-mid);font-size:11pt;margin-bottom:14px}
+.introbox{border:1px solid var(--border);background:var(--mint);border-radius:8px;
+  padding:13px 15px;font-size:8.4pt;line-height:1.55;color:var(--text-mid);margin:8px 0 14px}
+.introbox b{color:var(--text);font-weight:700}
+p{margin-bottom:9px}
+.band{background:var(--brand);color:#fff;font-weight:600;font-size:10.5pt;padding:9px 14px;border-radius:6px;margin:18px 0 14px}
+.subh{font-weight:700;color:var(--brand);font-size:10pt;margin:16px 0 8px}
+
+.frow{display:flex;align-items:flex-end;gap:16px;margin:11px 0}
+.frow .lab{width:205px;flex:none;font-size:8.8pt;font-weight:600;color:var(--text);line-height:1.25}
+.frow .ln{flex:1;border-bottom:1px solid var(--border);height:16px}
+
+.checks{margin:6px 0}
+.checkgrid{display:flex;flex-wrap:wrap}
+.chk{display:flex;align-items:flex-start;gap:9px;margin:8px 0;font-size:8.9pt;color:var(--text)}
+.checkgrid .chk{width:50%;padding-right:14px}
+.chk .box{width:11px;height:11px;border:1.6px solid var(--brand);border-radius:2px;flex:none;margin-top:2px}
+.hint{font-size:8.2pt;color:var(--text-mid);margin:2px 0 8px}
+
+ol.commit{margin:4px 0 4px 0;padding-left:0;list-style:none;counter-reset:c}
+ol.commit li{counter-increment:c;position:relative;padding-left:24px;margin:8px 0;font-size:8.9pt;line-height:1.5}
+ol.commit li::before{content:counter(c) ".";position:absolute;left:0;color:var(--brand);font-weight:700}
+
+.note{background:var(--offwhite);border:1px solid var(--border);border-left:3px solid var(--brand);
+  border-radius:6px;padding:10px 13px;font-size:8.3pt;color:var(--text-mid);margin:12px 0}
+.note b{color:var(--brand)}
+.consent .chk{margin:9px 0;font-size:8.9pt}
+
+.sigs{display:flex;gap:40px;margin-top:10px}
+.sig{flex:1}
+.sigttl{font-weight:700;font-size:9pt;color:var(--text);margin-bottom:26px}
+.sigline{border-bottom:1px solid var(--text-mid);height:1px;margin-bottom:5px}
+.sigcap{font-size:8pt;color:var(--text-lt);margin-bottom:24px}
+.avoid{break-inside:avoid}
+</style>
+</head>
+<body>
+<div class="pg-head"><div class="l"><b>sur.plus</b><span>NGO Partner Agreement</span></div><div class="r">surpluspurpose.com</div></div>
+<div class="pg-foot">sur.plus · service@surpluspurpose.com · +49 1604 000 400</div>
+
+<main>
+  <div class="eyebrow">NGO Partner Agreement · Pre-Registration</div>
+  <h1>NGO Partner Agreement</h1>
+  <div class="subtitle">sur.plus Platform — Pre-Registration</div>
+
+  <div class="introbox"><b>What is sur.plus?</b> A B2B platform that matches corporate surplus goods (returns, B-stock, overstock) with verified NGOs, at no cost to NGOs. Every match generates automated CSRD/ESG documentation for the corporate donor. NGOs receive resources they need, without fundraising or cold outreach to companies. The platform is currently being built. This agreement registers your organisation in the verified NGO network ahead of the first matches.</div>
+
+  <p>This is a straightforward pre-registration document. It records your organisation&rsquo;s details, resource needs, and the mutual commitments between <b>sur.plus UG (haftungsbeschränkt)</b>, Landsberger Straße 57, 82266 Inning am Ammersee-Stegen, Germany, registered with the commercial register of the Munich Local Court under HRB 315904 (“sur.plus”), and your NGO. A full platform Terms of Service will follow at launch.</p>
+
+  <div class="band">A — Organisation Details</div>
+  <div class="frow"><div class="lab">Organisation name</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Legal form</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Registration number</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Country of registration</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Operating address</div><div class="ln"></div></div>
+
+  <div class="subh">Primary contact</div>
+  <div class="frow"><div class="lab">Contact name &amp; title</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Email address</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">WhatsApp / Phone</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Website</div><div class="ln"></div></div>
+
+  <div class="subh">Nonprofit status</div>
+  <div class="checks">
+    <div class="chk"><div class="box"></div><div>Registered charity / nonprofit in country of operation</div></div>
+    <div class="chk"><div class="box"></div><div>Eligible to receive tax-deductible in-kind donations</div></div>
+    <div class="chk"><div class="box"></div><div>No current sanctions or insolvency proceedings</div></div>
+  </div>
+
+  <div class="note"><b>Verification:</b> sur.plus will conduct a brief check within 3–5 business days (legal entity + nonprofit status). No financial data required at this stage.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="band">B — Resource Needs</div>
+
+  <div class="subh">What can your organisation receive?</div>
+  <div class="hint">Tick all categories that apply — this forms your matching profile.</div>
+  <div class="checkgrid">
+    <div class="chk"><div class="box"></div><div>IT Hardware (laptops, monitors, servers)</div></div>
+    <div class="chk"><div class="box"></div><div>Office Furniture (desks, chairs, shelving)</div></div>
+    <div class="chk"><div class="box"></div><div>Textiles &amp; Clothing</div></div>
+    <div class="chk"><div class="box"></div><div>Household Goods &amp; Appliances</div></div>
+    <div class="chk"><div class="box"></div><div>Tools &amp; Equipment</div></div>
+    <div class="chk"><div class="box"></div><div>Educational Materials</div></div>
+    <div class="chk"><div class="box"></div><div>Materials &amp; semi-finished goods (film, timber, metal, fabric)</div></div>
+    <div class="chk"><div class="box"></div><div>Packaging &amp; shipping supplies</div></div>
+    <div class="chk"><div class="box"></div><div>Other:</div></div>
+  </div>
+
+  <div class="subh">Logistics</div>
+  <div class="frow"><div class="lab">Max. volume per match (items or kg)</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Storage capacity at receiving location</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Preferred: pickup / delivery / either</div><div class="ln"></div></div>
+  <div class="frow"><div class="lab">Countries you can receive from</div><div class="ln"></div></div>
+
+  <div class="subh">Current needs (up to 3)</div>
+  <div class="hint">Be specific — these become your first Need Posts, visible to corporate partners. Item, quantity, condition, timeline, purpose.</div>
+  <div class="avoid">
+    <p style="font-weight:700;font-size:9pt;margin:10px 0 2px;color:var(--text)">Need 1</p>
+    <div class="frow"><div class="lab">Item / category &amp; quantity</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Condition (new / refurb / used-good) &amp; needed by</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Purpose / project context</div><div class="ln"></div></div>
+  </div>
+  <div class="avoid">
+    <p style="font-weight:700;font-size:9pt;margin:14px 0 2px;color:var(--text)">Need 2</p>
+    <div class="frow"><div class="lab">Item / category &amp; quantity</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Condition (new / refurb / used-good) &amp; needed by</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Purpose / project context</div><div class="ln"></div></div>
+  </div>
+  <div class="avoid">
+    <p style="font-weight:700;font-size:9pt;margin:14px 0 2px;color:var(--text)">Need 3</p>
+    <div class="frow"><div class="lab">Item / category &amp; quantity</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Condition (new / refurb / used-good) &amp; needed by</div><div class="ln"></div></div>
+    <div class="frow"><div class="lab">Purpose / project context</div><div class="ln"></div></div>
+  </div>
+</main>
+
+<main style="break-before:page">
+  <div class="band">C — Mutual Commitments</div>
+
+  <div class="subh">What sur.plus commits to</div>
+  <ol class="commit">
+    <li>NGO access is free of charge: no fees, no subscriptions, no commission on goods received.</li>
+    <li>Priority match notifications: you are notified as soon as surplus matching your needs becomes available — ahead of the wider network.</li>
+    <li>Logistics coordination with the corporate partner. Transport costs are as a rule borne by the donating company; deviations, such as collection by you, are agreed per match before you confirm. Risk passes to you on handover; under German law the donor is liable to you only for intent and gross negligence (sec. 521 BGB). Condition and known defects are recorded in the handover protocol.</li>
+    <li>A verified impact report for every match — usable for grant applications and donor reporting.</li>
+    <li>GDPR-compliant data processing. EU-based storage. Your data is never sold or shared without consent.</li>
+  </ol>
+  <p style="margin-top:10px;font-size:8.5pt;line-height:1.5;color:#5A6B63">Version 2.1, effective 10 October 2026 (transport costs &ldquo;as a rule&rdquo;, passing of risk, categories aligned with the platform&rsquo;s exclusion list: no food, no medical devices). For partners who registered before 13 August 2026, version 1.0 and its commitment to permanently free access continue to apply unchanged; for matches already confirmed, the transport arrangement promised at the time applies.</p>
+
+  <div class="subh">What we ask of you</div>
+  <ol class="commit">
+    <li>Confirm receipt of allocated goods within 5 business days of delivery via the sur.plus confirmation process.</li>
+    <li>Use goods received solely for the charitable purposes stated in your registration. No commercial resale.</li>
+    <li>Respond to match notifications within 48 hours where possible. Repeated non-response may affect priority status.</li>
+    <li>Notify sur.plus of material changes (address, legal status, capacity) within 14 days.</li>
+    <li>Consent to sur.plus referencing your organisation in anonymised impact communications. Whether we may name you beyond that is your own choice in Section D.</li>
+  </ol>
+
+  <div class="subh">Term &amp; termination</div>
+  <p style="font-size:8.9pt">This agreement is effective from the date of signature and continues indefinitely. Either party may terminate with 30 days written notice to service@surpluspurpose.com. Governing law: Germany. Disputes resolved by good-faith negotiation first.</p>
+
+  <div class="band">D — Data &amp; Consent</div>
+  <p style="font-size:8.9pt">sur.plus processes organisation name, contact details, resource needs and match history to operate the platform. Legal basis: Art. 6(1)(b) and (f) GDPR. EU-based storage. Retained for partnership duration plus 3 years. Deleted on written request after termination.</p>
+  <div class="checks consent">
+    <div class="chk"><div class="box"></div><div>I consent to receiving match notifications by email and/or WhatsApp.</div></div>
+    <div class="chk"><div class="box"></div><div>I consent to our profile (name, category, region) being visible to verified corporate partners.</div></div>
+    <div class="chk"><div class="box"></div><div>I consent to sur.plus <b>naming our organisation publicly alongside our needs</b> &mdash; on surpluspurpose.com, in impact reports and in marketing communications (e.g. LinkedIn). Contact details are never published. Withdraw at any time, informally, at service@surpluspurpose.com; the mention is removed within 14&nbsp;days.</div></div>
+    <div class="chk"><div class="box"></div><div>I confirm the information in this agreement is accurate and complete.</div></div>
+  </div>
+  <div class="note"><b>Data rights:</b> access, correct, delete or export your data at any time. Contact service@surpluspurpose.com.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="subh">Signatures</div>
+  <p style="font-size:8.9pt">By signing, both parties agree to the terms above. Confirmation by email is accepted.</p>
+
+  <div class="sigs">
+    <div class="sig">
+      <div class="sigttl">NGO — Authorised Representative</div>
+      <div class="sigline"></div><div class="sigcap">Name / Signature</div>
+      <div class="sigline"></div><div class="sigcap">Date &amp; Place</div>
+    </div>
+    <div class="sig">
+      <div class="sigttl">sur.plus UG (haftungsbeschränkt) — Florian Lechner, Managing Director</div>
+      <div class="sigline"></div><div class="sigcap">Name / Signature</div>
+      <div class="sigline"></div><div class="sigcap">Date &amp; Place</div>
+    </div>
+  </div>
+
+  <div class="note"><b>Next steps after signing:</b> (1) Verification within 3–5 business days. (2) Confirmation email with onboarding details. (3) Your Need Profile goes live — priority match notifications start. (4) The first match is coordinated personally by the sur.plus team. Questions: Florian Lechner · florian@surpluspurpose.com · WhatsApp +49 1604 000 400</div>
+</main>
+<script src="/search.js" defer></script>
+</body>
+</html>

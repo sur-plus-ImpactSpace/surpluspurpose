@@ -1,0 +1,10 @@
+{
+  "name": "surplus-dev-tools",
+  "private": true,
+  "type": "module",
+  "description": "Local (non-deployed) dev tools for the sur.plus repo. Not tracked by git per the repo whitelist .gitignore.",
+  "scripts": {},
+  "devDependencies": {
+    "jsdom": "^24.0.0"
+  }
+}

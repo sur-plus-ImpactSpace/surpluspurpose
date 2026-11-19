@@ -1,0 +1,43 @@
+<!doctype html>
+<!-- sur.plus — Demo-Seite für die Antwort-Suche (nicht verlinkt, nur zum Testen)
+     Lokal testen:  cd 05_Landingpage/Online && python3 -m http.server 8080
+     dann öffnen:   http://localhost:8080/search-demo.html  (EN)
+                    bzw. lang="de" unten umstellen für DE-Index -->
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>sur.plus · Antwort-Suche Demo</title>
+<style>
+  body{font-family:system-ui,sans-serif;background:#0A2318;color:#fff;min-height:100vh;
+       display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;margin:0;padding:24px}
+  h1{font-size:22px;font-weight:600;margin:0}
+  p{color:#9fd6c2;font-size:14px;max-width:460px;text-align:center;line-height:1.6;margin:0}
+  button.demo{border:0;border-radius:12px;background:#4DB896;color:#0A2318;font-weight:700;
+       font-size:15px;padding:14px 22px;cursor:pointer}
+  kbd{background:#1b3a2b;border-radius:5px;padding:2px 7px;font-size:12px}
+  .ex{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;max-width:520px}
+  .ex button{border:1px solid #2c5a44;background:transparent;color:#c9ecdd;border-radius:999px;
+       font-size:12.5px;padding:7px 13px;cursor:pointer}
+  .ex button:hover{border-color:#4DB896}
+</style>
+</head>
+<body>
+  <h1>Antwort-Suche · Demo</h1>
+  <p>Suchfeld über alle Inhalte von surpluspurpose.com — FAQ, Ratgeber, Guides, Case Studies.
+     Öffnen per Button, <kbd>/</kbd> oder <kbd>⌘K</kbd>. 0&nbsp;€ Betriebskosten, cookieless, kein LLM.</p>
+  <button class="demo js-open-search">Suche öffnen</button>
+  <div class="ex">
+    <button class="js-open-search" data-q="Was kostet sur.plus?">Was kostet sur.plus?</button>
+    <button class="js-open-search" data-q="Sachspende steuerlich absetzen">Sachspende steuerlich absetzen</button>
+    <button class="js-open-search" data-q="Sind NGOs kostenlos?">Sind NGOs kostenlos?</button>
+    <button class="js-open-search" data-q="Vernichtungsverbot Textilien">Vernichtungsverbot</button>
+    <button class="js-open-search" data-q="Laptops spenden DSGVO">Laptops spenden &amp; DSGVO</button>
+    <button class="js-open-search" data-q="Zuwendungsbestätigung">Zuwendungsbestätigung</button>
+  </div>
+  <script src="/search.js" defer></script>
+  <!-- chat.js dazuladen, damit der "Mit Florian chatten"-Fallback wie live funktioniert -->
+  <script src="/chat.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+# =============================================================================
+#  sur.plus repository — WHITELIST .gitignore
+#  Default: ignore EVERYTHING (keeps confidential business/legal/finance docs,
+#  CVs, contracts etc. out of Git). Only the website deploy folder + repo meta
+#  are tracked and pushed to GitHub.
+# =============================================================================
+
+# 1) Ignore everything at the top level by default
+/*
+
+# Never track dependency dirs, even inside whitelisted folders
+**/node_modules/
+**/node_modules
+**/node_modules.nosync/
+**/.pnpm-store.nosync/
+
+# 2) Re-include repo meta, build workspace, CI, guard tools + the website deploy folder
+!/.gitignore
+!/AGENTS.md
+!/README.md
+!/netlify.toml
+!/package.json
+!/pnpm-lock.yaml
+!/pnpm-workspace.yaml
+!/tsconfig.base.json
+!/eslint.config.mjs
+!/vitest.config.ts
+!/.github/
+!/.github/workflows/
+!/.github/workflows/ci.yml
+!/apps/
+!/apps/web/
+!/apps/web/**
+!/packages/
+!/packages/domain/
+!/packages/domain/**
+!/docs/
+!/docs/adr/
+!/docs/adr/**
+!/supabase/
+!/supabase/migrations/
+!/supabase/migrations/**
+!/tools/
+tools/*
+!/tools/package.json
+!/tools/smoke.mjs
+!/tools/build-search-index.mjs
+!/05_Landingpage/
+/05_Landingpage/*
+!/05_Landingpage/Online/
+# Deploy-Konfiguration der Landingpage fuer Cloudflare Workers (build.mjs,
+# wrangler.jsonc, worker/) — gehoert versioniert, das gebaute dist/ nicht.
+!/05_Landingpage/cloudflare/
+
+# 3) Never commit OS / editor cruft, even inside the website
+**/.DS_Store
+*.tmp
+*.log
+node_modules/
+**/node_modules/
+tools/package-lock.json
+**/.next/
+**/*.tsbuildinfo
+.pnpm-store/
+
+# Local Finder/editor duplicate copies such as "file 2.ts" should never enter
+# the typed workspace or Git status.
+**/* [0-9].ts
+**/* [0-9].tsx
+**/* [0-9].js
+**/* [0-9].mjs
+**/* [0-9].yml
+**/* [0-9].yaml
+**/* [0-9].md
+**/* 2.*
+**/* 3.*
+**/* 4.*
+**/* 5.*
+**/* 6.*
+**/* 7.*
+**/* 8.*
+**/* 9.*
+
+# nosync workaround (iCloud): symlinks + renamed dirs stay ignored
+**/node_modules
+**/node_modules.nosync/
+.pnpm-store
+.pnpm-store.nosync/
+
+# iCloud duplicates of those symlinks ("node_modules 2", ".pnpm-store 2").
+# They are dangling symlinks off this Mac; once committed they break
+# `next build` in CI with ENOENT while stat-ing them.
+# MUST stay at the end of this file: the whitelist re-includes above
+# (e.g. `!/apps/web/**`) would otherwise override these rules.
+**/node_modules [0-9]
+**/node_modules [0-9][0-9]
+**/.pnpm-store [0-9]
+**/.pnpm-store [0-9][0-9]
+# pnpm store-check temp artifacts (created outside a normal install run)
+_tmp_*
+**/_tmp_*
+
+# Local env files (dev secrets, local Supabase keys) must never be committed.
+# MUST stay at the end: the whitelist re-includes above (e.g. `!/apps/web/**`)
+# would otherwise track them.
+**/.env
+**/.env.local
+**/.env*.local
+
+# Cloudflare: gebaute Asset-Kopie der Landingpage und lokale Wrangler-Zustaende
+05_Landingpage/cloudflare/dist/
+**/.wrangler/

@@ -1,0 +1,33 @@
+# Security headers for all pages
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# NGO embed widget - explicitly embeddable on partner sites
+/widget/*
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Robots-Tag: noindex, nofollow
+
+# Dashboard preview — reachable but kept out of search indexes
+/app/*
+  X-Robots-Tag: noindex, nofollow
+
+/app/config.js
+  Cache-Control: no-store
+
+# Long-lived caching for static, content-hashed assets
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/img/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable

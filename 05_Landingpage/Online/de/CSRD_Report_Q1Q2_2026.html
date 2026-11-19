@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>sur.plus · CSRD-Impact-Bericht · Q1/Q2 2026</title>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;src:url("../fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;src:url("../fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;src:url("../fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;src:url("../fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;src:url("../fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;src:url("../fonts/dm-serif-display-latin-400-italic.woff2") format("woff2")}
+
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-mid:#2E8B6A;--brand-lt:#4DB896;
+  --mint:#E8F5F0;--offwhite:#F7FAF8;--accent:#D4712A;
+  --text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;--border:rgba(26,92,74,.18);
+  --serif:'DM Serif Display',Georgia,serif;--sans:'DM Sans',-apple-system,Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:A4;margin:64px 0 52px 0;
+  @bottom-right{content:"Seite " counter(page);margin-right:46px;vertical-align:middle;
+    font-family:'DM Sans',Arial,sans-serif;font-size:7.6pt;color:#7A9E8E;}
+}
+html{font-family:var(--sans);color:var(--text);font-size:9.4pt;line-height:1.5;-weasy-hyphens:none}
+
+/* running header / footer (repeat on every page) */
+.pg-head{position:fixed;top:-64px;left:0;right:0;height:64px;background:var(--dark);
+  display:flex;align-items:center;justify-content:space-between;padding:0 46px;color:#fff;}
+.pg-head .l{font-size:8.6pt}
+.pg-head .l b{font-weight:700;letter-spacing:-.01em;margin-right:8px}
+.pg-head .l span{color:rgba(255,255,255,.62)}
+.pg-head .r{font-size:7.6pt;letter-spacing:.12em;color:var(--brand-lt);text-transform:uppercase}
+.pg-foot{position:fixed;bottom:-52px;left:0;right:0;height:52px;padding:0 46px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid var(--border);color:var(--text-lt);font-size:7.6pt}
+
+main{padding:0 46px}
+.eyebrow{border:1px solid var(--border);background:var(--offwhite);border-radius:7px;
+  text-align:center;padding:7px;margin:14px 0 22px;color:var(--brand);
+  font-size:8pt;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+h1{font-family:var(--serif);font-size:27pt;line-height:1.08;color:var(--text);font-weight:400;margin-bottom:14px}
+.meta{color:var(--text-mid);font-size:9.6pt;line-height:1.7}
+.meta .lbl{color:var(--text-lt)}
+.rule{height:2px;background:var(--brand);margin:22px 0 6px;width:100%}
+h2.sec{font-family:var(--serif);font-size:14pt;font-weight:400;color:var(--text);margin:20px 0 12px}
+.bandhead{background:var(--brand);color:#fff;font-weight:600;font-size:10.5pt;
+  padding:9px 14px;border-radius:6px;margin:6px 0 14px}
+h3{font-size:10pt;font-weight:700;color:var(--text);margin:16px 0 7px}
+h4{font-size:9.6pt;font-weight:700;color:var(--brand);margin:16px 0 6px}
+p{margin-bottom:9px}
+.lead{font-weight:700;color:var(--text);margin-bottom:9px}
+
+.cards{display:flex;gap:9px;margin:8px 0}
+.card{flex:1;border:1px solid var(--border);background:var(--offwhite);border-radius:8px;
+  padding:13px 8px;text-align:center}
+.card .v{font-family:var(--serif);font-size:16pt;color:var(--brand);line-height:1}
+.card .k{font-size:6.8pt;color:var(--text-mid);margin-top:7px;line-height:1.25}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 12px;font-size:8.4pt}
+th{background:var(--mint);color:var(--brand);text-align:left;font-weight:700;
+  padding:6px 8px;font-size:7.6pt;text-transform:uppercase;letter-spacing:.04em}
+td{padding:5px 8px;border-bottom:1px solid rgba(26,92,74,.10);color:var(--text)}
+tr.total td{font-weight:700;color:var(--text);border-top:1.5px solid var(--brand);border-bottom:none}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+
+.note{background:var(--offwhite);border:1px solid var(--border);border-left:3px solid var(--brand);
+  border-radius:6px;padding:10px 13px;font-size:8.2pt;color:var(--text-mid);font-style:italic;margin:10px 0}
+.note b{font-style:normal;color:var(--brand)}
+
+.badges{display:flex;gap:10px;margin:18px 0 14px}
+.badge{flex:1;border:1px solid var(--border);background:var(--offwhite);border-radius:8px;padding:12px 11px}
+.badge .t{font-size:7.6pt;font-weight:700;letter-spacing:.08em;color:var(--brand);text-transform:uppercase;margin-bottom:5px}
+.badge .d{font-size:7.4pt;color:var(--text-mid);line-height:1.35}
+.disc{font-size:7.6pt;color:var(--text-lt);line-height:1.5;margin:12px 0}
+.avoid-break{break-inside:avoid}
+</style>
+</head>
+<body>
+<div class="pg-head"><div class="l"><b>sur.plus</b><span>CSRD-Impact-Bericht · Q1/Q2 2026</span></div><div class="r">Beispieldokument · surpluspurpose.com</div></div>
+<div class="pg-foot">sur.plus · surpluspurpose.com · service@surpluspurpose.com&nbsp;</div>
+
+<main>
+  <div class="eyebrow">CSRD-Impact-Bericht · Q1/Q2 2026</div>
+  <h1>Surplus-Impact &amp;<br>CSRD-Dokumentation</h1>
+  <div class="meta"><span class="lbl">Berichtszeitraum:</span> 1. Januar 2026 – 30. Juni 2026<br>
+  <span class="lbl">Berichtendes Unternehmen:</span> [Ihr Unternehmensname] · Erstellt von sur.plus</div>
+  <div class="rule"></div>
+
+  <h2 class="sec">Zentrale Impact-Kennzahlen — H1 2026</h2>
+  <div class="cards">
+    <div class="card"><div class="v">187.400 €</div><div class="k">Umgeleiteter Surplus-Wert</div></div>
+    <div class="card"><div class="v">11,93 tCO2e</div><div class="k">Vermiedene Emissionen, außerhalb des Inventars</div></div>
+    <div class="card"><div class="v">23</div><div class="k">Abgeschlossene Matches</div></div>
+    <div class="card"><div class="v">6</div><div class="k">Erreichte Länder</div></div>
+  </div>
+  <div class="cards">
+    <div class="card"><div class="v">23 / 23</div><div class="k">Audit-Trail vollständig</div></div>
+    <div class="card"><div class="v">3.840 kg</div><div class="k">Aus der Entsorgung umgeleiteter Surplus</div></div>
+    <div class="card"><div class="v">22 NGOs</div><div class="k">Empfangende Organisationen</div></div>
+    <div class="card"><div class="v">Ø 48 Std.</div><div class="k">Durchlaufzeit Zertifikat</div></div>
+  </div>
+
+  <h3>Über diesen Bericht</h3>
+  <p>Dieses Dokument bildet die CSRD-konforme Wirkungsdokumentation für Überschussware, die im Berichtszeitraum über die sur.plus-Plattform gespendet wurde. Jeder Datenpunkt stammt aus verifizierten, abgeschlossenen Transaktionen. NGO-Bestätigungen sind digital signiert. Die CO2-Zahlen folgen dem GHG Protocol Corporate Value Chain (Scope 3) Standard. Wer Überschuss aus der Entsorgung umleitet, senkt seine Kategorie 5, Abfall aus dem eigenen Betrieb; trägt das spendende Unternehmen den Transport, fallen diese Emissionen unter Kategorie 4. Dieser Bericht ist für die Verwendung in Ihren Angaben zu ESRS E5, S3 und G1 aufbereitet.</p>
+  <div class="note"><b>Verifizierungsstandard:</b> Alle Impact-Zahlen basieren auf abgeschlossenen, NGO-bestätigten Transaktionen. Die Werte zu vermiedenem CO2 verwenden Lebenszyklus-Emissionsfaktoren je Produktkategorie (GHG Protocol). Monetäre Werte entsprechen dem Zeitwert der Ware im Zeitpunkt der Übergabe laut Angabe des spendenden Unternehmens - das ist die Grundlage, die eine Zuwendungsbestätigung verlangt. Der ursprüngliche Beschaffungswert wird getrennt im Transaktionsexport geführt. Dieser Bericht liefert Dokumentation zur Verwendung in Ihren ESRS-Angaben unter der CSRD (EU 2022/2464). Er ist selbst keine Nachhaltigkeitserklärung und beansprucht keine ESRS-Konformität.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="bandhead">E5 — Ressourcennutzung &amp; Kreislaufwirtschaft</div>
+
+  <h4>E5.1 Aus der Entsorgung umgeleiteter Surplus</h4>
+  <p>Indem Überschussware durch direkte Wiederverwendung im Kreislauf gehalten statt vernichtet wurde, hielt das berichtende Unternehmen Material in der hochwertigsten Schleife der Kreislaufwirtschaft — Wiederverwendung (R3) vor Recycling oder Verwertung, im Einklang mit der EU-Abfallhierarchie. Die folgenden Zahlen stellen die im Berichtszeitraum aus der Entsorgung umgeleitete Surplus-Menge dar.</p>
+  <table>
+    <thead><tr><th>Kategorie</th><th>Umgeleitetes Gewicht</th><th>Vermiedene Entsorgungskosten</th><th>Ersetzter Entsorgungsweg</th></tr></thead>
+    <tbody>
+      <tr><td>IT-Hardware</td><td>1.840 kg</td><td>4.600 €</td><td>Zertifizierte Elektroschrott-Entsorgung</td></tr>
+      <tr><td>Büromöbel</td><td>1.620 kg</td><td>1.944 €</td><td>Sperrmüllentsorgung</td></tr>
+      <tr><td>Textilien</td><td>380 kg</td><td>228 €</td><td>Industrielle Textilabfälle</td></tr>
+      <tr class="total"><td>Gesamt</td><td>3.840 kg</td><td>6.772 €</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Reuse-Quote:</b> 100 % des vermittelten Surplus wurde zur direkten Wiederverwendung (R3) platziert statt downgecycelt oder vernichtet — die höchste Stufe der EU-Abfallhierarchie. <b>Finanzieller Hinweis:</b> Insgesamt vermiedene Entsorgungskosten in H1 2026: 6.772 €. Zusammen mit der Reduktion der Lagerkosten (geschätzt 2.100 € bei durchschnittlich 3,2 Monaten Überschuss-Haltedauer) belaufen sich die dem sur.plus-Programm zurechenbaren betrieblichen Einsparungen in diesem Berichtszeitraum auf rund 8.872 €.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="bandhead">Vermiedene Emissionen - getrennt vom Treibhausgas-Inventar ausgewiesen</div>
+
+  <h4>A.1 Vermiedene Emissionen aus Wiederverwendung</h4>
+  <p>Durch die Umleitung von Überschussware an verifizierte NGOs statt ihrer Entsorgung vermied das berichtende Unternehmen die Treibhausgasemissionen, die mit der Herstellung gleichwertiger Neuprodukte verbunden gewesen wären. Die folgenden Zahlen schätzen die Emissionen, die vermieden wurden, weil wiederverwendete Ware die Herstellung gleichwertiger Neuprodukte ersetzt hat - berechnet mit veröffentlichten Lebenszyklus-Emissionsfaktoren je Produktkategorie.</p>
+  <table>
+    <thead><tr><th>Kategorie</th><th>Gespendete Einheiten</th><th>Emissionsfaktor</th><th>Vermiedene CO2e</th><th>Methodik</th></tr></thead>
+    <tbody>
+      <tr><td>IT-Hardware (Laptops)</td><td>240 Einheiten</td><td>0,0045 tCO2e/Einheit</td><td>1,08 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr><td>IT-Hardware (Monitore)</td><td>96 Einheiten</td><td>0,0038 tCO2e/Einheit</td><td>0,36 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr><td>IT-Hardware (Server)</td><td>8 Einheiten</td><td>0,210 tCO2e/Einheit</td><td>1,68 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr><td>Büromöbel</td><td>220 Einheiten</td><td>0,0120 tCO2e/Einheit</td><td>2,64 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr><td>Textilien</td><td>1.200 Stück</td><td>0,0051 tCO2e/Stück</td><td>6,12 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr><td>Sonstiges (Drucker)</td><td>32 Einheiten</td><td>0,0017 tCO2e/Einheit</td><td>0,05 tCO2e</td><td>GHG Protocol LC</td></tr>
+      <tr class="total"><td>Gesamt</td><td>—</td><td>—</td><td>11,93 tCO2e</td><td></td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Hinweis zu vermiedenen Emissionen:</b> Diese Zahlen sind nicht Teil des Scope-1-, -2- oder -3-Inventars und werden davon auch nicht abgezogen; eine Verrechnung mit wissenschaftsbasierten Reduktionszielen (SBTi) findet nicht statt. Referenzfall: Herstellung eines gleichwertigen Neuprodukts derselben Kategorie. Systemgrenze: Cradle-to-Gate des ersetzten Produkts, ohne Nutzungsphase und Lebensende. Zeitraum: der oben genannte Berichtszeitraum. Faktoren: veröffentlichte Lebenszyklus-Emissionsfaktoren je Produktkategorie, Faktortabelle im Anhang. Die Schätzung unterstellt, dass jede gespendete Einheit einen Neukauf ersetzt. Das lässt sich nicht direkt beobachten und ist daher eine Obergrenze.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="bandhead">S3 — Soziales: Betroffene Gemeinschaften</div>
+
+  <h4>S3.1 Verifizierte NGO-Begünstigte</h4>
+  <p>Die folgenden Organisationen erhielten im Berichtszeitraum Überschussware. Jede Organisation wird vor dem Onboarding durch sur.plus verifiziert. Die Prüfung umfasst die Kontrolle des Rechtsträgers, die Bestätigung des Gemeinnützigkeitsstatus sowie eine Kapazitätsbewertung.</p>
+  <table>
+    <thead><tr><th>Datum</th><th>NGO</th><th>Land</th><th>Kategorie</th><th class="num">Wert</th><th>Zertifikat</th></tr></thead>
+    <tbody>
+      <tr><td>14. Mai 26</td><td>Bildung Digital e.V.</td><td>DE</td><td>IT-Hardware</td><td class="num">28.800 €</td><td>ZB-2026-0023</td></tr>
+      <tr><td>02. Mai 26</td><td>Sozialwerk Hamburg gGmbH</td><td>DE</td><td>Möbel</td><td class="num">16.200 €</td><td>ZB-2026-0022</td></tr>
+      <tr><td>18. Apr 26</td><td>Kleiderkammer Lodz</td><td>PL</td><td>Textilien</td><td class="num">14.400 €</td><td>ZB-2026-0021</td></tr>
+      <tr><td>03. Apr 26</td><td>Stichting Werk Amsterdam</td><td>NL</td><td>IT-Hardware</td><td class="num">19.200 €</td><td>ZB-2026-0020</td></tr>
+      <tr><td>21. Mär 26</td><td>Cowork4Good Wien</td><td>AT</td><td>Möbel</td><td class="num">12.000 €</td><td>ZB-2026-0019</td></tr>
+      <tr><td>07. Mär 26</td><td>Tech4Society Stockholm</td><td>SE</td><td>IT-Hardware</td><td class="num">22.400 €</td><td>ZB-2026-0018</td></tr>
+      <tr><td>19. Feb 26</td><td>NGO Hub Gdansk</td><td>PL</td><td>IT-Hardware</td><td class="num">6.400 €</td><td>ZB-2026-0017</td></tr>
+      <tr class="total"><td>+ 16 weitere</td><td>verifizierte Matches</td><td>—</td><td>divers</td><td class="num">68.000 €</td><td>aktenkundig</td></tr>
+    </tbody>
+  </table>
+  <div class="note"><b>Hinweis:</b> Alle Organisationen, Werte und Zertifikatsnummern in diesem Beispielbericht sind illustrativ und dienen ausschließlich der Veranschaulichung des Berichtsformats.</div>
+
+  <h4>S3.2 Geografische Reichweite</h4>
+  <table>
+    <thead><tr><th>Land</th><th>Unterstützte NGOs</th><th>Matches</th><th class="num">Übertragener Gesamtwert</th></tr></thead>
+    <tbody>
+      <tr><td>Deutschland (DE)</td><td>9 Organisationen</td><td>10 Matches</td><td class="num">74.200 €</td></tr>
+      <tr><td>Polen (PL)</td><td>6 Organisationen</td><td>6 Matches</td><td class="num">38.400 €</td></tr>
+      <tr><td>Niederlande (NL)</td><td>4 Organisationen</td><td>4 Matches</td><td class="num">31.600 €</td></tr>
+      <tr><td>Schweden (SE)</td><td>2 Organisationen</td><td>2 Matches</td><td class="num">26.800 €</td></tr>
+      <tr><td>Österreich (AT)</td><td>1 Organisation</td><td>1 Match</td><td class="num">16.400 €</td></tr>
+      <tr class="total"><td>Gesamt</td><td>22 Organisationen</td><td>23 Matches</td><td class="num">187.400 €</td></tr>
+    </tbody>
+  </table>
+
+  <div class="note"><b>Hinweis zum Umfang:</b> sur.plus liefert tiefe, aktivitätsgenaue Daten für ESRS E5 und S3. Es ist eine spezialisierte Datenquelle, keine Voll-ESRS-Suite — die Zahlen fließen für die übrigen Themen direkt in Ihr bestehendes Reporting-Tool ein.</div>
+</main>
+
+<main style="break-before:page">
+  <div class="bandhead">G1 — Governance: Audit-Trail &amp; Compliance-Dokumentation</div>
+
+  <h4>G1.1 Vollständigkeit der Dokumentation</h4>
+  <table>
+    <thead><tr><th>Anforderung</th><th>Status</th><th>Nachweis</th></tr></thead>
+    <tbody>
+      <tr><td>Prüfung der NGO-Rechtsträgerschaft</td><td>Vollständig (100 %)</td><td>Prüfunterlagen aktenkundig</td></tr>
+      <tr><td>Zuwendungsbestätigung (DE/AT)</td><td>Automatisch erstellt + NGO-signiert</td><td>ZB-Bescheinigungen beigefügt</td></tr>
+      <tr><td>GHG-Protocol-Emissionsfaktoren</td><td>Pro Kategorie angewendet</td><td>Faktortabelle im Anhang</td></tr>
+      <tr><td>Transaktions-Audit-Log</td><td>Vollständig — 23/23 Matches</td><td>Unveränderliches Log in der Plattform</td></tr>
+      <tr><td>NGO-Empfangsbestätigung</td><td>Digitale Signatur — 23/23</td><td>Signierte Bestätigungen aktenkundig</td></tr>
+      <tr><td>DSGVO-Datenverarbeitung</td><td>Verarbeitung ausschließlich in der EU</td><td>AVV auf Anfrage verfügbar</td></tr>
+      <tr><td>Unabhängige Prüfung</td><td>Nicht durchgeführt</td><td>Dokumentation für Ihre Prüfung aufbereitet</td></tr>
+    </tbody>
+  </table>
+
+  <h4>G1.2 ESRS-Querverweis</h4>
+  <table>
+    <thead><tr><th>ESRS-Standard</th><th>Angabe</th><th>In diesem Bericht abgedeckt</th><th>Abschnitt</th></tr></thead>
+    <tbody>
+      <tr><td>ESRS E5</td><td>Ressourcennutzung &amp; Kreislaufwirtschaft</td><td>Ja — umgeleiteter Surplus &amp; Reuse</td><td>E5.1</td></tr>
+      <tr><td>ESRS E1</td><td>THG-Emissionen</td><td>Nicht abgedeckt - vermiedene Emissionen liegen außerhalb des Inventars und werden getrennt ausgewiesen</td><td>A.1</td></tr>
+      <tr><td>ESRS S3</td><td>Betroffene Gemeinschaften</td><td>Ja — NGO-Begünstigte</td><td>S3.1, S3.2</td></tr>
+      <tr><td>ESRS G1</td><td>Unternehmensführung</td><td>Ja — vollständiger Audit-Trail</td><td>G1.1</td></tr>
+    </tbody>
+  </table>
+
+  <div class="badges">
+    <div class="badge"><div class="t">Von sur.plus zertifiziert</div><div class="d">Alle Matches werden vor Ausstellung der Dokumentation durch sur.plus verifiziert.</div></div>
+    <div class="badge"><div class="t">Für Ihre Prüfung aufbereitet</div><div class="d">Aufbereitet für die Verwendung in Ihren ESRS-Angaben E5, S3 und G1.</div></div>
+    <div class="badge"><div class="t">DSGVO-konform</div><div class="d">Datenverarbeitung ausschließlich in der EU. Alle personenbezogenen Daten minimiert.</div></div>
+  </div>
+
+  <p class="disc">Dieser Bericht wurde am 8. Juli 2026 automatisch von der sur.plus-Plattform erstellt. Er basiert auf verifizierten Transaktionsdaten und wird wie besehen für CSRD-Berichtszwecke bereitgestellt. sur.plus übernimmt keine Haftung für die Nutzung dieses Dokuments durch Dritte über das oben genannte berichtende Unternehmen hinaus. Bei Fragen: service@surpluspurpose.com</p>
+  <div class="note"><b>Nächste Schritte:</b> Teilen Sie diesen Bericht mit Ihrem Nachhaltigkeits-/ESG-Team und Ihrer Rechtsabteilung zur Aufnahme in Ihre jährliche CSRD-Angabe. Ihr vollständiges Transaktionsprotokoll und der Rohdaten-Export (XLSX) stehen in Ihrem sur.plus-Dashboard bereit. Die Erneuerung der CSRD-Dokumentation für Q3/Q4 2026 wird zum Ende des Berichtszeitraums automatisch erstellt.</div>
+</main>
+<script src="/search.js" defer></script>
+</body>
+</html>

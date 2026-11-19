@@ -1,0 +1,127 @@
+import type { ImpactReport } from "@surplus/domain";
+
+export type CsrdReportMeta = { companyName: string; generatedAt: string };
+
+function escapeHtml(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+}
+
+const eur = (value: number) => `€${value.toLocaleString("en", { maximumFractionDigits: 0 })}`;
+const periodLabel = (report: ImpactReport) =>
+  report.period ? `${report.period.from ?? "start"} to ${report.period.to ?? "today"}` : "all time";
+
+/**
+ * The company's complete sustainability report for a period, in ESRS terms:
+ * key metrics, E5 resource use, E1 avoided emissions (Scope 3), S3 affected
+ * communities, and every single donation. Standalone HTML: it downloads as a
+ * file and prints to PDF. Every figure comes from donations whose receipt the
+ * NGO confirmed. NGO and company names are user content, so everything is escaped.
+ */
+export function renderCsrdReportHtml(report: ImpactReport, meta: CsrdReportMeta): string {
+  const e = escapeHtml;
+  const rows = (items: string[][], head: string[]) =>
+    `<table><thead><tr>${head.map((cell) => `<th>${e(cell)}</th>`).join("")}</tr></thead><tbody>${items
+      .map((row) => `<tr>${row.map((cell) => `<td>${e(cell)}</td>`).join("")}</tr>`)
+      .join("")}</tbody></table>`;
+
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sustainability report · ${e(meta.companyName)} · ${e(periodLabel(report))}</title>
+<style>
+  body { font-family: system-ui, sans-serif; color: #1e2a23; margin: 0; background: #f4f2ec; }
+  .sheet { max-width: 900px; margin: 24px auto; background: #fff; padding: 48px 56px; border: 1px solid #ddd; }
+  .kicker { font-size: 11px; letter-spacing: .18em; text-transform: uppercase; color: #2f6f4f; }
+  h1 { font-size: 26px; margin: 8px 0 4px; } h2 { font-size: 16px; margin: 32px 0 6px; color: #2f6f4f; }
+  .meta { font-size: 12px; color: #666; }
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+  .v { font-size: 22px; font-weight: 600; color: #2f6f4f; } .l { font-size: 11px; letter-spacing: .1em; text-transform: uppercase; color: #888; }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; margin: 8px 0; }
+  th { text-align: left; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: #888; padding: 6px 8px 4px 0; border-bottom: 1px solid #ddd; }
+  td { padding: 5px 8px 5px 0; border-bottom: 1px solid #f0ede4; }
+  .foot { font-size: 11px; color: #777; line-height: 1.6; margin-top: 32px; }
+  @media print { body { background: #fff; } .sheet { border: 0; margin: 0; max-width: none; } }
+</style>
+</head>
+<body>
+<div class="sheet">
+  <p class="kicker">sur.plus · Sustainability report (CSRD / ESRS)</p>
+  <h1>${e(meta.companyName)}</h1>
+  <p class="meta">Period: ${e(periodLabel(report))} · Generated ${e(meta.generatedAt.slice(0, 10))}</p>
+
+  <h2>Key metrics</h2>
+  <div class="metrics">
+    <div><div class="v">${e(eur(report.totals.valueEur))}</div><div class="l">Donated value</div></div>
+    <div><div class="v">${e(String(report.totals.matches))}</div><div class="l">Completed donations</div></div>
+    <div><div class="v">${e(report.totals.weightKg.toLocaleString("en"))} kg</div><div class="l">Goods kept in use</div></div>
+    <div><div class="v">${e(String(report.totals.co2Tons))} t</div><div class="l">CO₂e avoided</div></div>
+    <div><div class="v">${e(String(report.totals.ngos))}</div><div class="l">NGOs supported</div></div>
+    <div><div class="v">${e(String(report.totals.countries))}</div><div class="l">Countries</div></div>
+  </div>
+
+  <h2>E5 · Resource use and circular economy</h2>
+  ${rows(
+    report.byCategory.map((row) => [row.category, String(row.units), `${Math.round(row.weightKg).toLocaleString("en")} kg`, eur(row.valueEur)]),
+    ["Category", "Units", "Weight", "Value"]
+  )}
+
+  <h2>E1 · Avoided emissions (Scope 3)</h2>
+  ${rows(report.byCategory.map((row) => [row.category, `${row.co2Tons} t CO₂e`]), ["Category", "Avoided"])}
+
+  <h2>S3 · Affected communities</h2>
+  ${rows(
+    report.geoReach.map((row) => [row.country, String(row.ngos), String(row.matches), eur(row.valueEur)]),
+    ["Country", "NGOs", "Donations", "Value"]
+  )}
+
+  <h2>All donations in the period</h2>
+  ${rows(
+    report.beneficiaries.map((row) => [
+      row.date,
+      row.matchId,
+      row.title,
+      row.category,
+      String(row.units),
+      `${row.weightKg} kg`,
+      eur(row.valueEur),
+      `${row.co2Tons} t`,
+      `${row.ngoName} (${row.country})`
+    ]),
+    ["Date", "Match", "Goods", "Category", "Units", "Weight", "Value", "CO₂e", "Recipient NGO"]
+  )}
+
+  <p class="foot">Only donations whose receipt was confirmed by the recipient NGO are counted. Values are the
+  declared unit values at listing time; CO₂e uses the avoided-emission figure recorded on each match. This
+  report was generated by sur.plus from the audited match records.</p>
+</div>
+</body>
+</html>`;
+}
+
+/** One row per donation. Cells that start with a formula character are neutralised (CSV injection). */
+export function renderCsrdReportCsv(report: ImpactReport): string {
+  const cell = (value: string | number) => {
+    const text = String(value);
+    const safe = /^[=+\-@\t\r]/.test(text) ? `'${text}` : text;
+
+    return /[",\n]/.test(safe) ? `"${safe.replace(/"/g, '""')}"` : safe;
+  };
+  const lines = [
+    ["date", "match_id", "goods", "category", "units", "weight_kg", "value_eur", "co2e_tons", "ngo", "country"],
+    ...report.beneficiaries.map((row) => [
+      row.date,
+      row.matchId,
+      row.title,
+      row.category,
+      row.units,
+      row.weightKg,
+      row.valueEur,
+      row.co2Tons,
+      row.ngoName,
+      row.country
+    ])
+  ];
+
+  return `${lines.map((line) => line.map(cell).join(",")).join("\n")}\n`;
+}

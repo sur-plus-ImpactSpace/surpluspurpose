@@ -1,0 +1,25 @@
+{
+  "name": "surpluspurpose",
+  "private": true,
+  "packageManager": "pnpm@11.7.0",
+  "engines": {
+    "node": ">=24.0.0"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @surplus/web dev",
+    "build": "pnpm --filter @surplus/web build",
+    "lint": "pnpm -r --if-present lint",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "test": "pnpm -r --if-present test",
+    "ci": "pnpm lint && pnpm typecheck && pnpm build && pnpm test",
+    "seed:superadmin": "node --env-file=apps/web/.env.local tools/seed-superadmin.mjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "26.0.1",
+    "eslint": "10.5.0",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.62.0",
+    "vitest": "4.1.9"
+  }
+}

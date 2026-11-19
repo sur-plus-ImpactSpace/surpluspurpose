@@ -1,0 +1,12 @@
+# Netlify config for the sur.plus product app (apps/web). 
+# Create a SEPARATE Netlify site with "Base directory" = apps/web;
+# Netlify detects the pnpm workspace and installs from the repo root.
+[build]
+  command = "pnpm build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "24"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

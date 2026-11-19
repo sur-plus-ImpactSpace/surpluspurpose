@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>sur.plus · Chat Ops</title>
+<style>
+  :root{--ink:#15241d;--bg:#f7faf8;--dark:#0A2318;--brand:#4DB896;--line:#e6efea}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--ink)}
+  header{background:var(--dark);color:#fff;padding:14px 18px;display:flex;align-items:center;gap:10px}
+  header b{font-size:15px}
+  header span{font-size:12px;color:#9fd6c2}
+  main{display:grid;grid-template-columns:280px 1fr;gap:0;height:calc(100vh - 58px)}
+  @media(max-width:720px){main{grid-template-columns:1fr}#conv{display:none}main.sel #threads{display:none}main.sel #conv{display:flex}}
+  #threads{border-right:1px solid var(--line);overflow-y:auto;background:#fff}
+  .th{padding:12px 14px;border-bottom:1px solid var(--line);cursor:pointer}
+  .th:hover,.th.act{background:#eef8f3}
+  .th b{display:block;font-size:13px}
+  .th small{color:#4A6B5A;font-size:11.5px}
+  .th .prev{display:block;font-size:12.5px;color:#334;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #conv{display:flex;flex-direction:column}
+  #msgs{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:8px}
+  .b{max-width:70%;padding:8px 12px;border-radius:12px;font-size:13.5px;line-height:1.45;white-space:pre-wrap;word-wrap:break-word}
+  .b.v{align-self:flex-start;background:#fff;border:1px solid var(--line)}
+  .b.f{align-self:flex-end;background:var(--dark);color:#fff}
+  .b small{display:block;font-size:10.5px;opacity:.6;margin-top:4px}
+  #composer{display:flex;border-top:1px solid var(--line);background:#fff}
+  #composer textarea{flex:1;border:0;resize:none;padding:12px;font-size:13.5px;font-family:inherit;outline:none;height:52px}
+  #composer button{border:0;background:var(--brand);color:var(--dark);font-weight:700;padding:0 20px;cursor:pointer}
+  #gate{max-width:340px;margin:80px auto;background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+  #gate input{width:100%;padding:10px;border:1px solid var(--line);border-radius:8px;font-size:14px;margin:10px 0}
+  #gate button{width:100%;padding:10px;border:0;border-radius:8px;background:var(--dark);color:#fff;font-weight:600;cursor:pointer}
+  .meta{font-size:11.5px;color:#4A6B5A;padding:8px 16px;border-top:1px solid var(--line);background:#fff}
+  #err{color:#b4552d;font-size:12.5px;padding:6px 16px;display:none}
+</style>
+</head>
+<body>
+<header><b>sur.plus · Live-Chat Ops</b><span id="status">–</span></header>
+<div id="gate">
+  <b>Ops-Token</b>
+  <p style="font-size:12.5px;color:#4A6B5A">CHAT_OPS_TOKEN aus den Netlify-Umgebungsvariablen.</p>
+  <input id="tok" type="password" placeholder="Token">
+  <button onclick="saveTok()">Anmelden</button>
+</div>
+<main id="app" style="display:none">
+  <div id="threads"></div>
+  <div id="conv">
+    <div id="msgs"></div>
+    <div id="err"></div>
+    <div class="meta" id="meta"></div>
+    <div id="composer">
+      <textarea id="reply" placeholder="Antwort als Florian … (Enter = senden)"></textarea>
+      <button onclick="send()">Senden</button>
+    </div>
+  </div>
+</main>
+<script>
+'use strict';
+var API='/.netlify/functions/chat';
+var token=null, all=[], current=null, timer=null;
+
+function saveTok(){
+  token=document.getElementById('tok').value.trim();
+  if(!token) return;
+  try{sessionStorage.setItem('spOpsTok',token);}catch(e){}
+  boot();
+}
+function boot(){
+  document.getElementById('gate').style.display='none';
+  document.getElementById('app').style.display='grid';
+  load();
+  if(timer)clearInterval(timer);
+  timer=setInterval(load,5000);
+}
+function load(){
+  fetch(API+'?ops=1&token='+encodeURIComponent(token)).then(function(r){
+    if(r.status===401){document.getElementById('status').textContent='Token ungültig';try{sessionStorage.removeItem('spOpsTok');}catch(e){};return {messages:[]};}
+    return r.json();
+  }).then(function(d){
+    all=d.messages||[];
+    document.getElementById('status').textContent=all.length+' Nachrichten (letzte 300)';
+    renderThreads();
+    if(current)renderConv();
+  }).catch(function(){});
+}
+function threads(){
+  var map={};
+  all.forEach(function(m){
+    var t=map[m.thread_id]||(map[m.thread_id]={id:m.thread_id,msgs:[],email:null,last:null});
+    t.msgs.push(m);
+    if(m.visitor_email)t.email=m.visitor_email;
+    if(!t.last||m.created_at>t.last)t.last=m.created_at;
+  });
+  return Object.values(map).sort(function(a,b){return a.last<b.last?1:-1;});
+}
+function renderThreads(){
+  var el=document.getElementById('threads');el.innerHTML='';
+  threads().forEach(function(t){
+    var d=document.createElement('div');
+    d.className='th'+(current===t.id?' act':'');
+    var lastMsg=t.msgs.slice().sort(function(a,b){return a.created_at<b.created_at?1:-1;})[0];
+    d.innerHTML='<b>'+t.id.slice(0,8)+'…'+(t.email?' · '+escp(t.email):'')+'</b>'
+      +'<small>'+new Date(t.last).toLocaleString('de-DE')+'</small>'
+      +'<span class="prev">'+escp(lastMsg?lastMsg.body:'')+'</span>';
+    d.onclick=function(){current=t.id;location.hash=t.id;document.querySelector('main').classList.add('sel');renderThreads();renderConv();};
+    el.appendChild(d);
+  });
+}
+function renderConv(){
+  var box=document.getElementById('msgs');box.innerHTML='';
+  var t=threads().filter(function(x){return x.id===current;})[0];
+  if(!t)return;
+  t.msgs.slice().sort(function(a,b){return a.created_at>b.created_at?1:-1;}).forEach(function(m){
+    var b=document.createElement('div');
+    b.className='b '+(m.sender==='florian'?'f':'v');
+    b.textContent=m.body;
+    var s=document.createElement('small');
+    s.textContent=new Date(m.created_at).toLocaleString('de-DE');
+    b.appendChild(s);
+    box.appendChild(b);
+  });
+  box.scrollTop=box.scrollHeight;
+  document.getElementById('meta').textContent='Thread '+current+(t.email?' · '+t.email:' · keine E-Mail angegeben')
+    +(t.msgs[0]&&t.msgs[0].page?' · Seite: '+t.msgs[0].page:'');
+}
+function send(){
+  var ta=document.getElementById('reply');
+  var body=ta.value.trim();
+  if(!body||!current)return;
+  fetch(API,{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({ops:1,token:token,thread:current,body:body})
+  }).then(function(r){return r.json().then(function(d){return{ok:r.ok,d:d};});})
+    .then(function(res){
+      if(!res.ok){var e=document.getElementById('err');e.textContent='Senden fehlgeschlagen: '+(res.d.error||'?');e.style.display='block';setTimeout(function(){e.style.display='none';},5000);return;}
+      ta.value='';load();
+    });
+}
+document.getElementById('reply').addEventListener('keydown',function(e){
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();send();}
+});
+function escp(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+(function(){
+  try{token=sessionStorage.getItem('spOpsTok');}catch(e){}
+  if(location.hash.length>1)current=location.hash.slice(1);
+  if(token)boot();
+})();
+</script>
+<script src="/search.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wertermittlung bei Sachspenden je Warengruppe | sur.plus</title>
+<meta name="description" content="Woher der Wert einer Sachspende kommt, wenn es keinen Gebrauchtmarkt gibt: vier Belegtypen je Warengruppe, die Null-Euro-Grenze und wer für die Zahl haftet.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="icon" type="image/svg+xml" href="/surplus_icon.svg">
+<link rel="alternate icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A2318">
+<meta name="application-name" content="sur.plus">
+<meta name="apple-mobile-web-app-title" content="sur.plus">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://surpluspurpose.com/de/ratgeber/wertermittlung-sachspende-warengruppen.html">
+<meta property="og:title" content="Wertermittlung bei Sachspenden je Warengruppe | sur.plus">
+<meta property="og:description" content="Woher der Wert einer Sachspende kommt, wenn es keinen Gebrauchtmarkt gibt: vier Belegtypen je Warengruppe, die Null-Euro-Grenze und wer für die Zahl haftet.">
+<meta property="og:image" content="https://surpluspurpose.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="sur.plus">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Wertermittlung bei Sachspenden je Warengruppe | sur.plus">
+<meta name="twitter:description" content="Woher der Wert einer Sachspende kommt, wenn es keinen Gebrauchtmarkt gibt: vier Belegtypen je Warengruppe, die Null-Euro-Grenze und wer für die Zahl haftet.">
+<meta name="twitter:image" content="https://surpluspurpose.com/og-image.png">
+
+<link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://surpluspurpose.com/de/ratgeber/wertermittlung-sachspende-warengruppen.html">
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-mid:#2E8B6A;--brand-lt:#4DB896;--brand-xs:#E8F5F0;
+  --accent:#D4712A;--accent-lt:#E8935A;--accent-xs:#FDF3EA;
+  --white:#FFFFFF;--offwhite:#F7FAF8;--text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;
+  --border:rgba(26,92,74,0.12);
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:rgba(77,184,150,.3)}
+
+/* header */
+.rg-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--brand-xs)}
+.rg-head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.rg-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.rg-logo svg{width:32px;height:32px;flex:none}
+.rg-logo .wm{font-size:20px;letter-spacing:-.4px;color:var(--brand);font-weight:700;line-height:1}
+.rg-logo .wm .d{color:var(--accent)}.rg-logo .wm b{color:var(--brand);font-weight:700}
+.rg-nav{display:flex;align-items:center;gap:16px;font-size:13.5px}
+.rg-nav a{color:var(--text-mid);text-decoration:none;font-weight:600}
+.rg-nav a:hover{color:var(--brand)}
+.rg-nav .rg-lang{border:1px solid var(--brand-xs);border-radius:8px;padding:3px 9px;color:var(--brand)}
+@media(max-width:560px){.rg-nav .hide-s{display:none}}
+
+.rg-wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.rg-wrap.wide{max-width:1000px}
+
+/* breadcrumb */
+.rg-crumb{padding:18px 0 0;font-size:12.5px;color:var(--text-lt)}
+.rg-crumb a{color:var(--text-mid);text-decoration:none}
+.rg-crumb a:hover{color:var(--brand)}
+.rg-crumb span{margin:0 6px;opacity:.5}
+
+/* hero */
+.rg-hero{padding-top:22px;padding-bottom:6px}
+.rg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.rg-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.6vw,43px);line-height:1.12;color:var(--dark);margin:13px 0 0;letter-spacing:-.01em}
+.rg-lead{margin:16px 0 0;font-size:18px;line-height:1.62;color:var(--text)}
+.rg-meta{margin:18px 0 0;padding:12px 0;border-top:1px solid var(--brand-xs);border-bottom:1px solid var(--brand-xs);font-size:12.5px;color:var(--text-lt);display:flex;flex-wrap:wrap;gap:6px 18px}
+.rg-meta b{color:var(--text-mid);font-weight:600}
+
+/* TOC */
+.rg-toc{margin:26px 0 0;background:var(--offwhite);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.rg-toc h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-toc ol{margin:0;padding-left:20px;font-size:14.5px;line-height:1.85;color:var(--text-mid)}
+.rg-toc a,.rg-crumb a{text-decoration:none}
+.rg-toc a:hover{color:var(--brand);text-decoration:underline}
+
+/* body copy */
+.rg-body{padding-top:8px}
+.rg-body h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.2vw,31px);line-height:1.2;color:var(--dark);margin:44px 0 0;letter-spacing:-.01em}
+.rg-body h3{font-size:18px;font-weight:700;color:var(--dark);margin:30px 0 0}
+.rg-body p{margin:14px 0 0;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body ul,.rg-body ol{margin:14px 0 0;padding-left:22px;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body li{margin:7px 0 0}
+.rg-body li::marker{color:var(--brand-mid)}
+.rg-body a{color:var(--brand);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.rg-body a:hover{color:var(--accent)}
+.rg-body strong{font-weight:700;color:var(--dark)}
+.rg-body em{font-style:italic}
+.rg-body figure{margin:22px 0 0}
+.rg-body figcaption{margin:8px 0 0;font-size:12.5px;color:var(--text-lt)}
+
+/* table */
+.rg-tw{margin:22px 0 0;overflow-x:auto;border:1px solid var(--border);border-radius:12px}
+.rg-body table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+.rg-body th{text-align:left;background:var(--brand-xs);color:var(--dark);font-weight:700;padding:11px 14px;font-size:13px;letter-spacing:.01em}
+.rg-body td{padding:11px 14px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.55}
+.rg-body tbody tr:nth-child(even){background:var(--offwhite)}
+
+/* callouts */
+.rg-note{margin:24px 0 0;border-left:3px solid var(--brand-mid);background:var(--brand-xs);border-radius:0 12px 12px 0;padding:16px 20px}
+.rg-note p{margin:0;font-size:15.5px;line-height:1.65}
+.rg-note p + p{margin-top:10px}
+.rg-note .rg-note-t{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 7px}
+.rg-note.amber{border-left-color:var(--accent);background:var(--accent-xs)}
+.rg-note.amber .rg-note-t{color:var(--accent)}
+
+/* key figures */
+.rg-stats{display:grid;gap:12px;grid-template-columns:1fr;margin:26px 0 0}
+@media(min-width:620px){.rg-stats{grid-template-columns:repeat(3,1fr)}}
+.rg-stat{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.rg-stat-v{font-family:var(--serif);font-size:28px;line-height:1.05;color:var(--brand)}
+.rg-stat-l{margin:7px 0 0;font-size:12.5px;line-height:1.5;color:var(--text-lt)}
+
+/* steps */
+.rg-steps{counter-reset:s;margin:24px 0 0;padding:0;list-style:none}
+.rg-steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:18px 0 0}
+.rg-steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.rg-steps b{display:block;color:var(--dark);font-size:16.5px}
+.rg-steps span{display:block;margin:4px 0 0;font-size:15.5px;line-height:1.65;color:var(--text-mid)}
+
+/* FAQ */
+.rg-faq{margin:44px 0 0}
+.rg-faq h2{margin-top:0}
+.rg-faq-item{border-top:1px solid var(--brand-xs);padding:17px 0}
+.rg-faq-item h3{font-size:16.5px;font-weight:700;color:var(--dark);margin:0}
+.rg-faq-item p{margin:9px 0 0;font-size:15.5px;line-height:1.68;color:var(--text-mid)}
+
+/* sources */
+.rg-src{margin:40px 0 0;padding:20px 22px;background:var(--offwhite);border:1px solid var(--border);border-radius:14px}
+.rg-src h2{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-src ol{margin:0;padding-left:20px;font-size:13.5px;line-height:1.7;color:var(--text-mid)}
+.rg-src a{color:var(--brand)}
+
+/* CTA */
+.rg-cta{margin:44px 0 0;background:var(--brand-xs);border-radius:18px;padding:30px 28px;text-align:center}
+.rg-cta h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--dark);margin:0 0 8px;line-height:1.2}
+.rg-cta p{margin:0 0 20px;color:var(--text-mid);font-size:15.5px;line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto}
+.rg-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.rg-btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+.rg-btn.p{background:var(--brand);color:#fff}
+.rg-btn.p:hover{background:var(--dark)}
+.rg-btn.s{background:#fff;color:var(--brand);border:1px solid var(--brand-lt)}
+.rg-btn.s:hover{border-color:var(--brand)}
+
+/* related */
+.rg-rel{margin:44px 0 0}
+.rg-rel h2{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--dark);margin:0 0 4px}
+.rg-grid{display:grid;gap:14px;grid-template-columns:1fr;margin:18px 0 0}
+@media(min-width:620px){.rg-grid{grid-template-columns:1fr 1fr}}
+.rg-body a.rg-card,.rg-body a.rg-card:hover,.rg-card,.rg-card:hover{text-decoration:none}
+.rg-card{display:block;border:1px solid var(--brand-xs);border-radius:14px;padding:20px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.rg-body a.rg-card:hover{color:inherit}
+.rg-card:hover{border-color:var(--brand-lt);box-shadow:0 6px 20px rgba(26,92,74,.08);transform:translateY(-1px)}
+.rg-card .rg-card-k{font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.rg-card h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25;color:var(--dark);margin:9px 0 0}
+.rg-card p{margin:9px 0 0;font-size:14px;line-height:1.55;color:var(--text-mid)}
+.rg-card .rg-card-go{display:inline-block;margin:12px 0 0;font-size:13px;font-weight:700;color:var(--brand)}
+
+/* footer */
+.rg-foot{margin-top:56px;border-top:1px solid var(--brand-xs);padding:26px 0 34px;font-size:13px;line-height:1.9;color:var(--text-lt);text-align:center}
+.rg-foot a{color:var(--text-mid);text-decoration:none}
+.rg-foot a:hover{color:var(--brand)}
+.rg-foot .rg-foot-claim{display:block;font-family:var(--serif);font-size:15px;color:var(--brand);margin:0 0 6px}
+/* sp-mobile-v1 */
+.cs-nav a{padding:6px 0;display:inline-flex;align-items:center;min-height:34px}
+.cs-nav .cs-nav-s{display:none}
+@media(max-width:640px){
+  .cs-wrap,.rg-wrap{padding-left:18px;padding-right:18px}
+  .rg-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .rg-logo svg{width:29px;height:29px}
+  .rg-logo .wm{font-size:18px}
+  .rg-nav{gap:13px;font-size:13.5px}
+  .cs-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .cs-logo svg{width:29px;height:29px}
+  .cs-logo .wm{font-size:18px}
+  .cs-nav{gap:13px;font-size:13.5px}
+  .cs-nav .cs-nav-l{display:none}
+  .cs-nav .cs-nav-s{display:inline}
+  .cs-nav .cs-lang{padding:4px 8px;font-size:12.5px}
+  .cs-hero{padding-top:34px}
+  .cs-lead{font-size:17px}
+  .cs-cta{padding:24px 18px;margin-bottom:44px}
+  .cs-btns{flex-direction:column}
+  .cs-btn{width:100%;padding:14px 18px;text-align:center}
+  .gd-body p,.gd-body li{font-size:16px}
+  .gd-lead{font-size:17.5px}
+  .gd-body h2{font-size:23px}
+  .gd-body h3{font-size:18.5px}
+  .gd-meta{gap:6px 12px;font-size:12.5px}
+  .gd-key,.gd-warn{padding:16px 16px}
+  .gd-prod{padding:20px 18px}
+  .gd-toc{padding:18px 18px}
+  .gd-table{font-size:14px;min-width:420px}
+  .gd-table th,.gd-table td{padding:10px 12px}
+  .gd-src li{font-size:13.5px}
+}
+@media(max-width:420px){
+  .cs-nav{gap:11px;font-size:13px}
+  .cs-nav .cs-nav-home{display:none}
+}
+@media(max-width:360px){
+  .cs-wrap,.rg-wrap{padding-left:15px;padding-right:15px}
+  .cs-logo .wm,.rg-logo .wm{font-size:17px}
+  .cs-nav{gap:9px;font-size:12.5px}
+}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Wertermittlung bei Sachspenden: woher die Zahl kommt, wenn es keinen Gebrauchtmarkt gibt",
+  "description": "Woher der Wert einer Sachspende kommt, wenn es keinen Gebrauchtmarkt gibt: vier Belegtypen je Warengruppe, die Null-Euro-Grenze und wer für die Zahl haftet.",
+  "inLanguage": "de",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://surpluspurpose.com/de/ratgeber/wertermittlung-sachspende-warengruppen.html"
+  },
+  "url": "https://surpluspurpose.com/de/ratgeber/wertermittlung-sachspende-warengruppen.html",
+  "image": "https://surpluspurpose.com/og-image.png",
+  "datePublished": "2026-08-26",
+  "dateModified": "2026-08-26",
+  "author": {
+    "@type": "Person",
+    "name": "Florian Lechner",
+    "url": "https://www.linkedin.com/in/florian-lechner-206434107",
+    "jobTitle": "Gründer, sur.plus"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surpluspurpose.com/icon-512.png"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/surplus-purpose/"
+    ]
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "@id": "https://surpluspurpose.com/de/ratgeber/"
+  },
+  "citation": [
+    "https://www.gesetze-im-internet.de/estg/__6.html",
+    "https://www.gesetze-im-internet.de/ustg_1980/__10.html",
+    "https://www.gesetze-im-internet.de/ustg_1980/__3.html",
+    "https://www.gesetze-im-internet.de/estg/__10b.html",
+    "https://www.gesetze-im-internet.de/kstg_1977/__9.html",
+    "https://www.gesetze-im-internet.de/estdv_1955/__50.html",
+    "https://www.gesetze-im-internet.de/ao_1977/__147.html",
+    "https://www.bundesfinanzministerium.de/"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Sachspende"
+    },
+    {
+      "@type": "Thing",
+      "name": "Wertermittlung"
+    },
+    {
+      "@type": "Thing",
+      "name": "Teilwert"
+    },
+    {
+      "@type": "Thing",
+      "name": "Umsatzsteuer"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Dürfen wir eine Sachspende mit 0 Euro ansetzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nur bei wertloser Ware. Nach der Verwaltungsauffassung zur Bemessungsgrundlage bei Sachspenden ist ein Ansatz von 0 Euro auf Gegenstände beschränkt, die tatsächlich keinen Wert mehr haben, etwa Lebensmittel kurz vor Ablauf des Mindesthaltbarkeitsdatums. Einwandfreie Neuware, die aus wirtschaftlichen oder logistischen Gründen ausgesondert wird, darf nicht mit null bewertet werden."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Zählt der Neupreis oder der Anschaffungspreis?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Weder noch. Maßgeblich ist der Wert im Zeitpunkt der Zuwendung: ertragsteuerlich der Teilwert nach § 6 Abs. 1 Nr. 1 Satz 3 EStG, umsatzsteuerlich der Einkaufspreis für einen gleichartigen Gegenstand nach § 10 Abs. 4 Satz 1 Nr. 1 UStG. Der historische Anschaffungspreis ist nur dann relevant, wenn er zugleich der aktuelle Marktpreis ist, was bei Neuware aus dem Lager vorkommen kann."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Gilt für Sachspenden die 300-Euro-Bagatellgrenze?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. Der vereinfachte Zuwendungsnachweis nach § 50 Abs. 4 EStDV gilt ausschließlich für Geldzuwendungen. Für Sachspenden gibt es keine Bagatellgrenze; es braucht immer eine Zuwendungsbestätigung nach amtlichem Muster, unabhängig vom Betrag."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Brauchen wir für jede einzelne Position einen eigenen Beleg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nicht je Stück, aber je Artikel oder Modell. Zwanzig identische Laptops desselben Modells und derselben Konfiguration tragen einen Beleg. Sobald sich Modell, Konfiguration oder Zustand unterscheiden, ist es eine eigene Position mit eigenem Beleg. Bei Verbrauchsmaterial mit einheitlichem Einkaufspreis ist die Zusammenfassung zu Artikelgruppen sachgerecht."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange müssen die Bewertungsunterlagen aufbewahrt werden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Acht Jahre. § 147 Abs. 3 AO in der Fassung des Vierten Bürokratieentlastungsgesetzes hat die Frist für Buchungsbelege zum 1. Januar 2025 von zehn auf acht Jahre verkürzt. Bewertungsunterlagen, Bildschirmfotos von Vergleichsangeboten und Gutachten gehören zum Buchungsbeleg der Entnahme."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://surpluspurpose.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ratgeber",
+      "item": "https://surpluspurpose.com/de/ratgeber/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Wertermittlung bei Sachspenden: woher die Zahl kommt, wenn es keinen Gebrauchtmarkt gibt",
+      "item": "https://surpluspurpose.com/de/ratgeber/wertermittlung-sachspende-warengruppen.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="rg-head"><div class="rg-wrap wide rg-head-in">
+  <a class="rg-logo" href="/de/" aria-label="sur.plus – Startseite"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#1A5C4A"/><path d="M44 98 A56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M100 42 A56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M156 110 A56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><path d="M100 166 A56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><circle cx="100" cy="104" r="22" fill="#FFFFFF"/><circle cx="100" cy="104" r="10" fill="#1A5C4A"/></svg><span class="wm">sur<span class="d">.</span><b>plus</b></span></a>
+  <nav class="rg-nav" aria-label="Hauptnavigation">
+    <a href="/de/">Start</a>
+    <a href="/de/ratgeber/">Ratgeber</a>
+    <a class="hide-s" href="/de/case-studies/">Fallstudien</a>
+    <a class="hide-s" href="/de/rechner/">Rechner</a>
+  
+    <a href="#search">Suche</a>
+  </nav>
+</div></header>
+<main>
+  <div class="rg-wrap">
+    <nav class="rg-crumb" aria-label="Brotkrumennavigation">
+      <a href="/de/">Start</a><span>›</span><a href="/de/ratgeber/">Ratgeber</a><span>›</span>Steuer und Nachweis
+    </nav>
+  </div>
+  <article>
+  <section class="rg-wrap rg-hero">
+    <span class="rg-kicker">Steuer und Nachweis</span>
+    <h1>Wertermittlung bei Sachspenden: woher die Zahl kommt, wenn es keinen Gebrauchtmarkt gibt</h1>
+    <p class="rg-lead">Jede Sachspende braucht am Ende genau eine Zahl. Das Gesetz sagt sehr genau, <em>welcher</em> Wert gemeint ist – der Teilwert für die Ertragsteuer, der fiktive Einkaufspreis für die Umsatzsteuer. Es sagt nicht, woher diese Zahl kommen soll. Genau dort scheitern Bewertungen: nicht am Rechnen, sondern am Beleg.</p>
+    <p class="rg-lead">Für gebrauchte IT lässt sich der Beleg beschaffen, weil es einen funktionierenden Markt und identifizierbare Modelle gibt. Für einen großen Teil dessen, was in Unternehmen tatsächlich übrig bleibt – Möbel, Textilien, Werkzeuge, Neuware ohne Abnehmer – gibt es keinen. Dieser Beitrag ordnet die Belegtypen den Warengruppen zu und benennt die Grenze, an der ein Wert von null zulässig ist und an der er es nicht mehr ist.</p>
+    <div class="rg-meta">
+      <span><b>Aktualisiert:</b> 26. August 2026</span>
+      <span><b>Lesezeit:</b> 11 Min.</span>
+      <span><b>Für:</b> Finanzbuchhaltung, Steuerabteilung und Facility Management</span>
+    </div>
+    <nav class="rg-toc" aria-label="Inhaltsverzeichnis">
+      <h2>Inhalt</h2>
+      <ol>
+        <li><a href="#zahl">Warum die Zahl am Beleg hängt und nicht am Gegenstand</a></li>
+        <li><a href="#belegtypen">Die vier Belegtypen – und was das Gesetz vorgibt, wenn keiner greift</a></li>
+        <li><a href="#it">IT und Elektronik: die Warengruppe mit Markt</a></li>
+        <li><a href="#moebel">Büromöbel: warum Händlerpreise den Teilwert überzeichnen</a></li>
+        <li><a href="#textilien">Textilien und Kleidung: Sammelware statt Einzelstück</a></li>
+        <li><a href="#werkzeuge">Werkzeuge und Maschinen: wenn nur das Gutachten bleibt</a></li>
+        <li><a href="#neuware">Büromaterial und Neuware: die Null-Euro-Frage und wo sie endet</a></li>
+        <li><a href="#gemischt">Gemischte Bestände: die Position, die offen bleiben darf</a></li>
+        <li><a href="#kipppunkt">Der Kipppunkt: wann ein höherer Wert teurer wird</a></li>
+        <li><a href="#haftung">Wer für die Zahl geradesteht</a></li>
+      </ol>
+    </nav>
+  </section>
+
+  <section class="rg-wrap rg-body">
+
+    <h2 id="zahl">Warum die Zahl am Beleg hängt und nicht am Gegenstand</h2>
+    <p>Zwei Normen definieren den Wert einer Sachspende, und beide beschreiben einen gedachten Preis, keinen dokumentierten.</p>
+    <p>Ertragsteuerlich gilt der Teilwert. § 6 Abs. 1 Nr. 1 Satz 3 EStG definiert ihn als „der Betrag, den ein Erwerber des ganzen Betriebs im Rahmen des Gesamtkaufpreises für das einzelne Wirtschaftsgut ansetzen würde; dabei ist davon auszugehen, dass der Erwerber den Betrieb fortführt". Umsatzsteuerlich ist die unentgeltliche Zuwendung nach § 3 Abs. 1b UStG einer Lieferung gegen Entgelt gleichgestellt; Bemessungsgrundlage ist nach § 10 Abs. 4 Satz 1 Nr. 1 UStG „der Einkaufspreis zuzüglich der Nebenkosten für den Gegenstand oder für einen gleichartigen Gegenstand oder mangels eines Einkaufspreises nach den Selbstkosten, jeweils zum Zeitpunkt des Umsatzes".</p>
+    <p>Beide Formulierungen unterstellen einen hypothetischen Erwerber. Keine von beiden nennt eine Quelle. Deshalb ist die Wertermittlung in der Praxis keine Rechenaufgabe, sondern eine Nachweisaufgabe: Die Zahl ist so belastbar wie das Dokument, das hinter ihr liegt.</p>
+    <div class="rg-note amber">
+      <span class="rg-note-t">Verbreiteter Irrtum</span>
+      <p>Der Neupreis ist nicht der Zuwendungswert. Maßgeblich ist in beiden Systemen der Wert im Zeitpunkt der Zuwendung. Ebenso wenig ist es der Buchwert: Ein abgeschriebenes Wirtschaftsgut mit Restbuchwert null kann einen erheblichen Teilwert haben. Welcher der beiden Wertansätze ertragsteuerlich zu wählen ist und warum das Buchwertprivileg nach § 6 Abs. 1 Nr. 4 Satz 4 EStG kein Sparinstrument ist, behandelt der Beitrag <a href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert oder Teilwert</a>.</p>
+    </div>
+    <p>Eine Nebenbedingung, die regelmäßig übersehen wird: Nach § 10 Abs. 4 Satz 2 UStG gehört die Umsatzsteuer nicht zur Bemessungsgrundlage. Gebrauchtmarkt-Angebote sind aber Endpreise. Wer sie unbereinigt ansetzt, bewertet zu hoch. Die Mechanik dahinter steht ausführlich im Beitrag <a href="/de/ratgeber/sachspende-unternehmen-steuer.html">Umsatzsteuer auf Sachspenden</a>.</p>
+
+    <h2 id="belegtypen">Die vier Belegtypen – und was das Gesetz vorgibt, wenn keiner greift</h2>
+    <p>Der Wortlaut des § 10 Abs. 4 Satz 1 Nr. 1 UStG ist genauer, als er gelesen wird. Er nennt keine Auswahl, sondern eine Reihenfolge: erst der Einkaufspreis <em>für den Gegenstand</em>, dann der Einkaufspreis <em>für einen gleichartigen Gegenstand</em>, und erst „mangels eines Einkaufspreises" die Selbstkosten. Wer diese Kaskade überspringt und stattdessen schätzt, hat keinen Beleg, sondern eine Meinung.</p>
+    <div class="rg-tw"><table>
+      <thead><tr><th>Belegtyp</th><th>Wann er trägt</th><th>Typische Warengruppen</th></tr></thead>
+      <tbody>
+        <tr><td>Anerkannte Marktübersicht</td><td>laufend gepflegte, branchenübliche Preisübersicht</td><td>praktisch nur Fahrzeuge</td></tr>
+        <tr><td>Vergleichspreis je Modell</td><td>funktionierender Gebrauchtmarkt, Gegenstand über Modell und Konfiguration identifizierbar</td><td>IT, Unterhaltungs- und Konferenztechnik</td></tr>
+        <tr><td>Einkaufspreis abzüglich belegter Minderung</td><td>eigener Einkauf dokumentiert, Minderungsgrund nachweisbar</td><td>Neuware, Retouren, Büromaterial, Lagertextilien</td></tr>
+        <tr><td>Selbstkosten</td><td>kein Einkaufspreis ermittelbar – vom Gesetz ausdrücklich vorgesehen</td><td>Eigenfertigung, Sonderanfertigungen, Werbemittel</td></tr>
+        <tr><td>Sachverständigengutachten</td><td>hoher Einzelwert ohne vergleichbaren Markt</td><td>Maschinen, Sonderanlagen</td></tr>
+      </tbody>
+    </table></div>
+    <p>Fahrzeuge sind die einzige Warengruppe mit einer allgemein anerkannten Marktübersicht. Für gebrauchte Büroausstattung, Technik oder Textilien existiert nichts Vergleichbares. Diese Lücke ist der eigentliche Grund, warum Bewertungen in der Praxis so unterschiedlich ausfallen – und warum die Belegart je Position dokumentiert gehört, nicht nur das Ergebnis.</p>
+
+    <h2 id="it">IT und Elektronik: die Warengruppe mit Markt</h2>
+    <p>IT ist der Sonderfall, in dem die zweite Stufe der Kaskade zuverlässig funktioniert. Modellbezeichnung, Baujahr, Prozessor, Arbeitsspeicher und Speichergröße machen den Gegenstand eindeutig identifizierbar, und für genau diese Kombination gibt es Angebote von Refurbishern und auf Gebrauchtmarktplätzen. Wie eine solche Recherche aufgebaut wird, mit Quelle, Datum und Belegart je Modell, und welche Referenzpreise sich für typische Geräte belegen lassen, steht im Beitrag <a href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert oder Teilwert</a>. Das wird hier nicht wiederholt.</p>
+    <p>Wichtig ist die Grenze dieser Methode. Sobald die Modellbezeichnung fehlt oder nicht marktgängig ist – Fremdlabel, OEM-Serien, Sonderkonfigurationen, herstellergebundene Konferenztechnik ohne Gebrauchtangebote – fällt auch IT auf die dritte oder vierte Stufe zurück. Die Warengruppe entscheidet also nicht allein; entscheidend ist, ob der konkrete Gegenstand am Markt wiederauffindbar ist.</p>
+    <div class="rg-note">
+      <span class="rg-note-t">Was die Bewertung nicht ersetzt</span>
+      <p>Ein belegter Wert sagt nichts darüber, ob das Gerät weitergegeben werden darf. Datenträgerlöschung und Deregistrierung aus Mobile-Device-Management-Systemen sind eigene Nachweise und laufen parallel; sie stehen im Beitrag <a href="/de/ratgeber/it-hardware-spenden-dsgvo.html">Firmen-IT spenden statt schreddern</a>.</p>
+    </div>
+
+    <h2 id="moebel">Büromöbel: warum Händlerpreise den Teilwert überzeichnen</h2>
+    <p>Für gebrauchte Systemmöbel existiert ein Händlermarkt, und die dort ausgewiesenen Preise sind verlockend eindeutig. Sie sind aber der falsche Beleg. Ein Händlerpreis ist ein Verkaufspreis <em>nach</em> Aufbereitung: gereinigt, teilweise neu bezogen, mit ersetzten Rollen und Gasfedern, transportiert, mit Gewährleistung. Der Teilwert des ungereinigten Stuhls, der noch im Bürogebäude steht, ist etwas anderes.</p>
+    <p>Der methodisch saubere Bezugspunkt wäre der Einkaufspreis des Aufbereiters. Den veröffentlicht niemand. Praktikabel ist deshalb ein zweistufiges Vorgehen: den Händler-Angebotspreis als dokumentierte Obergrenze festhalten und den Abschlag für Aufbereitung und Transport ausdrücklich als Annahme kennzeichnen. Eine gekennzeichnete Annahme ist prüfungsfest. Eine geglättete Zahl, die Beleg und Schätzung vermischt, ist es nicht.</p>
+    <p>Zwei weitere Punkte fallen bei Möbeln regelmäßig auseinander:</p>
+    <ul>
+      <li><strong>Konvolut gegen Einzelaufstellung.</strong> Möbel werden als Ladung bewegt und gern als Ladung bewertet. Die Zuwendungsbestätigung verlangt aber Art und Menge der zugewendeten Sache. Eine Sammelposition „diverse Büroausstattung" trägt dort nicht. Was das amtliche Muster im Einzelnen fordert, steht im Beitrag <a href="/de/ratgeber/zuwendungsbestaetigung-sachspende.html">Zuwendungsbestätigung für Sachspenden</a>.</li>
+      <li><strong>Zustand mindert, Verwendbarkeit nicht.</strong> Ein höhenverstellbarer Tisch, den der Empfänger mangels Prüfung nicht als Arbeitsmittel einsetzen darf, verliert dadurch nicht an Teilwert. Der Wert bemisst sich am Markt, nicht am konkreten Empfänger. Warum Möbelspenden trotzdem an genau dieser Frage scheitern, behandelt <a href="/de/ratgeber/bueromoebel-spende-anforderungen-empfaenger.html">Büromöbel spenden: Anforderungen der Empfänger</a>.</li>
+    </ul>
+
+    <h2 id="textilien">Textilien und Kleidung: Sammelware statt Einzelstück</h2>
+    <p>Bei Textilien zerfällt die Warengruppe in zwei Fälle, die steuerlich fast nichts gemeinsam haben.</p>
+    <p><strong>Getragene Kleidung</strong> wird am Markt nicht stückweise bepreist, sondern nach Gewicht in Sortierqualitäten gehandelt. Ein Kilopreis für gemischte Altkleider ist kein Einkaufspreis für einen gleichartigen Gegenstand im Sinne des § 10 Abs. 4 UStG – er bezieht sich auf ein anderes Handelsgut. Getragene Textilien landen deshalb regelmäßig auf der Selbstkosten- oder Nullbetrachtung, und das ist bei tatsächlich abgetragener Ware auch sachgerecht.</p>
+    <p><strong>Textile Neuware</strong> ist der Gegenfall: Merchandise, Arbeitskleidung aus Lagerbeständen, Werbetextilien, Retouren. Hier existiert ein dokumentierter Einkaufspreis, und der gilt – auch wenn die Ware im eigenen Kanal unverkäuflich ist, solange sie unbeeinträchtigt ist. Das ist der teure Irrtum im Handel und der Grund, warum Vernichtung lange billiger schien als Spende. Die handelsspezifische Seite steht im Beitrag <a href="/de/ratgeber/retouren-ueberbestaende-spenden-statt-vernichten.html">Retouren und Überbestände spenden statt vernichten</a>.</p>
+    <div class="rg-note amber">
+      <span class="rg-note-t">Offener Punkt</span>
+      <p>Werbetextilien mit aufgedrucktem Firmenlogo sind für den allgemeinen Markt nur eingeschränkt verwertbar. Ob das eine Beeinträchtigung der Verkehrsfähigkeit im Sinne der Verwaltungsauffassung darstellt oder eine rein wirtschaftliche Einschränkung, ist nicht abschließend geklärt. Wir kennzeichnen das als offen und empfehlen, den Ansatz vorab mit der Steuerberatung abzustimmen, statt ihn zu setzen.</p>
+    </div>
+
+    <h2 id="werkzeuge">Werkzeuge und Maschinen: wenn nur das Gutachten bleibt</h2>
+    <p>Werkzeuge und Maschinen verhalten sich umgekehrt zu Textilien: wenige Stück, hoher Einzelwert, kein standardisierter Markt. Für Handwerkzeuge und Kleingeräte in Stückzahlen funktioniert der Vergleichspreis noch. Für Maschinen mit fünfstelligem Anschaffungswert funktioniert er nicht mehr, weil jedes Exemplar über Betriebsstunden, Wartungshistorie und Ausstattung ein Einzelstück ist.</p>
+    <p>Anders als für Büroausstattung existiert für Maschinen ein etablierter Markt für Bewertungsgutachten. Ein Kurzgutachten kostet Geld, ist bei entsprechendem Einzelwert aber der einzige Beleg, der trägt. Die Verhältnismäßigkeit entscheidet: Bei vierzig Akkuschraubern ist der Vergleichspreis richtig, bei einer CNC-Fräse das Gutachten. Betriebsstunden, Wartungsnachweise und Restnutzungsdauer sind dabei Teil des Belegs, nicht Beiwerk – sie sind der Grund, warum das Gutachten zu seiner Zahl kommt.</p>
+
+    <h2 id="neuware">Büromaterial und Neuware: die Null-Euro-Frage und wo sie endet</h2>
+    <p>Dies ist der Abschnitt, in dem die meisten Fehler passieren, und der einzige, in dem die Finanzverwaltung sich konkret geäußert hat.</p>
+    <p>Mit Schreiben vom 18. März 2021 (Az. III C 2 - S 7109/19/10002 :001) hat das Bundesministerium der Finanzen den Umsatzsteuer-Anwendungserlass zur Bemessungsgrundlage bei Sachspenden ergänzt. Der Kern: Ist ein Gegenstand aufgrund seiner Beschaffenheit nicht mehr oder nur noch stark eingeschränkt verkehrsfähig, ist eine im Vergleich zu noch verkehrsfähiger Ware geminderte Bemessungsgrundlage anzusetzen. Der Ansatz von 0 Euro kommt dabei nur bei wertloser Ware in Betracht – genannt werden Lebensmittel und Non-Food-Artikel kurz vor Ablauf des Mindesthaltbarkeitsdatums sowie Frischwaren, bei denen die Verkaufsfähigkeit nicht mehr gegeben ist.</p>
+    <p>Ebenso deutlich ist die Gegenrichtung: Wird <strong>Neuware ohne jegliche Beeinträchtigung aus wirtschaftlichen oder logistischen Gründen</strong> aus dem Warenverkehr ausgesondert, liegt keine eingeschränkte Verkehrsfähigkeit vor. Ein Restposten Bürostühle im Originalkarton, der nur deshalb weggegeben wird, weil das Lager gebraucht wird, ist voll zu bewerten. Derselbe Restposten nach einem Wasserschaden ist es nicht – vorausgesetzt, der Schaden ist dokumentiert. Der Unterschied zwischen beiden Fällen liegt in der Fotodokumentation, nicht im Steuerrecht.</p>
+    <div class="rg-note amber">
+      <span class="rg-note-t">Zwei Schreiben, ein Datum, zwei Geltungsdauern</span>
+      <p>Am 18. März 2021 sind zwei BMF-Schreiben zu Sachspenden ergangen, und sie werden regelmäßig verwechselt. Die hier beschriebene Regelung zur geminderten Bemessungsgrundlage gilt <strong>zeitlich unbefristet</strong>. Die daneben erlassene <strong>Billigkeitsregelung</strong> für Einzelhändler, die auf die Besteuerung ganz verzichtete, galt ausschließlich für Zuwendungen zwischen dem 1. März 2020 und dem 31. Dezember 2021 und ist ausgelaufen. Wer sie heute als geltendes Recht zitiert, zitiert eine abgelaufene Ausnahme.</p>
+    </div>
+    <p>Für Büromaterial im engeren Sinn – Papier, Ordner, Verbrauchsmaterial – folgt daraus ein unbequemes Ergebnis: Es ist meist unbeschädigt, hat einen dokumentierten Einkaufspreis und ist deshalb voll zu bewerten, obwohl der Aufwand der Bewertung in keinem Verhältnis zum Betrag steht. Wirtschaftlich sinnvoll ist hier die Zusammenfassung zu Artikelgruppen mit einheitlichem Einkaufspreis, nicht die Einzelbewertung.</p>
+
+    <h2 id="gemischt">Gemischte Bestände: die Position, die offen bleiben darf</h2>
+    <p>In jeder Liste ab etwa hundert Positionen bleiben Posten übrig, für die sich kein Beleg finden lässt. Der Reflex ist, sie zu schätzen, damit die Tabelle vollständig aussieht. Das ist der schlechtere Weg. Eine als offen geführte Position ist prüfungsfest, weil sie erkennbar macht, was ermittelt wurde und was nicht. Eine geschätzte Position, die aussieht wie eine ermittelte, entwertet im Zweifel die gesamte Bewertung.</p>
+    <p>Drei Regeln haben sich dafür bewährt:</p>
+    <ol>
+      <li><strong>Belegart je Position mitführen.</strong> Vergleichspreis, Einkaufspreis, Selbstkosten, Gutachten oder Annahme – als eigenes Feld, nicht als Fußnote. Positionen mit dem Kennzeichen „Annahme" lassen sich dann gezielt nacharbeiten oder gegenüber der Prüfung erklären.</li>
+      <li><strong>Flüchtige Belege sichern.</strong> Gebrauchtmarkt-Angebote verschwinden. Ein Link ist drei Jahre später kein Beleg mehr, ein Bildschirmfoto mit sichtbarem Datum schon.</li>
+      <li><strong>Aufbewahrungsfrist einhalten.</strong> Buchungsbelege sind nach § 147 Abs. 3 AO in der Fassung des Vierten Bürokratieentlastungsgesetzes seit dem 1. Januar 2025 acht Jahre aufzubewahren, nicht zehn. Die Bewertungsunterlagen gehören zum Buchungsbeleg.</li>
+    </ol>
+    <p>Für die Zuwendungsbestätigung gilt daneben unverändert, dass Art und Menge der Zuwendung angegeben werden müssen. Sammelpositionen ohne Aufschlüsselung erfüllen das nicht, auch wenn der Gesamtwert korrekt ermittelt wurde.</p>
+
+    <h2 id="kipppunkt">Der Kipppunkt: wann ein höherer Wert teurer wird</h2>
+    <p>Eine höhere Bewertung wirkt in zwei Richtungen gleichzeitig. Sie erhöht den abziehbaren Spendenbetrag, und sie erhöht die Umsatzsteuer auf die unentgeltliche Wertabgabe. Solange der Spendenhöchstbetrag nicht ausgeschöpft ist, überwiegt der Abzugseffekt, weil der Ertragsteuersatz regelmäßig über dem Umsatzsteuersatz liegt.</p>
+    <p>Der Punkt, an dem sich das dreht, ist der Höchstbetrag. Abziehbar sind 20 Prozent – bei Kapitalgesellschaften des Einkommens nach § 9 Abs. 1 Nr. 2 KStG, bei Einkommensteuerpflichtigen des Gesamtbetrags der Einkünfte nach § 10b Abs. 1 EStG – oder wahlweise 4 Promille aus Umsätzen, Löhnen und Gehältern. Ist diese Grenze erreicht, ist der Abzug gedeckelt. Die Umsatzsteuer ist es nicht. Ab diesem Punkt kostet jeder zusätzlich bewertete Euro bares Geld, ohne einen zusätzlichen Abzug zu erzeugen.</p>
+    <p>Das ist ausdrücklich kein Argument für eine niedrige Bewertung – die Höhe folgt dem Beleg, nicht dem Interesse. Es ist ein Argument dafür, den Höchstbetrag <em>vor</em> der Bewertung zu kennen, weil er darüber entscheidet, ob eine große Spende in einem Jahr oder verteilt über zwei sinnvoll ist. Der überschießende Betrag geht als Zuwendungsvortrag in die Folgejahre. Beide Grenzen und die Günstigerprüfung rechnet der <a href="/de/ratgeber/sachspende-hoechstbetrag-rechner.html">Spendenhöchstbetrag-Rechner</a>.</p>
+
+    <h2 id="haftung">Wer für die Zahl geradesteht</h2>
+    <p>Die Rollenverteilung ist eindeutig und wird trotzdem oft vertauscht: Den Wert ermittelt der Spender, weil nur er Einkaufspreise, Zustand und Historie kennt. Bestätigen muss ihn der Empfänger, weil er die Zuwendungsbestätigung ausstellt.</p>
+    <p>Diese Asymmetrie ist teuer. Nach § 10b Abs. 4 EStG darf der Spender auf die Richtigkeit der Bestätigung vertrauen, solange er sie nicht durch unlautere Mittel erwirkt hat und ihre Unrichtigkeit nicht kennt oder grob fahrlässig verkennt. Wer dagegen vorsätzlich oder grob fahrlässig eine unrichtige Bestätigung ausstellt, haftet für die entgangene Steuer, pauschal mit 30 Prozent des zugewendeten Betrags.</p>
+    <p>Praktisch heißt das: Eine gemeinnützige Organisation, die eine Wertangabe ohne Beleg bestätigt, haftet für eine Zahl, die sie nicht ermittelt hat und nicht ermitteln konnte. Professionelle Empfänger verlangen deshalb die Bewertungsunterlagen, bevor sie unterschreiben – und tun gut daran. Die Empfängerperspektive steht im Beitrag <a href="/de/ratgeber/sachspenden-erhalten-gemeinnuetzige-organisation.html">Sachspenden von Unternehmen erhalten</a>.</p>
+    <p>Für den Spender folgt daraus ein einfacher Test vor der Übergabe: Lässt sich zu jeder Position sagen, aus welcher Quelle der Wert stammt, von welchem Datum sie ist und welcher Belegart sie entspricht? Wenn ja, ist die Bewertung fertig. Wenn nein, fehlt kein Betrag, sondern ein Dokument. Die übrigen Haftungsschichten einer Sachspende – Schenkungsrecht, Produktsicherheit, Produkthaftung, Transport – ordnet der Beitrag <a href="/de/ratgeber/haftung-sachspende-unternehmen.html">Haftung bei Sachspenden</a> ein.</p>
+
+  <section class="rg-faq" id="faq" data-sp-section="faq">
+    <h2>Häufige Fragen</h2>
+    <div class="rg-faq-item"><h3>Dürfen wir eine Sachspende mit 0 Euro ansetzen?</h3><p>Nur bei wertloser Ware. Nach der Verwaltungsauffassung zur Bemessungsgrundlage bei Sachspenden ist ein Ansatz von 0 Euro auf Gegenstände beschränkt, die tatsächlich keinen Wert mehr haben, etwa Lebensmittel kurz vor Ablauf des Mindesthaltbarkeitsdatums. Einwandfreie Neuware, die aus wirtschaftlichen oder logistischen Gründen ausgesondert wird, darf nicht mit null bewertet werden.</p></div>
+    <div class="rg-faq-item"><h3>Zählt der Neupreis oder der Anschaffungspreis?</h3><p>Weder noch. Maßgeblich ist der Wert im Zeitpunkt der Zuwendung: ertragsteuerlich der Teilwert nach § 6 Abs. 1 Nr. 1 Satz 3 EStG, umsatzsteuerlich der Einkaufspreis für einen gleichartigen Gegenstand nach § 10 Abs. 4 Satz 1 Nr. 1 UStG. Der historische Anschaffungspreis ist nur dann relevant, wenn er zugleich der aktuelle Marktpreis ist, was bei Neuware aus dem Lager vorkommen kann.</p></div>
+    <div class="rg-faq-item"><h3>Gilt für Sachspenden die 300-Euro-Bagatellgrenze?</h3><p>Nein. Der vereinfachte Zuwendungsnachweis nach § 50 Abs. 4 EStDV gilt ausschließlich für Geldzuwendungen. Für Sachspenden gibt es keine Bagatellgrenze; es braucht immer eine Zuwendungsbestätigung nach amtlichem Muster, unabhängig vom Betrag.</p></div>
+    <div class="rg-faq-item"><h3>Brauchen wir für jede einzelne Position einen eigenen Beleg?</h3><p>Nicht je Stück, aber je Artikel oder Modell. Zwanzig identische Laptops desselben Modells und derselben Konfiguration tragen einen Beleg. Sobald sich Modell, Konfiguration oder Zustand unterscheiden, ist es eine eigene Position mit eigenem Beleg. Bei Verbrauchsmaterial mit einheitlichem Einkaufspreis ist die Zusammenfassung zu Artikelgruppen sachgerecht.</p></div>
+    <div class="rg-faq-item"><h3>Wie lange müssen die Bewertungsunterlagen aufbewahrt werden?</h3><p>Acht Jahre. § 147 Abs. 3 AO in der Fassung des Vierten Bürokratieentlastungsgesetzes hat die Frist für Buchungsbelege zum 1. Januar 2025 von zehn auf acht Jahre verkürzt. Bewertungsunterlagen, Bildschirmfotos von Vergleichsangeboten und Gutachten gehören zum Buchungsbeleg der Entnahme.</p></div>
+  </section>
+
+  <section class="rg-src" data-sp-section="quellen">
+    <h2>Quellen</h2>
+    <ol>
+      <li>§ 6 Abs. 1 Nr. 1 und Nr. 4 EStG (Teilwert, Entnahme, Buchwertansatz bei Zuwendung an begünstigte Empfänger) – <a href="https://www.gesetze-im-internet.de/estg/__6.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, Wortlaut geprüft über lxgesetze.de, abgerufen August 2026.</li>
+      <li>§ 10 Abs. 4 UStG (Bemessungsgrundlage bei unentgeltlichen Wertabgaben, Einkaufspreis, Selbstkosten, Umsatzsteuer nicht in der Bemessungsgrundlage) – <a href="https://www.gesetze-im-internet.de/ustg_1980/__10.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, Wortlaut geprüft über lxgesetze.de, abgerufen August 2026.</li>
+      <li>§ 3 Abs. 1b UStG (unentgeltliche Wertabgabe) – <a href="https://www.gesetze-im-internet.de/ustg_1980/__3.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, abgerufen August 2026.</li>
+      <li>§ 10b EStG (Höchstbeträge, Wert der Zuwendung, Vertrauensschutz und Ausstellerhaftung mit 30 Prozent) – <a href="https://www.gesetze-im-internet.de/estg/__10b.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, Wortlaut geprüft über dejure.org, abgerufen August 2026.</li>
+      <li>§ 9 Abs. 1 Nr. 2 KStG (Höchstbetrag bei Kapitalgesellschaften, Bezugsgröße Einkommen) – <a href="https://www.gesetze-im-internet.de/kstg_1977/__9.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, abgerufen August 2026.</li>
+      <li>§ 50 Abs. 4 EStDV (vereinfachter Zuwendungsnachweis, nur Geldzuwendungen) – <a href="https://www.gesetze-im-internet.de/estdv_1955/__50.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, abgerufen August 2026.</li>
+      <li>§ 147 Abs. 3 AO in der Fassung des Vierten Bürokratieentlastungsgesetzes (Aufbewahrung von Buchungsbelegen acht Jahre ab 1. Januar 2025) – <a href="https://www.gesetze-im-internet.de/ao_1977/__147.html" rel="noopener nofollow" target="_blank">gesetze-im-internet.de</a>, abgerufen August 2026.</li>
+      <li>BMF, Schreiben vom 18. März 2021, Az. III C 2 - S 7109/19/10002 :001, Umsatzsteuerliche Beurteilung von Sachspenden (Ergänzung des Umsatzsteuer-Anwendungserlasses zur Bemessungsgrundlage, zeitlich unbefristet) – <a href="https://www.bundesfinanzministerium.de/" rel="noopener nofollow" target="_blank">bundesfinanzministerium.de</a>, abgerufen August 2026.</li>
+      <li>BMF, Schreiben vom 18. März 2021, Billigkeitsregelung für Einzelhändler, befristet auf Zuwendungen vom 1. März 2020 bis 31. Dezember 2021 (ausgelaufen) – <a href="https://www.bundesfinanzministerium.de/" rel="noopener nofollow" target="_blank">bundesfinanzministerium.de</a>, abgerufen August 2026.</li>
+      <li>Sekundärquelle zur Einordnung der beiden BMF-Schreiben: Deutscher Steuerberaterverband e. V., „Neue BMF-Schreiben zur umsatzsteuerlichen Beurteilung von Sachspenden" – <a href="https://www.dstv.de/artikel-pool/neue-bmf-schreiben-zur-umsatzsteuerlichen-beurteilung-von-sachspenden-2" rel="noopener nofollow" target="_blank">dstv.de</a>, abgerufen August 2026.</li>
+    </ol>
+    <p><strong>Rechtsstand: 26. August 2026.</strong> Die Wortlaute der genannten Gesetzesnormen wurden gegen die Volltextfassungen geprüft. Der Wortlaut der ergänzten Passage des Umsatzsteuer-Anwendungserlasses war in diesem Rechercheschritt nicht als maschinenlesbarer Volltext zugänglich; die inhaltliche Wiedergabe stützt sich auf vier voneinander unabhängige Fachquellen, die übereinstimmend berichten. Wir kennzeichnen das ausdrücklich, statt es zu glätten. Vorrangig zu prüfen sind eine neuere Verwaltungsanweisung und die jeweils aktuelle Fassung des Anwendungserlasses. Dieser Beitrag ist redaktionelle Orientierung und ersetzt keine Steuer- oder Rechtsberatung. Bitte mit Ihrem Steuerberater prüfen.</p>
+    <div class="rg-note"><span class="rg-note-t">Welche Zeilen sur.plus liefert – und welche nicht</span>
+      <p>Geliefert wird die Vorarbeit, aus der eine Bewertung entstehen kann: die Bestandsliste je Position mit Kategorie, Modell und Menge, eine Vergleichspreisrecherche je Modell mit Quelle, Datum und Belegart, das Übergabeprotokoll mit Datum und Empfänger sowie der geprüfte Gemeinnützigkeitsstatus des Empfängers. Die zugehörige Wertermittlungs- und Übergabeprotokoll-Vorlage stellen wir in der sur.plus-App bereit.</p>
+      <p>Nicht geliefert wird die Bewertung selbst. sur.plus setzt keinen steuerlichen Wertansatz fest, erteilt keine Steuer- oder Rechtsberatung und sagt nicht zu, dass ein bestimmter Ansatz anerkannt wird. Die Zuwendungsbestätigung bereiten wir ab dem Tree-Tarif aus den Dokumentationsdaten vorausgefüllt vor – ausstellen und unterschreiben muss sie die berechtigte Empfängerorganisation. Die Zahl selbst verantworten Spender, Empfänger und deren Beratung.</p>
+    </div>
+  </section>
+
+  <section class="rg-cta" data-sp-section="cta">
+    <h2>Belegart je Position – als Nebenprodukt der Vermittlung</h2>
+    <p>Wer weiß, was der Bestand ungefähr wert ist, führt ein anderes Gespräch mit der Finanzabteilung. Drei Wege, das in Minuten statt in Tagen zu klären.</p>
+    <div class="rg-btns">
+      <a class="rg-btn p" href="/de/surplus_impact_calculator.html">Impact in 60 Sekunden berechnen</a>
+      <a class="rg-btn s" href="https://calendly.com/florian_surplus/30min" rel="noopener" target="_blank">30-Min-Gespräch buchen</a>
+      <a class="rg-btn s" href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert oder Teilwert rechnen</a>
+    </div>
+  </section>
+
+  <section class="rg-rel" data-sp-section="weiterlesen">
+    <h2>Weiterlesen</h2>
+    <div class="rg-grid">
+      <a class="rg-card" href="/de/ratgeber/buchwert-teilwert-rechner.html"><span class="rg-card-k">Steuern &amp; Wertansatz</span><h3>Buchwert oder Teilwert: was die Sachspende wirklich kostet</h3><p>Warum beide Wege in der Grundkonstellation gleich viel kosten, die vier Fälle mit Unterschied – und belegte Referenzpreise für typische Geräte.</p></a>
+      <a class="rg-card" href="/de/ratgeber/zuwendungsbestaetigung-sachspende.html"><span class="rg-card-k">Nachweis &amp; Haftung</span><h3>Zuwendungsbestätigung für Sachspenden: Muster, Pflichtangaben, Fehler</h3><p>Welche Angaben das amtliche Muster verlangt, wer die Wertangabe liefert und wofür der Aussteller mit 30 Prozent haftet.</p></a>
+    </div>
+  </section>
+  </section>
+  </article>
+
+<section class="rg-wrap" data-editorial-note><div style="border-left:3px solid var(--brand-lt,#4DB896);background:var(--brand-xs,#E8F5F0);border-radius:0 8px 8px 0;padding:14px 16px;margin:26px 0 34px"><p style="margin:0 0 5px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand,#1A5C4A)">Redaktion</p><p style="margin:0;font-size:13px;line-height:1.66;color:#33453D">Redaktionell verantwortlich: Florian Lechner, sur.plus, Landsberger Stra&szlig;e 57, 82266 Inning am Ammersee-Stegen. Dieser Beitrag wurde KI-gest&uuml;tzt erstellt und vor der Ver&ouml;ffentlichung anhand der genannten Primärquellen redaktionell gepr&uuml;ft. Eine Pr&uuml;fung durch Rechtsanw&auml;lte, Steuerberater oder Wirtschaftspr&uuml;fer ist nicht erfolgt. <a href="/de/ratgeber/redaktionelle-grundsaetze.html" style="color:var(--brand,#1A5C4A);text-decoration:underline">Redaktionelle Grunds&auml;tze &rarr;</a></p></div></section>
+<section class="rg-wrap" data-preferred-source><div style="text-align:center;margin:-14px 0 40px"><a href="https://www.google.com/preferences/source?q=surpluspurpose.com" rel="noopener" target="_blank" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5A6B63;text-decoration:none;border:1px solid rgba(26,92,74,.15);border-radius:999px;padding:7px 14px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex:none"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.1-1.01z"/></svg>sur.plus in der Google Suche als bevorzugte Quelle speichern</a></div></section>
+</main>
+<footer class="rg-foot"><div class="rg-wrap wide">
+  <span class="rg-foot-claim">Every surplus has a purpose. We find it.</span>
+  sur.plus (surpluspurpose.com) ·
+  <a href="/de/">Start</a> ·
+  <a href="/de/ratgeber/">Ratgeber</a> ·
+  <a href="/de/case-studies/">Fallstudien</a> ·
+  <a href="/de/surplus_impact_calculator.html">Impact Calculator</a> ·
+  <a href="https://www.linkedin.com/company/surplus-purpose/" rel="noopener" target="_blank">LinkedIn</a>
+</div></footer>
+<script src="/search.js" defer></script>
+</body>
+</html>

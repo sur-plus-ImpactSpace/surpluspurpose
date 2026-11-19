@@ -1,0 +1,10 @@
+# Root Netlify config — the website lives in a subfolder.
+# This tells Netlify the base directory so it finds the site + functions
+# without needing the "Base directory" field set in the UI.
+[build]
+  base = "05_Landingpage/Online"
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"

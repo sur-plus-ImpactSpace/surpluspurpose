@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img">
+  <title>sur.plus icon</title>
+  <desc>sur.plus circular matching icon — standalone mark</desc>
+
+  <!-- Background -->
+  <rect width="200" height="200" rx="40" fill="#1A5C4A"/>
+
+  <!-- Top arc: supply side (light teal) -->
+  <path d="M 44 98 A 56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 100 42 A 56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="12" stroke-linecap="round"/>
+  <!-- Bottom arc: NGO side (amber) -->
+  <path d="M 156 110 A 56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="12" stroke-linecap="round"/>
+  <path d="M 100 166 A 56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="12" stroke-linecap="round"/>
+  <!-- Vertical connectors -->
+  <line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="12" stroke-linecap="round"/>
+  <line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="12" stroke-linecap="round"/>
+  <!-- Center matching dot -->
+  <circle cx="100" cy="104" r="22" fill="#FFFFFF"/>
+  <circle cx="100" cy="104" r="10" fill="#1A5C4A"/>
+</svg>

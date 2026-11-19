@@ -1,0 +1,35 @@
+# 2026-10-03: Deutsche Startseite ist der Standard. Root und /index.html leiten erzwungen auf /de/,
+# die englische Startseite lebt unter /en/. Alle anderen EN-Pfade (/for-companies/, /guides/, ...) bleiben.
+/            /de/   301!
+/index.html  /de/   301!
+
+# Legacy dashboard prototype retired - the product app lives on its own site
+# Cloudflare zieht den nackten Pfad NICHT in /app/* hinein (Netlify tat das),
+# deshalb je eine eigene Zeile fuer /app und /de/app. Ohne sie laufen die
+# beiden Adressen in die 404-Seite.
+/app https://app.surpluspurpose.com/demo 301!
+/de/app https://app.surpluspurpose.com/demo 301!
+/app/* https://app.surpluspurpose.com/demo 301!
+/de/app/* https://app.surpluspurpose.com/demo 301!
+/de/dashboard /de/#dashboard 302
+/de/dashboard/* /de/#dashboard 302
+/dashboard /en/#dashboard 302
+/dashboard/* /en/#dashboard 302
+
+# Ratgeber: Duplikat-Slugs vom 2026-08-06 auf die kanonischen Fassungen (2026-08-07).
+# 2026-08-09: sachspende-unternehmen-steuer wieder LIVE - zur USt-Spezialseite differenziert,
+# eigener Suchintent (Kannibalisierung redaktionell aufgeloest statt per Redirect).
+# 2026-08-12: Die alten HTML-Dateien wurden aus dem Deploy entfernt (Archiv:
+# 05_Landingpage/_archiv_redirects/), daher normale 301 statt erzwungener 301!.
+/de/ratgeber/espr-vernichtungsverbot-spendennachweis.html /de/ratgeber/eu-vernichtungsverbot-2026.html 301
+/de/ratgeber/esrs-e5-kreislaufwirtschaft-sachspenden.html /de/ratgeber/sachspenden-esrs-e5-csrd.html 301
+/de/ratgeber/bueromoebel-spenden-statt-entsorgen.html /de/ratgeber/bueromoebel-spenden-unternehmen.html 301
+
+# 2026-09-23: Fallstudien ersetzt - drei grenzueberschreitende Beispiele durch fuenf Anlass-Faelle
+# (Archiv: 05_Landingpage/_archiv_redirects/case-studies-2026-07/). Naechstliegender neuer Fall.
+/case-studies/office-furniture-donation-uk-poland.html /case-studies/office-move-lease-handover-donation-munich.html 301
+/de/case-studies/bueromoebel-sachspende-uk-polen.html /de/case-studies/bueroumzug-rueckbaupflicht-sachspende.html 301
+/case-studies/it-equipment-donation-belgium-portugal.html /case-studies/it-refresh-no-market-lot-laptops-donation.html 301
+/de/case-studies/it-hardware-sachspende-belgien-portugal.html /de/case-studies/it-refresh-no-market-los-laptops-sachspende.html 301
+/case-studies/winter-clothing-donation-switzerland-greece.html /case-studies/store-closure-shop-fittings-stock-donation.html 301
+/de/case-studies/winterkleidung-sachspende-schweiz-griechenland.html /de/case-studies/filialschliessung-ladenbau-restware-sachspende.html 301

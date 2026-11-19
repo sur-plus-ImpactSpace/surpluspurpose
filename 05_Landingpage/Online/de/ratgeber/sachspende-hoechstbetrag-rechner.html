@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spendenhöchstbetrag-Rechner für Unternehmen | sur.plus</title>
+<meta name="description" content="B2B-Rechner für den Spendenabzug: 20 % der Bemessungsgrundlage oder 4 ‰ aus Umsätzen und Löhnen – mit Günstigerprüfung, Zuwendungsvortrag und Gewerbesteuer-Kürzung.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+
+<link rel="icon" type="image/svg+xml" href="/surplus_icon.svg">
+<link rel="alternate icon" type="image/png" href="/icon-512.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#0A2318">
+<meta name="application-name" content="sur.plus">
+<meta name="apple-mobile-web-app-title" content="sur.plus">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html">
+<meta property="og:title" content="Spendenhöchstbetrag-Rechner für Unternehmen | sur.plus">
+<meta property="og:description" content="B2B-Rechner für den Spendenabzug: 20 % der Bemessungsgrundlage oder 4 ‰ aus Umsätzen und Löhnen – mit Günstigerprüfung, Zuwendungsvortrag und Gewerbesteuer-Kürzung.">
+<meta property="og:image" content="https://surpluspurpose.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="sur.plus">
+<meta property="og:locale" content="de_DE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Spendenhöchstbetrag-Rechner für Unternehmen | sur.plus">
+<meta name="twitter:description" content="B2B-Rechner für den Spendenabzug: 20 % der Bemessungsgrundlage oder 4 ‰ aus Umsätzen und Löhnen – mit Günstigerprüfung, Zuwendungsvortrag und Gewerbesteuer-Kürzung.">
+<meta name="twitter:image" content="https://surpluspurpose.com/og-image.png">
+
+<link rel="preload" href="/fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<link rel="canonical" href="https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html">
+
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url("/fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0A2318;--brand:#1A5C4A;--brand-mid:#2E8B6A;--brand-lt:#4DB896;--brand-xs:#E8F5F0;
+  --accent:#D4712A;--accent-lt:#E8935A;--accent-xs:#FDF3EA;
+  --white:#FFFFFF;--offwhite:#F7FAF8;--text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;
+  --border:rgba(26,92,74,0.12);
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:var(--sans);background:var(--white);color:var(--text);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:rgba(77,184,150,.3)}
+
+/* header */
+.rg-head{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--brand-xs)}
+.rg-head-in{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:13px 0}
+.rg-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.rg-logo svg{width:32px;height:32px;flex:none}
+.rg-logo .wm{font-size:20px;letter-spacing:-.4px;color:var(--brand);font-weight:700;line-height:1}
+.rg-logo .wm .d{color:var(--accent)}.rg-logo .wm b{color:var(--brand);font-weight:700}
+.rg-nav{display:flex;align-items:center;gap:16px;font-size:13.5px}
+.rg-nav a{color:var(--text-mid);text-decoration:none;font-weight:600}
+.rg-nav a:hover{color:var(--brand)}
+.rg-nav .rg-lang{border:1px solid var(--brand-xs);border-radius:8px;padding:3px 9px;color:var(--brand)}
+@media(max-width:560px){.rg-nav .hide-s{display:none}}
+
+.rg-wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.rg-wrap.wide{max-width:1000px}
+
+/* breadcrumb */
+.rg-crumb{padding:18px 0 0;font-size:12.5px;color:var(--text-lt)}
+.rg-crumb a{color:var(--text-mid);text-decoration:none}
+.rg-crumb a:hover{color:var(--brand)}
+.rg-crumb span{margin:0 6px;opacity:.5}
+
+/* hero */
+.rg-hero{padding-top:22px;padding-bottom:6px}
+.rg-kicker{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--accent)}
+.rg-hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(29px,4.6vw,43px);line-height:1.12;color:var(--dark);margin:13px 0 0;letter-spacing:-.01em}
+.rg-lead{margin:16px 0 0;font-size:18px;line-height:1.62;color:var(--text)}
+.rg-meta{margin:18px 0 0;padding:12px 0;border-top:1px solid var(--brand-xs);border-bottom:1px solid var(--brand-xs);font-size:12.5px;color:var(--text-lt);display:flex;flex-wrap:wrap;gap:6px 18px}
+.rg-meta b{color:var(--text-mid);font-weight:600}
+
+/* TOC */
+.rg-toc{margin:26px 0 0;background:var(--offwhite);border:1px solid var(--border);border-radius:14px;padding:18px 20px}
+.rg-toc h2{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-toc ol{margin:0;padding-left:20px;font-size:14.5px;line-height:1.85;color:var(--text-mid)}
+.rg-toc a,.rg-crumb a{text-decoration:none}
+.rg-toc a:hover{color:var(--brand);text-decoration:underline}
+
+/* body copy */
+.rg-body{padding-top:8px}
+.rg-body h2{font-family:var(--serif);font-weight:400;font-size:clamp(24px,3.2vw,31px);line-height:1.2;color:var(--dark);margin:44px 0 0;letter-spacing:-.01em}
+.rg-body h3{font-size:18px;font-weight:700;color:var(--dark);margin:30px 0 0}
+.rg-body p{margin:14px 0 0;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body ul,.rg-body ol{margin:14px 0 0;padding-left:22px;font-size:16.5px;line-height:1.72;color:var(--text)}
+.rg-body li{margin:7px 0 0}
+.rg-body li::marker{color:var(--brand-mid)}
+.rg-body a{color:var(--brand);text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1px}
+.rg-body a:hover{color:var(--accent)}
+.rg-body strong{font-weight:700;color:var(--dark)}
+.rg-body em{font-style:italic}
+.rg-body figure{margin:22px 0 0}
+.rg-body figcaption{margin:8px 0 0;font-size:12.5px;color:var(--text-lt)}
+
+/* table */
+.rg-tw{margin:22px 0 0;overflow-x:auto;border:1px solid var(--border);border-radius:12px}
+.rg-body table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+.rg-body th{text-align:left;background:var(--brand-xs);color:var(--dark);font-weight:700;padding:11px 14px;font-size:13px;letter-spacing:.01em}
+.rg-body td{padding:11px 14px;border-top:1px solid var(--border);color:var(--text);vertical-align:top;line-height:1.55}
+.rg-body tbody tr:nth-child(even){background:var(--offwhite)}
+
+/* callouts */
+.rg-note{margin:24px 0 0;border-left:3px solid var(--brand-mid);background:var(--brand-xs);border-radius:0 12px 12px 0;padding:16px 20px}
+.rg-note p{margin:0;font-size:15.5px;line-height:1.65}
+.rg-note p + p{margin-top:10px}
+.rg-note .rg-note-t{display:block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 7px}
+.rg-note.amber{border-left-color:var(--accent);background:var(--accent-xs)}
+.rg-note.amber .rg-note-t{color:var(--accent)}
+
+/* key figures */
+.rg-stats{display:grid;gap:12px;grid-template-columns:1fr;margin:26px 0 0}
+@media(min-width:620px){.rg-stats{grid-template-columns:repeat(3,1fr)}}
+.rg-stat{background:var(--offwhite);border:1px solid var(--border);border-radius:12px;padding:16px 18px}
+.rg-stat-v{font-family:var(--serif);font-size:28px;line-height:1.05;color:var(--brand)}
+.rg-stat-l{margin:7px 0 0;font-size:12.5px;line-height:1.5;color:var(--text-lt)}
+
+/* steps */
+.rg-steps{counter-reset:s;margin:24px 0 0;padding:0;list-style:none}
+.rg-steps li{counter-increment:s;position:relative;padding:0 0 0 44px;margin:18px 0 0}
+.rg-steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;border-radius:50%;background:var(--brand);color:#fff;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.rg-steps b{display:block;color:var(--dark);font-size:16.5px}
+.rg-steps span{display:block;margin:4px 0 0;font-size:15.5px;line-height:1.65;color:var(--text-mid)}
+
+/* FAQ */
+.rg-faq{margin:44px 0 0}
+.rg-faq h2{margin-top:0}
+.rg-faq-item{border-top:1px solid var(--brand-xs);padding:17px 0}
+.rg-faq-item h3{font-size:16.5px;font-weight:700;color:var(--dark);margin:0}
+.rg-faq-item p{margin:9px 0 0;font-size:15.5px;line-height:1.68;color:var(--text-mid)}
+
+/* sources */
+.rg-src{margin:40px 0 0;padding:20px 22px;background:var(--offwhite);border:1px solid var(--border);border-radius:14px}
+.rg-src h2{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand);margin:0 0 10px}
+.rg-src ol{margin:0;padding-left:20px;font-size:13.5px;line-height:1.7;color:var(--text-mid)}
+.rg-src a{color:var(--brand)}
+
+/* CTA */
+.rg-cta{margin:44px 0 0;background:var(--brand-xs);border-radius:18px;padding:30px 28px;text-align:center}
+.rg-cta h2{font-family:var(--serif);font-weight:400;font-size:26px;color:var(--dark);margin:0 0 8px;line-height:1.2}
+.rg-cta p{margin:0 0 20px;color:var(--text-mid);font-size:15.5px;line-height:1.6;max-width:520px;margin-left:auto;margin-right:auto}
+.rg-btns{display:flex;gap:11px;justify-content:center;flex-wrap:wrap}
+.rg-btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+.rg-btn.p{background:var(--brand);color:#fff}
+.rg-btn.p:hover{background:var(--dark)}
+.rg-btn.s{background:#fff;color:var(--brand);border:1px solid var(--brand-lt)}
+.rg-btn.s:hover{border-color:var(--brand)}
+
+/* related */
+.rg-rel{margin:44px 0 0}
+.rg-rel h2{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--dark);margin:0 0 4px}
+.rg-grid{display:grid;gap:14px;grid-template-columns:1fr;margin:18px 0 0}
+@media(min-width:620px){.rg-grid{grid-template-columns:1fr 1fr}}
+.rg-body a.rg-card,.rg-body a.rg-card:hover,.rg-card,.rg-card:hover{text-decoration:none}
+.rg-card{display:block;border:1px solid var(--brand-xs);border-radius:14px;padding:20px;text-decoration:none;background:#fff;transition:border-color .15s,box-shadow .15s,transform .15s}
+.rg-body a.rg-card:hover{color:inherit}
+.rg-card:hover{border-color:var(--brand-lt);box-shadow:0 6px 20px rgba(26,92,74,.08);transform:translateY(-1px)}
+.rg-card .rg-card-k{font-size:10.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--accent)}
+.rg-card h3{font-family:var(--serif);font-weight:400;font-size:19px;line-height:1.25;color:var(--dark);margin:9px 0 0}
+.rg-card p{margin:9px 0 0;font-size:14px;line-height:1.55;color:var(--text-mid)}
+.rg-card .rg-card-go{display:inline-block;margin:12px 0 0;font-size:13px;font-weight:700;color:var(--brand)}
+
+/* footer */
+.rg-foot{margin-top:56px;border-top:1px solid var(--brand-xs);padding:26px 0 34px;font-size:13px;line-height:1.9;color:var(--text-lt);text-align:center}
+.rg-foot a{color:var(--text-mid);text-decoration:none}
+.rg-foot a:hover{color:var(--brand)}
+.rg-foot .rg-foot-claim{display:block;font-family:var(--serif);font-size:15px;color:var(--brand);margin:0 0 6px}
+/* sp-mobile-v1 */
+.cs-nav a{padding:6px 0;display:inline-flex;align-items:center;min-height:34px}
+.cs-nav .cs-nav-s{display:none}
+@media(max-width:640px){
+  .cs-wrap,.rg-wrap{padding-left:18px;padding-right:18px}
+  .rg-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .rg-logo svg{width:29px;height:29px}
+  .rg-logo .wm{font-size:18px}
+  .rg-nav{gap:13px;font-size:13.5px}
+  .cs-head-in{gap:12px;padding-top:10px;padding-bottom:10px}
+  .cs-logo svg{width:29px;height:29px}
+  .cs-logo .wm{font-size:18px}
+  .cs-nav{gap:13px;font-size:13.5px}
+  .cs-nav .cs-nav-l{display:none}
+  .cs-nav .cs-nav-s{display:inline}
+  .cs-nav .cs-lang{padding:4px 8px;font-size:12.5px}
+  .cs-hero{padding-top:34px}
+  .cs-lead{font-size:17px}
+  .cs-cta{padding:24px 18px;margin-bottom:44px}
+  .cs-btns{flex-direction:column}
+  .cs-btn{width:100%;padding:14px 18px;text-align:center}
+  .gd-body p,.gd-body li{font-size:16px}
+  .gd-lead{font-size:17.5px}
+  .gd-body h2{font-size:23px}
+  .gd-body h3{font-size:18.5px}
+  .gd-meta{gap:6px 12px;font-size:12.5px}
+  .gd-key,.gd-warn{padding:16px 16px}
+  .gd-prod{padding:20px 18px}
+  .gd-toc{padding:18px 18px}
+  .gd-table{font-size:14px;min-width:420px}
+  .gd-table th,.gd-table td{padding:10px 12px}
+  .gd-src li{font-size:13.5px}
+}
+@media(max-width:420px){
+  .cs-nav{gap:11px;font-size:13px}
+  .cs-nav .cs-nav-home{display:none}
+}
+@media(max-width:360px){
+  .cs-wrap,.rg-wrap{padding-left:15px;padding-right:15px}
+  .cs-logo .wm,.rg-logo .wm{font-size:17px}
+  .cs-nav{gap:9px;font-size:12.5px}
+}
+
+/* calculator */
+[hidden]{display:none!important}
+.calc{border:1.5px solid var(--brand);border-radius:16px;overflow:hidden;margin:26px 0 30px;background:var(--white)}
+.calc-form{padding:24px 22px 6px;background:var(--offwhite)}
+.calc-fs{border:0;padding:0;margin:0 0 20px}
+.calc-fs legend{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);padding:0 0 10px}
+.calc-seg{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.calc-seg label{display:block;cursor:pointer}
+.calc-seg input{position:absolute;opacity:0;width:0;height:0}
+.calc-seg span{display:block;border:1.5px solid var(--border);border-radius:11px;padding:11px 13px;background:var(--white);font-size:14px;font-weight:600;color:var(--text);line-height:1.35}
+.calc-seg small{display:block;font-weight:400;font-size:12px;color:var(--text-lt);margin-top:3px}
+.calc-seg input:checked + span{border-color:var(--brand);background:var(--brand-xs);box-shadow:0 0 0 1px var(--brand) inset}
+.calc-seg input:focus-visible + span{outline:2px solid var(--accent);outline-offset:2px}
+.calc-row{margin:0 0 14px}
+.calc-row > label{display:block;font-size:13.5px;font-weight:600;color:var(--text);margin:0 0 6px}
+.calc-in{display:flex;align-items:stretch;max-width:340px}
+.calc-in input{flex:1;min-width:0;font:inherit;font-size:16px;font-variant-numeric:tabular-nums;padding:9px 11px;border:1.5px solid var(--border);border-right:0;border-radius:10px 0 0 10px;background:var(--white);color:var(--text)}
+.calc-in input:focus{outline:0;border-color:var(--brand)}
+.calc-unit{display:flex;align-items:center;padding:0 13px;border:1.5px solid var(--border);border-left:0;border-radius:0 10px 10px 0;background:var(--brand-xs);color:var(--brand);font-weight:700;font-size:14px}
+.calc-in-sub{margin-top:8px}
+.calc-hint{font-size:12.5px;line-height:1.55;color:var(--text-mid);margin:6px 0 0;max-width:62ch}
+.calc-chk{display:inline-flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--text);cursor:pointer}
+.calc-chk input{width:17px;height:17px;accent-color:var(--brand)}
+.calc-row-chk{margin-bottom:12px}
+.calc-out{padding:22px;border-top:1.5px solid var(--brand)}
+.calc-verdict{border-radius:11px;padding:13px 15px;font-size:14.5px;line-height:1.6;margin:0 0 18px}
+.calc-verdict.ok{background:var(--brand-xs);color:var(--text);border-left:3px solid var(--brand-mid)}
+.calc-verdict.warn{background:var(--accent-xs);color:var(--text);border-left:3px solid var(--accent)}
+.calc-kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin:0 0 18px}
+.calc-kpi{border:1px solid var(--border);border-radius:11px;padding:12px 13px;background:var(--white)}
+.calc-kpi.hi{border-color:var(--brand);background:var(--brand-xs)}
+.calc-kpi-l{display:block;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--text-lt)}
+.calc-kpi-v{display:block;font-family:var(--serif);font-size:clamp(20px,3.1vw,26px);color:var(--dark);margin:5px 0 2px;font-variant-numeric:tabular-nums}
+.calc-kpi.hi .calc-kpi-v{color:var(--brand)}
+.calc-kpi-s{display:block;font-size:12px;color:var(--text-mid)}
+.calc-tbl{width:100%;border-collapse:collapse;font-size:14.5px}
+.calc-tbl td{padding:9px 2px;border-bottom:1px solid var(--border)}
+.calc-tbl td:last-child{text-align:right;font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
+.calc-tbl-sum td{font-weight:700;color:var(--brand);border-bottom:2px solid var(--brand)}
+.calc-gewst{margin-top:22px;padding-top:16px;border-top:1px dashed var(--border)}
+.calc-gewst h3{font-family:var(--sans);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);margin:0 0 8px}
+.calc-disc{font-size:12px;line-height:1.6;color:var(--text-lt);margin:16px 0 0}
+@media(max-width:640px){
+  .calc-seg{grid-template-columns:1fr}
+  .calc-kpis{grid-template-columns:1fr}
+  .calc-in{max-width:none}
+}
+@media print{.calc-form{background:#fff}.calc{break-inside:avoid}}
+
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Spendenhöchstbetrag berechnen: der Rechner für Unternehmen",
+  "description": "B2B-Rechner für den Spendenabzug: 20 % der Bemessungsgrundlage oder 4 ‰ aus Umsätzen und Löhnen – mit Günstigerprüfung, Zuwendungsvortrag und Gewerbesteuer-Kürzung.",
+  "inLanguage": "de",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html"
+  },
+  "url": "https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html",
+  "image": "https://surpluspurpose.com/og-image.png",
+  "datePublished": "2026-08-09",
+  "dateModified": "2026-08-09",
+  "author": {
+    "@type": "Person",
+    "name": "Florian Lechner",
+    "url": "https://www.linkedin.com/in/florian-lechner-206434107",
+    "jobTitle": "Gründer, sur.plus"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://surpluspurpose.com/icon-512.png"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/surplus-purpose/"
+    ]
+  },
+  "isPartOf": {
+    "@type": "CollectionPage",
+    "@id": "https://surpluspurpose.com/de/ratgeber/"
+  },
+  "citation": [
+    "https://dejure.org/gesetze/EStG/10b.html",
+    "https://ksth.bundesfinanzministerium.de/ksth/2022/A-Koerperschaftsteuergesetz/II-Einkommen/1-Allgemeine-Vorschriften/Paragraf-9/inhalt.html",
+    "https://lxgesetze.de/gewstg/9",
+    "https://www.gesetze-im-internet.de/estg/__6.html"
+  ],
+  "about": [
+    {
+      "@type": "Thing",
+      "name": "Spendenabzug"
+    },
+    {
+      "@type": "Thing",
+      "name": "Sachspende"
+    },
+    {
+      "@type": "Thing",
+      "name": "Körperschaftsteuer"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Spendenhöchstbetrag-Rechner für Unternehmen",
+  "url": "https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html",
+  "inLanguage": "de",
+  "applicationCategory": "FinanceApplication",
+  "operatingSystem": "Alle (browserbasiert)",
+  "browserRequirements": "JavaScript",
+  "description": "Berechnet den steuerlichen Höchstbetrag für Zuwendungen nach § 9 Abs. 1 Nr. 2 KStG, § 10b Abs. 1 EStG und § 9 Nr. 5 GewStG: Günstigerprüfung zwischen 20 % der jeweiligen Bemessungsgrundlage und 4 ‰ aus Umsätzen und Löhnen, inklusive Zuwendungsvortrag.",
+  "isAccessibleForFree": true,
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "EUR"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "sur.plus",
+    "url": "https://surpluspurpose.com/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Darf ich zwischen der 20-%-Grenze und der 4-‰-Grenze frei wählen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es ist kein freies Wahlrecht, sondern eine Günstigerprüfung: Beide Höchstbeträge werden ermittelt, maßgeblich ist der höhere. In der Wirkung dürfen Sie also den günstigeren Weg nutzen, müssen ihn aber nicht erklären oder beantragen – er ergibt sich rechnerisch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Ist die 20-%-Grenze bei Kapitalgesellschaften auf den Gewinn bezogen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein. § 9 Abs. 2 Satz 1 KStG stellt auf das Einkommen ab – und zwar vor Abzug der Zuwendungen und vor dem Verlustabzug nach § 10d EStG. Bereits gebuchter Spendenaufwand ist für die Ermittlung der Bemessungsgrundlage also wieder hinzuzurechnen. Bei der Einkommensteuer ist es wiederum nicht das Einkommen, sondern der Gesamtbetrag der Einkünfte."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert mit Spenden über dem Höchstbetrag?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sie gehen nicht verloren. Der übersteigende Betrag wird als Zuwendungsvortrag in die folgenden Veranlagungs- beziehungsweise Erhebungszeiträume übernommen und dort im Rahmen der jeweiligen Höchstbeträge abgezogen. Eine zeitliche Begrenzung sieht das Gesetz nicht vor; der Vortrag wird gesondert festgestellt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Können wir auch im Verlustjahr steuerwirksam spenden?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Häufig ja. Ist das Einkommen null oder negativ, ergibt die 20-%-Grenze null – die 4-‰-Grenze aus Umsätzen und Löhnen bleibt davon aber unberührt und trägt den Abzug. Gerade in Restrukturierungsjahren, in denen Flächen aufgelöst und Ausstattung frei wird, ist das der relevante Rechenweg."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mit welchem Wert geht eine Sachspende in die Rechnung ein?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mit dem Entnahmewert zuzüglich der auf die Entnahme entfallenden Umsatzsteuer (§ 10b Abs. 3 EStG). Bei Nutzung des Buchwertprivilegs nach § 6 Abs. 1 Nr. 4 Satz 4 EStG ist das der Buchwert plus Umsatzsteuer, sonst der Teilwert plus Umsatzsteuer. Der Neupreis ist in keinem Fall der richtige Ansatz."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Start",
+      "item": "https://surpluspurpose.com/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Ratgeber",
+      "item": "https://surpluspurpose.com/de/ratgeber/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Spendenhöchstbetrag berechnen: der Rechner für Unternehmen",
+      "item": "https://surpluspurpose.com/de/ratgeber/sachspende-hoechstbetrag-rechner.html"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="rg-head"><div class="rg-wrap wide rg-head-in">
+  <a class="rg-logo" href="/de/" aria-label="sur.plus – Startseite"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#1A5C4A"/><path d="M44 98 A56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M100 42 A56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M156 110 A56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><path d="M100 166 A56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><circle cx="100" cy="104" r="22" fill="#FFFFFF"/><circle cx="100" cy="104" r="10" fill="#1A5C4A"/></svg><span class="wm">sur<span class="d">.</span><b>plus</b></span></a>
+  <nav class="rg-nav" aria-label="Hauptnavigation">
+    <a href="/de/">Start</a>
+    <a href="/de/ratgeber/">Ratgeber</a>
+    <a class="hide-s" href="/de/case-studies/">Fallstudien</a>
+    <a class="hide-s" href="/de/rechner/">Rechner</a>
+  
+    <a href="#search">Suche</a>
+  </nav>
+</div></header>
+<main>
+  <div class="rg-wrap">
+    <nav class="rg-crumb" aria-label="Brotkrumennavigation">
+      <a href="/de/">Start</a><span>›</span><a href="/de/ratgeber/">Ratgeber</a><span>›</span>Rechner
+    </nav>
+  </div>
+  <article>
+  <section class="rg-wrap rg-hero">
+    <span class="rg-kicker">Rechner · Steuern</span>
+    <h1>Spendenhöchstbetrag berechnen: der Rechner für Unternehmen</h1>
+    <p class="rg-lead">Wie viel darf ein Unternehmen im laufenden Jahr überhaupt steuerwirksam spenden? Das Gesetz nennt zwei Obergrenzen – <strong>20 % der Bemessungsgrundlage</strong> oder <strong>4 ‰ aus Umsätzen und Löhnen</strong> – und die günstigere gilt. Welche das ist, hängt vom Geschäftsmodell ab und überrascht regelmäßig: Bei personalstarken Unternehmen mit schmaler Marge gewinnt fast immer die Promille-Variante.</p>
+    <div class="rg-meta">
+      <span><b>Stand:</b> 9. August 2026</span>
+      <span><b>Rechnet im Browser</b> – keine Übertragung, keine Speicherung</span>
+      <span><b>Für:</b> Finanzleitung, Steuerabteilung, Geschäftsführung</span>
+    </div>
+  </section>
+
+  <section class="rg-wrap rg-body">
+
+<div class="calc" id="rechner">
+  <form class="calc-form" id="spForm" autocomplete="off">
+    <fieldset class="calc-fs">
+      <legend>1 · Rechtsform</legend>
+      <div class="calc-seg" role="radiogroup" aria-label="Rechtsform">
+        <label><input type="radio" name="form" value="kst" checked> <span>Kapitalgesellschaft<small>GmbH, UG, AG – § 9 Abs. 1 Nr. 2 KStG</small></span></label>
+        <label><input type="radio" name="form" value="est"> <span>Einzelunternehmen / Personengesellschaft<small>Abzug beim Steuerpflichtigen – § 10b Abs. 1 EStG</small></span></label>
+      </div>
+    </fieldset>
+
+    <fieldset class="calc-fs">
+      <legend>2 · Bemessungsgrundlage</legend>
+      <div class="calc-row">
+        <label for="basis" id="basisLabel">Einkommen vor Abzug der Zuwendungen und vor Verlustabzug</label>
+        <div class="calc-in"><input type="number" id="basis" min="0" step="1000" value="400000" inputmode="numeric"><span class="calc-unit">€</span></div>
+        <p class="calc-hint" id="basisHint">§ 9 Abs. 2 Satz 1 KStG: das Einkommen <em>vor</em> Abzug der Zuwendungen und <em>vor</em> dem Verlustabzug nach § 10d EStG. Die geplante Spende ist also hinzuzurechnen.</p>
+      </div>
+      <div class="calc-row">
+        <label for="umsatz">Summe der gesamten Umsätze</label>
+        <div class="calc-in"><input type="number" id="umsatz" min="0" step="10000" value="6000000" inputmode="numeric"><span class="calc-unit">€</span></div>
+      </div>
+      <div class="calc-row">
+        <label for="loehne">Löhne und Gehälter im Kalenderjahr</label>
+        <div class="calc-in"><input type="number" id="loehne" min="0" step="10000" value="2400000" inputmode="numeric"><span class="calc-unit">€</span></div>
+      </div>
+    </fieldset>
+
+    <fieldset class="calc-fs">
+      <legend>3 · Geplante Zuwendung</legend>
+      <div class="calc-row">
+        <label for="spende">Zuwendungen dieses Jahr insgesamt</label>
+        <div class="calc-in"><input type="number" id="spende" min="0" step="1000" value="95000" inputmode="numeric"><span class="calc-unit">€</span></div>
+        <p class="calc-hint">Bei Sachspenden ist das der <strong>Entnahmewert zuzüglich der darauf entfallenden Umsatzsteuer</strong> (§ 10b Abs. 3 EStG) – nicht der Neupreis. Welchen Entnahmewert Sie ansetzen dürfen, rechnet der <a href="/de/ratgeber/buchwert-teilwert-rechner.html">Buchwert-Teilwert-Rechner</a>.</p>
+      </div>
+      <div class="calc-row calc-row-chk">
+        <label class="calc-chk"><input type="checkbox" id="vortrag"> <span>Zuwendungsvortrag aus Vorjahren berücksichtigen</span></label>
+        <div class="calc-in calc-in-sub" id="vortragWrap" hidden><input type="number" id="vortragBetrag" min="0" step="1000" value="0" inputmode="numeric"><span class="calc-unit">€</span></div>
+      </div>
+      <div class="calc-row calc-row-chk">
+        <label class="calc-chk"><input type="checkbox" id="gewst"> <span>Gewerbesteuer-Kürzung mitrechnen (§ 9 Nr. 5 GewStG)</span></label>
+        <div class="calc-in calc-in-sub" id="gewstWrap" hidden><input type="number" id="gewinn" min="0" step="1000" value="380000" inputmode="numeric"><span class="calc-unit">€</span></div>
+        <p class="calc-hint" id="gewstHint" hidden>Gewinn aus Gewerbebetrieb, erhöht um die Hinzurechnungen nach § 8 Nr. 9 GewStG. Beim Promille-Weg zählen hier die Löhne des <em>Wirtschaftsjahres</em>.</p>
+      </div>
+    </fieldset>
+  </form>
+
+  <div class="calc-out" id="calcOut" aria-live="polite">
+    <div class="calc-verdict" id="verdict"></div>
+    <div class="calc-kpis">
+      <div class="calc-kpi"><span class="calc-kpi-l">Höchstbetrag 20 %</span><span class="calc-kpi-v" id="kpiProzent">–</span><span class="calc-kpi-s" id="kpiProzentBasis"></span></div>
+      <div class="calc-kpi"><span class="calc-kpi-l">Höchstbetrag 4 ‰</span><span class="calc-kpi-v" id="kpiPromille">–</span><span class="calc-kpi-s">aus Umsätzen + Löhnen</span></div>
+      <div class="calc-kpi hi"><span class="calc-kpi-l">Maßgeblicher Höchstbetrag</span><span class="calc-kpi-v" id="kpiMax">–</span><span class="calc-kpi-s" id="kpiMaxWeg"></span></div>
+    </div>
+    <table class="calc-tbl">
+      <tbody>
+        <tr><td>Zuwendungen dieses Jahr</td><td id="rSpende">–</td></tr>
+        <tr id="rVortragRow" hidden><td>zuzüglich Vortrag aus Vorjahren</td><td id="rVortrag">–</td></tr>
+        <tr class="calc-tbl-sum"><td>abziehbar in diesem Jahr</td><td id="rAbzug">–</td></tr>
+        <tr><td>Vortrag in Folgejahre</td><td id="rRest">–</td></tr>
+        <tr id="rLuftRow"><td>noch freies Abzugsvolumen dieses Jahr</td><td id="rLuft">–</td></tr>
+      </tbody>
+    </table>
+    <div class="calc-gewst" id="gewstOut" hidden>
+      <h3>Gewerbesteuer (§ 9 Nr. 5 GewStG)</h3>
+      <table class="calc-tbl">
+        <tbody>
+          <tr><td>20 % des erhöhten Gewerbeertrags</td><td id="gProzent">–</td></tr>
+          <tr><td>4 ‰ aus Umsätzen + Löhnen</td><td id="gPromille">–</td></tr>
+          <tr class="calc-tbl-sum"><td>Kürzungsbetrag höchstens</td><td id="gMax">–</td></tr>
+        </tbody>
+      </table>
+      <p class="calc-hint">Die gewerbesteuerliche Kürzung läuft getrennt von Körperschaft- bzw. Einkommensteuer und hat eine eigene Bemessungsgrundlage. Sie ist deshalb nicht mit dem Ergebnis oben zu addieren.</p>
+    </div>
+    <p class="calc-disc">Überschlagsrechnung nach dem Gesetzeswortlaut, ohne Gewähr und ohne Berücksichtigung von Sonderfällen (Vermögensstockspenden nach § 10b Abs. 1a EStG, Sponsoring, verdeckte Gewinnausschüttung, Spenden an politische Parteien). Keine Steuerberatung.</p>
+  </div>
+</div>
+
+<script>
+/* CALC-START */
+function spCalc(o){
+  var basis=Math.max(0,+o.basis||0), umsatz=Math.max(0,+o.umsatz||0), loehne=Math.max(0,+o.loehne||0);
+  var spende=Math.max(0,+o.spende||0), vortrag=Math.max(0,+o.vortrag||0);
+  var capProzent=basis*0.2;
+  var capPromille=(umsatz+loehne)*0.004;
+  var cap=Math.max(capProzent,capPromille);
+  var weg=capPromille>capProzent?'promille':(capProzent>capPromille?'prozent':'gleich');
+  var gesamt=spende+vortrag;
+  var abzug=Math.min(gesamt,cap);
+  var rest=Math.max(0,gesamt-cap);
+  var luft=Math.max(0,cap-gesamt);
+  var r={capProzent:capProzent,capPromille:capPromille,cap:cap,weg:weg,
+         gesamt:gesamt,abzug:abzug,rest:rest,luft:luft,gedeckelt:gesamt>cap};
+  if(o.gewst){
+    var gp=Math.max(0,+o.gewinn||0)*0.2;
+    var gq=(umsatz+loehne)*0.004;
+    r.gewst={prozent:gp,promille:gq,max:Math.max(gp,gq)};
+  }
+  return r;
+}
+/* CALC-END */
+(function(){
+  var $=function(id){return document.getElementById(id)};
+  var eur=new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0});
+  var ids=['basis','umsatz','loehne','spende','vortragBetrag','gewinn'];
+  function read(){
+    return {basis:$('basis').value,umsatz:$('umsatz').value,loehne:$('loehne').value,
+            spende:$('spende').value,
+            vortrag:$('vortrag').checked?$('vortragBetrag').value:0,
+            gewst:$('gewst').checked,gewinn:$('gewinn').value};
+  }
+  function render(){
+    var kst=document.querySelector('input[name="form"]:checked').value==='kst';
+    $('basisLabel').textContent=kst
+      ? 'Einkommen vor Abzug der Zuwendungen und vor Verlustabzug'
+      : 'Gesamtbetrag der Einkünfte';
+    $('basisHint').innerHTML=kst
+      ? '§ 9 Abs. 2 Satz 1 KStG: das Einkommen <em>vor</em> Abzug der Zuwendungen und <em>vor</em> dem Verlustabzug nach § 10d EStG. Die geplante Spende ist also hinzuzurechnen.'
+      : '§ 10b Abs. 1 EStG rechnet mit dem <em>Gesamtbetrag der Einkünfte</em> – nicht mit dem Einkommen. Bei Personengesellschaften wird der Abzug anteilig bei den Gesellschaftern geltend gemacht.';
+    $('kpiProzentBasis').textContent=kst?'des Einkommens (§ 9 Abs. 2 KStG)':'des Gesamtbetrags der Einkünfte';
+
+    $('vortragWrap').hidden=!$('vortrag').checked;
+    var g=$('gewst').checked;
+    $('gewstWrap').hidden=!g; $('gewstHint').hidden=!g; $('gewstOut').hidden=!g;
+
+    var r=spCalc(read());
+    $('kpiProzent').textContent=eur.format(r.capProzent);
+    $('kpiPromille').textContent=eur.format(r.capPromille);
+    $('kpiMax').textContent=eur.format(r.cap);
+    $('kpiMaxWeg').textContent=r.weg==='promille'?'die Promille-Grenze gewinnt'
+      :(r.weg==='prozent'?'die 20-%-Grenze gewinnt':'beide Wege gleich');
+
+    $('rSpende').textContent=eur.format(Math.max(0,+read().spende||0));
+    $('rVortragRow').hidden=!$('vortrag').checked;
+    $('rVortrag').textContent=eur.format(Math.max(0,+read().vortrag||0));
+    $('rAbzug').textContent=eur.format(r.abzug);
+    $('rRest').textContent=eur.format(r.rest);
+    $('rLuft').textContent=eur.format(r.luft);
+    $('rLuftRow').hidden=r.gedeckelt;
+
+    var v=$('verdict');
+    if(r.gedeckelt){
+      v.className='calc-verdict warn';
+      v.innerHTML='<strong>Über dem Höchstbetrag.</strong> '+eur.format(r.abzug)+
+        ' sind in diesem Jahr abziehbar, '+eur.format(r.rest)+
+        ' werden als Zuwendungsvortrag in die Folgejahre übernommen – nicht verloren.';
+    } else {
+      v.className='calc-verdict ok';
+      v.innerHTML='<strong>Vollständig abziehbar.</strong> Die Zuwendungen liegen innerhalb des Höchstbetrags; '+
+        eur.format(r.luft)+' Abzugsvolumen sind dieses Jahr noch frei.';
+    }
+    if(r.gewst){
+      $('gProzent').textContent=eur.format(r.gewst.prozent);
+      $('gPromille').textContent=eur.format(r.gewst.promille);
+      $('gMax').textContent=eur.format(r.gewst.max);
+    }
+  }
+  ids.forEach(function(i){var e=$(i); if(e){e.addEventListener('input',render)}});
+  ['vortrag','gewst'].forEach(function(i){$(i).addEventListener('change',render)});
+  Array.prototype.forEach.call(document.querySelectorAll('input[name="form"]'),function(e){
+    e.addEventListener('change',render)});
+  render();
+})();
+</script>
+
+<h2 id="logik">Was der Rechner rechnet</h2>
+<p>Das Gesetz stellt zwei Obergrenzen nebeneinander und verbindet sie mit einem „oder". Das ist kein freies Wahlrecht, sondern eine <strong>Günstigerprüfung</strong>: Beide Grenzen werden ermittelt, die höhere gilt.</p>
+<div class="rg-tw"><table>
+<thead><tr><th></th><th>Kapitalgesellschaft</th><th>Einzelunternehmen / Gesellschafter</th><th>Gewerbesteuer</th></tr></thead>
+<tbody>
+<tr><td><strong>Norm</strong></td><td>§ 9 Abs. 1 Nr. 2 KStG</td><td>§ 10b Abs. 1 EStG</td><td>§ 9 Nr. 5 GewStG</td></tr>
+<tr><td><strong>20-%-Grenze bezogen auf</strong></td><td>das <strong>Einkommen</strong> vor Abzug der Zuwendungen und vor Verlustabzug nach § 10d EStG (§ 9 Abs. 2 Satz 1 KStG)</td><td>den <strong>Gesamtbetrag der Einkünfte</strong></td><td>den um die Hinzurechnungen nach § 8 Nr. 9 GewStG erhöhten <strong>Gewinn aus Gewerbebetrieb</strong></td></tr>
+<tr><td><strong>4-‰-Grenze bezogen auf</strong></td><td colspan="2">Summe der gesamten Umsätze und der im <strong>Kalenderjahr</strong> aufgewendeten Löhne und Gehälter</td><td>dieselbe Summe, aber Löhne des <strong>Wirtschaftsjahres</strong></td></tr>
+<tr><td><strong>Überhang</strong></td><td colspan="3">Zuwendungsvortrag: Abzug in den folgenden Zeiträumen im Rahmen der dortigen Höchstbeträge – eine zeitliche Begrenzung sieht das Gesetz nicht vor</td></tr>
+</tbody></table></div>
+<div class="rg-note amber">
+  <span class="rg-note-t">Die Bezugsgröße ist der häufigste Fehler</span>
+  <p>„20 % vom Gewinn" steht in vielen Ratgebern – im Gesetz steht es nicht. Die Körperschaftsteuer rechnet mit dem <strong>Einkommen</strong>, die Einkommensteuer mit dem <strong>Gesamtbetrag der Einkünfte</strong>, die Gewerbesteuer mit dem <strong>erhöhten Gewerbeertrag</strong>. Drei Normen, drei Bemessungsgrundlagen. Wer die verwechselt, rechnet je nach Fall zu hoch oder zu niedrig.</p>
+</div>
+<p>Ein zweiter Stolperstein steckt im Wort „vor": Für die 20-%-Grenze der Kapitalgesellschaft ist das Einkommen <em>vor</em> Abzug der Zuwendungen maßgeblich. Wer den Gewinn nach bereits gebuchtem Spendenaufwand einsetzt, unterschätzt seinen Höchstbetrag. Die Zuwendungen sind vorher wieder hinzuzurechnen – ebenso wie der Verlustabzug nach § 10d EStG außen vor bleibt.</p>
+
+<h2 id="wer-gewinnt">Wann die Promille-Grenze gewinnt</h2>
+<p>Die 4-‰-Variante wirkt klein, ist aber unabhängig vom Ergebnis. Genau deshalb rettet sie den Abzug in den Jahren, in denen die 20-%-Grenze zusammenbricht:</p>
+<ul>
+<li><strong>Verlustjahre und schwache Jahre.</strong> Ist das Einkommen null oder negativ, ist die 20-%-Grenze null. Die Promille-Grenze steht trotzdem – und ist häufig der einzige Grund, warum in einem Krisenjahr überhaupt noch steuerwirksam gespendet werden kann. Für die Praxis heißt das: <em>Gerade</em> im Sanierungsjahr, in dem Standorte geschlossen und Möbel frei werden, greift der Abzug oft weiter als gedacht.</li>
+<li><strong>Personalintensive Geschäftsmodelle.</strong> Pflege, Handel, Logistik, Gastronomie: hohe Lohnsummen bei schmaler Marge. Bei 6 Mio. € Umsatz und 2,4 Mio. € Lohnsumme liegt die Promille-Grenze bei 33.600 € – dieselbe Grenze über die 20-%-Variante würde ein Einkommen von 168.000 € voraussetzen.</li>
+<li><strong>Umsatzstarke Konzerntöchter mit Verrechnungspreisen.</strong> Hoher Umsatz, dünnes lokales Ergebnis – ein klassischer Promille-Fall.</li>
+</ul>
+<p>Umgekehrt gewinnt die 20-%-Grenze bei ertragsstarken Unternehmen mit wenig Personal und geringem Außenumsatz – Beteiligungs- und Lizenzgesellschaften etwa.</p>
+
+<h2 id="sachspenden">Was bei Sachspenden in den Rechner gehört</h2>
+<p>Bei Sachspenden ist die Zuwendungshöhe nicht der Anschaffungs- oder Neupreis, sondern nach § 10b Abs. 3 EStG der <strong>Wert, der bei der Entnahme angesetzt wurde, zuzüglich der auf die Entnahme entfallenden Umsatzsteuer</strong>. Wer das Buchwertprivileg nach § 6 Abs. 1 Nr. 4 Satz 4 EStG zieht, deckt keine stillen Reserven auf – bekommt aber auch nur den Buchwert plus Umsatzsteuer als Zuwendung angerechnet. Welche Variante günstiger ist, entscheidet sich am Verhältnis von stillen Reserven, Steuersatz und verbleibendem Abzugsvolumen; der Rechenweg dazu steht im Beitrag <a href="/de/ratgeber/sachspende-buchen-buchungssatz.html">Sachspende buchen</a>.</p>
+<div class="rg-note">
+  <span class="rg-note-t">Reihenfolge in der Praxis</span>
+  <p>Erst den Entnahmewert und die Umsatzsteuer bestimmen, dann in diesen Rechner eintragen – nicht umgekehrt. Die Bewertungsgrundlagen und die drei Irrtümer, die dabei am häufigsten auftauchen, stehen im <a href="/de/ratgeber/sachspende-steuerlich-absetzen-unternehmen.html">Steuerleitfaden</a>; die formalen Anforderungen an den Beleg in <a href="/de/ratgeber/zuwendungsbestaetigung-sachspende.html">Zuwendungsbestätigung für Sachspenden</a>.</p>
+</div>
+
+<h2 id="grenzen">Was dieser Rechner nicht abbildet</h2>
+<p>Die Rechnung folgt dem Gesetzeswortlaut und bleibt bewusst an dessen Grenzen stehen:</p>
+<ul>
+<li><strong>Vermögensstockspenden</strong> an Stiftungen nach § 10b Abs. 1a EStG haben ein eigenes, zusätzliches Abzugsvolumen und laufen hier nicht mit.</li>
+<li><strong>Was als „Umsatz" zählt</strong>, ist im Detail auslegungsbedürftig. Der Rechner nimmt den eingegebenen Wert, wie er ist.</li>
+<li><strong>Personengesellschaften:</strong> Der einkommensteuerliche Abzug findet anteilig bei den Gesellschaftern statt, die Gewerbesteuer-Kürzung dagegen auf Ebene des Betriebs. Beide Ergebnisse gehören deshalb nicht addiert.</li>
+<li><strong>Abgrenzung zum Sponsoring:</strong> Wo eine Gegenleistung vereinbart ist, liegt keine Zuwendung vor, sondern Betriebsausgabe – mit ganz anderer Systematik und ohne Höchstbetrag.</li>
+<li><strong>Steuerersparnis in Euro</strong> weist der Rechner bewusst nicht aus. Sie hängt von Steuersatz, Hebesatz und Solidaritätszuschlag ab – das gehört in die Steuerberatung, nicht in einen Onlinerechner.</li>
+</ul>
+
+<div class="rg-note">
+  <span class="rg-note-t">Hinweis</span>
+  <p>Dieser Rechner gibt den Rechtsstand vom 9. August 2026 wieder. Die Berechnung erfolgt vollständig im Browser; es werden keine Eingaben übertragen oder gespeichert. Überschlagsrechnung, keine Steuerberatung.</p>
+</div>
+
+    <section class="rg-faq" id="faq" data-sp-section="faq">
+      <h2>Häufige Fragen</h2>
+      <div class="rg-faq-item"><h3>Darf ich zwischen der 20-%-Grenze und der 4-‰-Grenze frei wählen?</h3><p>Es ist kein freies Wahlrecht, sondern eine Günstigerprüfung: Beide Höchstbeträge werden ermittelt, maßgeblich ist der höhere. In der Wirkung dürfen Sie also den günstigeren Weg nutzen, müssen ihn aber nicht erklären oder beantragen – er ergibt sich rechnerisch.</p></div>
+<div class="rg-faq-item"><h3>Ist die 20-%-Grenze bei Kapitalgesellschaften auf den Gewinn bezogen?</h3><p>Nein. § 9 Abs. 2 Satz 1 KStG stellt auf das Einkommen ab – und zwar vor Abzug der Zuwendungen und vor dem Verlustabzug nach § 10d EStG. Bereits gebuchter Spendenaufwand ist für die Ermittlung der Bemessungsgrundlage also wieder hinzuzurechnen. Bei der Einkommensteuer ist es wiederum nicht das Einkommen, sondern der Gesamtbetrag der Einkünfte.</p></div>
+<div class="rg-faq-item"><h3>Was passiert mit Spenden über dem Höchstbetrag?</h3><p>Sie gehen nicht verloren. Der übersteigende Betrag wird als Zuwendungsvortrag in die folgenden Veranlagungs- beziehungsweise Erhebungszeiträume übernommen und dort im Rahmen der jeweiligen Höchstbeträge abgezogen. Eine zeitliche Begrenzung sieht das Gesetz nicht vor; der Vortrag wird gesondert festgestellt.</p></div>
+<div class="rg-faq-item"><h3>Können wir auch im Verlustjahr steuerwirksam spenden?</h3><p>Häufig ja. Ist das Einkommen null oder negativ, ergibt die 20-%-Grenze null – die 4-‰-Grenze aus Umsätzen und Löhnen bleibt davon aber unberührt und trägt den Abzug. Gerade in Restrukturierungsjahren, in denen Flächen aufgelöst und Ausstattung frei wird, ist das der relevante Rechenweg.</p></div>
+<div class="rg-faq-item"><h3>Mit welchem Wert geht eine Sachspende in die Rechnung ein?</h3><p>Mit dem Entnahmewert zuzüglich der auf die Entnahme entfallenden Umsatzsteuer (§ 10b Abs. 3 EStG). Bei Nutzung des Buchwertprivilegs nach § 6 Abs. 1 Nr. 4 Satz 4 EStG ist das der Buchwert plus Umsatzsteuer, sonst der Teilwert plus Umsatzsteuer. Der Neupreis ist in keinem Fall der richtige Ansatz.</p></div>
+    </section>
+    <section class="rg-src" data-sp-section="quellen">
+      <h2>Quellen</h2>
+      <ol><li><a href="https://dejure.org/gesetze/EStG/10b.html" rel="noopener nofollow" target="_blank">§ 10b EStG – Höchstbeträge (20 % des Gesamtbetrags der Einkünfte / 4 ‰ aus Umsätzen und Löhnen), Zuwendungsvortrag (Abs. 1 Sätze 9 f.), Bewertung von Sachzuwendungen (Abs. 3)</a></li>
+<li><a href="https://ksth.bundesfinanzministerium.de/ksth/2022/A-Koerperschaftsteuergesetz/II-Einkommen/1-Allgemeine-Vorschriften/Paragraf-9/inhalt.html" rel="noopener nofollow" target="_blank">BMF, Amtliches Körperschaftsteuer-Handbuch zu § 9 KStG – Höchstbeträge und maßgebliches Einkommen nach Abs. 2 Satz 1</a></li>
+<li><a href="https://lxgesetze.de/gewstg/9" rel="noopener nofollow" target="_blank">§ 9 Nr. 5 GewStG – Kürzung um Zuwendungen, 20 % des um Hinzurechnungen nach § 8 Nr. 9 erhöhten Gewinns oder 4 ‰ aus Umsätzen und Löhnen</a></li>
+<li><a href="https://www.bibukurse.de/koerperschaftsteuer/ermittlung/koerperschaftsteuerliche-korrekturen/spenden.html" rel="noopener nofollow" target="_blank">Günstigerprüfung statt Wahlrecht: Ermittlung beider Höchstbeträge und Ansatz des höheren Betrags (mit Rechenbeispiel)</a></li>
+<li><a href="https://www.gesetze-im-internet.de/estg/__6.html" rel="noopener nofollow" target="_blank">§ 6 Abs. 1 Nr. 4 EStG – Entnahmebewertung und Buchwertprivileg</a></li></ol>
+    </section>
+    <div class="rg-note"><span class="rg-note-t">Wofür sur.plus die Zahl liefert – und wofür nicht</span>
+<p>Der Rechner beantwortet die Frage nach dem <em>Rahmen</em>. Die Zahl, die hineingehört, entsteht im Vorgang: Entnahmewert, Umsatzsteuer und Empfängerstatus werden bei jeder Vermittlung erfasst, die Zuwendungsbestätigung baut darauf auf.</p><p><strong>Was sur.plus nicht ist:</strong> eine Steuerberatung. Bemessungsgrundlage, Buchwertwahlrecht und die Feststellung des Zuwendungsvortrags bleiben bei Ihnen und Ihrer Kanzlei.</p>
+</div>
+<section class="rg-cta" data-sp-section="cta">
+      <h2>Vom Abzugsvolumen zur tatsächlichen Spende</h2>
+      <p>Wenn der Rahmen steht, ist die nächste Frage, wer die Ware braucht. sur.plus gleicht Überschuss mit den Bedarfen verifizierter Empfänger ab und dokumentiert jede Übergabe nachweisfähig.</p>
+      <div class="rg-btns">
+        <a class="rg-btn p" href="/de/surplus_impact_calculator.html">Impact in 60 Sekunden berechnen</a>
+        <a class="rg-btn s" href="https://calendly.com/florian_surplus/30min" rel="noopener" target="_blank">30-Min-Gespräch buchen</a>
+      </div>
+      <p style="margin:18px 0 0;font-size:14px">
+        Oder zuerst die <a href="/surplus_Arbeitsmappe_Sachspenden_DE.pdf" download style="font-weight:700">kostenlose Arbeitsmappe (PDF, 6 Seiten)</a> – mit Zeitleiste, Angebotsvorlage, Bestandsblatt und Nachweis-Checkliste.
+      </p>
+    </section>
+    <section class="rg-rel" data-sp-section="weiterlesen">
+      <h2>Weiterlesen</h2>
+      <div class="rg-grid"> <a class="rg-card" href="/de/ratgeber/buchwert-teilwert-rechner.html"><span class="rg-card-k">Rechner</span><h3>Buchwert oder Teilwert bei Sachspenden</h3><p>Welcher Wertansatz bei der Entnahme günstiger ist – und warum die Antwort in der Grundkonstellation „beide gleich" lautet. Mit belegten Gebrauchtpreisen.</p><span class="rg-card-go">Zum Rechner →</span></a>
+<a class="rg-card" href="/de/ratgeber/sachspende-steuerlich-absetzen-unternehmen.html"><span class="rg-card-k">Steuern &amp; Buchhaltung</span><h3>Sachspende steuerlich absetzen: der Leitfaden für Unternehmen</h3><p>Höchstbeträge, Buchwertwahlrecht, Umsatzsteuer und Empfängerprüfung im Zusammenhang – der Grundlagenbeitrag zu diesem Rechner.</p><span class="rg-card-go">Weiterlesen →</span></a>
+<a class="rg-card" href="/de/ratgeber/sachspende-buchen-buchungssatz.html"><span class="rg-card-k">Steuern &amp; Praxis</span><h3>Sachspende buchen: Buchungssatz und zwei Beispiele</h3><p>Woher der Entnahmewert kommt, der in diesen Rechner gehört – mit dem Buchungsweg je Rechtsform.</p><span class="rg-card-go">Weiterlesen →</span></a>
+      </div>
+    </section>
+  </section>
+  </article>
+
+<section class="rg-wrap" data-editorial-note><div style="border-left:3px solid var(--brand-lt,#4DB896);background:var(--brand-xs,#E8F5F0);border-radius:0 8px 8px 0;padding:14px 16px;margin:26px 0 34px"><p style="margin:0 0 5px;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--brand,#1A5C4A)">Redaktion</p><p style="margin:0;font-size:13px;line-height:1.66;color:#33453D">Redaktionell verantwortlich: Florian Lechner, sur.plus, Landsberger Stra&szlig;e 57, 82266 Inning am Ammersee-Stegen. Dieser Beitrag wurde KI-gest&uuml;tzt erstellt und vor der Ver&ouml;ffentlichung anhand der genannten Primärquellen redaktionell gepr&uuml;ft. Eine Pr&uuml;fung durch Rechtsanw&auml;lte, Steuerberater oder Wirtschaftspr&uuml;fer ist nicht erfolgt. <a href="/de/ratgeber/redaktionelle-grundsaetze.html" style="color:var(--brand,#1A5C4A);text-decoration:underline">Redaktionelle Grunds&auml;tze &rarr;</a></p></div></section>
+<section class="rg-wrap" data-preferred-source><div style="text-align:center;margin:-14px 0 40px"><a href="https://www.google.com/preferences/source?q=surpluspurpose.com" rel="noopener" target="_blank" style="display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:#5A6B63;text-decoration:none;border:1px solid rgba(26,92,74,.15);border-radius:999px;padding:7px 14px"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="flex:none"><path d="M12 2l2.9 6.26L21 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.1-1.01z"/></svg>sur.plus in der Google Suche als bevorzugte Quelle speichern</a></div></section>
+</main>
+<footer class="rg-foot"><div class="rg-wrap wide">
+  <span class="rg-foot-claim">Every surplus has a purpose. We find it.</span>
+  sur.plus (surpluspurpose.com) ·
+  <a href="/de/">Start</a> ·
+  <a href="/de/ratgeber/">Ratgeber</a> ·
+  <a href="/de/case-studies/">Fallstudien</a> ·
+  <a href="/de/surplus_impact_calculator.html">Impact Calculator</a> ·
+  <a href="https://www.linkedin.com/company/surplus-purpose/" rel="noopener" target="_blank">LinkedIn</a>
+</div></footer>
+<script src="/search.js" defer></script>
+</body>
+</html>

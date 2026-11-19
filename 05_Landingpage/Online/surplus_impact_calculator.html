@@ -1,0 +1,1684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>sur.plus Impact Calculator - See your surplus potential in 60 seconds</title>
+<meta name="description" content="Calculate your CO₂ savings, disposal cost reduction and social impact potential in under 60 seconds. Free, no login required.">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="surplus_icon.svg">
+<link rel="alternate icon" type="image/png" href="icon-512.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0A2318">
+<link rel="canonical" href="https://surpluspurpose.com/surplus_impact_calculator.html">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://surpluspurpose.com/surplus_impact_calculator.html">
+<meta property="og:title" content="sur.plus Impact Calculator - See your surplus potential in 60 seconds">
+<meta property="og:description" content="Calculate your CO₂ savings, disposal cost reduction and social impact potential in under 60 seconds. Free, no login required.">
+<meta property="og:image" content="https://surpluspurpose.com/og-image.png">
+<meta property="og:site_name" content="sur.plus">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="sur.plus Impact Calculator - See your surplus potential in 60 seconds">
+<meta name="twitter:description" content="Calculate your CO₂ savings, disposal cost reduction and social impact potential in under 60 seconds. Free, no login required.">
+<meta name="twitter:image" content="https://surpluspurpose.com/og-image.png">
+<link rel="alternate" hreflang="en" href="https://surpluspurpose.com/surplus_impact_calculator.html">
+<link rel="alternate" hreflang="de" href="https://surpluspurpose.com/de/surplus_impact_calculator.html">
+<link rel="alternate" hreflang="x-default" href="https://surpluspurpose.com/surplus_impact_calculator.html">
+
+<!-- Self-hosted fonts (no external connection - privacy / GDPR) -->
+<link rel="preload" href="fonts/dm-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/dm-serif-display-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/dm-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:500;font-display:swap;src:url("fonts/dm-sans-latin-500-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:600;font-display:swap;src:url("fonts/dm-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:700;font-display:swap;src:url("fonts/dm-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:normal;font-weight:400;font-display:swap;src:url("fonts/dm-serif-display-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:'DM Serif Display';font-style:italic;font-weight:400;font-display:swap;src:url("fonts/dm-serif-display-latin-400-italic.woff2") format("woff2")}
+/* ---------- three routes + assumptions (22.09.2026) ---------- */
+.ways-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);padding:22px 22px 18px;margin-bottom:20px}
+.ways-title{font-family:var(--serif);font-size:19px;color:var(--text);letter-spacing:-.01em}
+.ways-sub{font-size:12.5px;color:var(--text-mid);margin:4px 0 16px;line-height:1.5}
+.ways{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.way{border:1px solid var(--border);border-radius:12px;padding:16px 15px 14px;background:var(--offwhite);display:flex;flex-direction:column;gap:9px}
+.way.me{background:var(--brand-xs);border-color:rgba(26,92,74,.35);box-shadow:0 8px 28px rgba(26,92,74,.08)}
+.way-name{font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--text-mid)}
+.way.me .way-name{color:var(--brand)}
+.way-name small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.02em;text-transform:none;color:var(--accent);margin-top:2px}
+.way-net{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums;color:var(--text)}
+.way-net.neg{color:#C75B4E}.way-net.pos{color:var(--brand)}
+.way-net small{display:block;font-family:var(--sans);font-size:11px;color:var(--text-lt);margin-top:5px;letter-spacing:0}
+.way-row{font-size:12px;line-height:1.45;color:var(--text-mid);padding-top:8px;border-top:1px dashed rgba(26,92,74,.16)}
+.way-row b{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-lt);margin-bottom:2px}
+.way.me .way-row{color:var(--text)}
+.asm{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--r-md);margin-bottom:20px;padding:0 18px}
+.asm summary{cursor:pointer;list-style:none;padding:14px 0;font-size:13px;font-weight:600;color:var(--brand);display:flex;align-items:center;gap:8px}
+.asm summary::-webkit-details-marker{display:none}
+.asm summary::before{content:"";width:7px;height:7px;border-right:2px solid var(--brand);border-bottom:2px solid var(--brand);transform:rotate(-45deg);transition:transform .2s}
+.asm[open] summary::before{transform:rotate(45deg)}
+.asm-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:2px 0 16px}
+.asm-grid label{display:block;font-size:11px;font-weight:600;color:var(--text-mid);margin-bottom:5px;line-height:1.35}
+.asm-grid input{width:100%;padding:8px 10px;border:1px solid rgba(26,92,74,.25);border-radius:8px;font-family:var(--sans);font-size:13px;color:var(--text);background:var(--white)}
+.asm-note{font-size:11.5px;color:var(--text-lt);padding-bottom:14px;line-height:1.5}
+@media (max-width:720px){.ways{grid-template-columns:1fr}.asm-grid{grid-template-columns:1fr 1fr}}
+.cat-card[data-cat="other"]{grid-column:1/-1}
+#condGrid{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:560px){#condGrid{grid-template-columns:1fr}}
+</style>
+
+<style>
+/* ============================================================
+   sur.plus - Impact Calculator v5 · 2026
+   Design system: index_v5 landing page
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --dark:#0A2318;--dark2:#0D2E20;--brand:#1A5C4A;--brand-mid:#2E8B6A;
+  --brand-lt:#4DB896;--brand-xs:#E8F5F0;--accent:#D4712A;--accent-lt:#E8935A;
+  --accent-xs:#FDF3EA;--white:#FFFFFF;--offwhite:#F7FAF8;--cream:#E8F5F0;
+  --text:#1C2B22;--text-mid:#4A6B5A;--text-lt:#7A9E8E;--border:rgba(26,92,74,0.12);
+  --border-dk:rgba(77,184,150,0.16);
+  --r-lg:24px;--r-md:16px;--r-sm:10px;
+  --serif:'DM Serif Display',Georgia,'Times New Roman',serif;
+  --sans:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --shadow-card:0 1px 2px rgba(10,35,24,.04),0 12px 40px rgba(10,35,24,.06);
+  --shadow-pop:0 20px 60px rgba(10,35,24,.14);
+  --ease:cubic-bezier(.2,.7,.3,1);
+  --noise:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='nz'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23nz)' opacity='0.04'/%3E%3C/svg%3E");
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--offwhite);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg{display:block}
+button{font-family:inherit}
+a{color:inherit}
+::selection{background:rgba(77,184,150,.3)}
+
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+@media(max-width:400px){.wrap{padding:0 16px}}
+
+/* ---------- shared atoms ---------- */
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0}
+.ic.lg{width:24px;height:24px;stroke-width:1.5}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand)}
+.kicker::before{content:'';width:20px;height:1px;background:currentColor;opacity:.5}
+.kicker.amber{color:var(--accent)}
+.kicker.on-dark{color:var(--brand-lt)}
+.kicker.on-dark.amber{color:var(--accent-lt)}
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* dark sections share a faint grid + glow */
+.dk{background:var(--dark);position:relative;overflow:hidden}
+.dk::before{content:'';position:absolute;inset:0;background-image:var(--noise),linear-gradient(rgba(78,184,150,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(78,184,150,.03) 1px,transparent 1px);background-size:180px 180px,56px 56px,56px 56px;pointer-events:none}
+.dk::after{content:'';position:absolute;inset:0;background:radial-gradient(900px 480px at 78% -10%,rgba(46,139,106,.22),transparent 65%),radial-gradient(640px 420px at 6% 108%,rgba(216,122,52,.14),transparent 60%);pointer-events:none}
+.dk>.wrap{position:relative;z-index:1}
+.rd-t{border-top-left-radius:28px;border-top-right-radius:28px}
+.rd-b{border-bottom-left-radius:28px;border-bottom-right-radius:28px}
+@media(max-width:600px){.rd-t{border-top-left-radius:20px;border-top-right-radius:20px}.rd-b{border-bottom-left-radius:20px;border-bottom-right-radius:20px}}
+
+/* ---------- match-arc motif (dot → arc → dot) ---------- */
+.arc-draw path.draw{stroke-dasharray:100;stroke-dashoffset:100;transition:stroke-dashoffset .65s cubic-bezier(.4,0,.2,1)}
+.arc-draw.arc-in path.draw{stroke-dashoffset:0}
+.arc-draw circle{opacity:0;transition:opacity .3s ease .35s}
+.arc-draw.arc-in circle{opacity:1}
+.arc-divider{display:flex;justify-content:center;margin:0 auto 22px}
+.arc-divider svg{width:120px;height:30px;overflow:visible}
+.arc-divider.sm{margin-bottom:18px}
+.arc-divider.sm svg{width:92px;height:24px}
+
+/* ---------- nav ---------- */
+header.site{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;gap:18px;height:64px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo svg{width:32px;height:32px}
+.wordmark{font-size:20px;letter-spacing:-.4px;color:var(--brand);font-weight:700}
+.wordmark b{color:var(--brand);font-weight:700}
+.wordmark .d{color:var(--accent)}
+.nav-back{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;color:var(--text-mid);text-decoration:none;padding:9px 15px;border-radius:10px;border:1px solid var(--border);transition:all .15s;white-space:nowrap}
+.nav-back:hover{background:var(--brand-xs);color:var(--brand);border-color:var(--brand)}
+
+/* ---------- hero ---------- */
+.calc-hero{padding:60px 0 110px;text-align:center}
+.calc-hero .wrap{max-width:760px}
+.calc-kicker-row{display:flex;justify-content:center;margin-bottom:18px}
+.calc-title{font-family:var(--serif);font-size:clamp(38px,5.4vw,62px);line-height:1.05;letter-spacing:-.02em;color:var(--white);font-weight:400;margin-bottom:18px}
+.calc-title em{font-style:italic;color:var(--brand-lt)}
+.calc-sub{font-size:16.5px;color:rgba(232,245,240,.68);line-height:1.7;font-weight:300;max-width:500px;margin:0 auto}
+.calc-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-lt);border:1px solid rgba(77,184,150,.25);background:rgba(77,184,150,.08);padding:6px 14px;border-radius:100px;margin-top:24px}
+.calc-eyebrow .ic{width:13px;height:13px}
+@keyframes heroUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.calc-hero .arc-divider{animation:heroUp .5s var(--ease) both}
+.calc-kicker-row{animation:heroUp .5s var(--ease) .04s both}
+.calc-title{animation:heroUp .55s var(--ease) .09s both}
+.calc-sub{animation:heroUp .5s var(--ease) .16s both}
+.calc-eyebrow{animation:heroUp .5s var(--ease) .22s both}
+.calc-card{animation:heroUp .6s var(--ease) .18s both}
+
+/* ---------- main card ---------- */
+.calc-wrap{max-width:860px;margin:-64px auto 0;padding:0 24px 88px;position:relative;z-index:5}
+@media(max-width:600px){.calc-wrap{padding:0 14px 64px}}
+.calc-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-lg);box-shadow:var(--shadow-pop);overflow:hidden}
+.calc-step{display:none;padding:44px 48px}
+.calc-step.active{display:block}
+@media(max-width:600px){.calc-step{padding:28px 20px}}
+
+/* ---------- step indicator ---------- */
+.step-indicator{display:flex;align-items:center;gap:0;margin-bottom:36px}
+.si-dot{width:32px;height:32px;border-radius:50%;background:var(--offwhite);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--text-lt);transition:all .25s var(--ease);flex-shrink:0;font-variant-numeric:tabular-nums}
+.si-dot.done{background:var(--brand);border-color:var(--brand);color:#fff}
+.si-dot.active{background:var(--accent);border-color:var(--accent);color:#fff;box-shadow:0 0 0 5px rgba(212,113,42,.12)}
+.si-line{flex:1;height:1px;background:var(--border);transition:background .3s}
+.si-line.done{background:var(--brand-lt)}
+
+/* ---------- form elements ---------- */
+.field-label{font-size:13px;font-weight:600;color:var(--text);margin-bottom:8px;display:block}
+.field-sub{font-size:12.5px;color:var(--text-lt);margin-bottom:14px}
+.step-title{font-family:var(--serif);font-size:clamp(23px,3vw,27px);font-weight:400;letter-spacing:-.01em;color:var(--text);margin-bottom:8px;line-height:1.15}
+.step-sub{font-size:14px;color:var(--text-mid);font-weight:300;margin-bottom:30px;line-height:1.65}
+
+/* ---------- category cards ---------- */
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:10px}
+@media(max-width:560px){.cat-grid{grid-template-columns:1fr 1fr}}
+.cat-card{border:1px solid var(--border);border-radius:var(--r-md);padding:18px 14px;cursor:pointer;text-align:center;background:var(--offwhite);transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease)}
+.cat-card:hover{transform:translateY(-3px);border-color:rgba(26,92,74,.3);background:var(--white);box-shadow:var(--shadow-card)}
+.cat-card.selected{border-color:var(--brand);background:var(--brand-xs);box-shadow:inset 0 0 0 1px var(--brand)}
+.cat-ico{width:40px;height:40px;border-radius:12px;background:var(--brand-xs);border:1px solid rgba(26,92,74,.14);color:var(--brand);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;transition:background .25s var(--ease),color .25s var(--ease)}
+.cat-card.selected .cat-ico{background:var(--brand);border-color:var(--brand);color:#fff}
+.cat-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:3px}
+.cat-co2{font-size:11px;color:var(--text-lt)}
+
+/* ---------- range slider ---------- */
+.range-wrap{margin-bottom:30px}
+.range-row{display:flex;align-items:center;gap:18px;margin-bottom:10px}
+.range-input{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:3px;background:rgba(26,92,74,.12);outline:none;cursor:pointer}
+.range-input::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--brand);border:3px solid #fff;cursor:pointer;box-shadow:0 2px 10px rgba(26,92,74,.35)}
+.range-input::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--brand);border:3px solid #fff;cursor:pointer;box-shadow:0 2px 10px rgba(26,92,74,.35)}
+.range-val{font-family:var(--serif);font-size:30px;color:var(--brand);font-weight:400;min-width:96px;text-align:right;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--text-lt)}
+.range-hint{font-size:11.5px;color:var(--text-lt);margin-top:8px}
+.range-hint a{color:var(--brand);font-weight:500;text-decoration:none}
+.range-hint a:hover{text-decoration:underline}
+
+/* ---------- disposal cost ---------- */
+.disposal-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:480px){.disposal-grid{grid-template-columns:1fr}}
+.disposal-option{border:1px solid var(--border);border-radius:var(--r-md);padding:15px 17px;cursor:pointer;background:var(--offwhite);transition:transform .25s var(--ease),border-color .25s var(--ease),box-shadow .25s var(--ease),background .25s var(--ease)}
+.disposal-option:hover{transform:translateY(-2px);border-color:rgba(26,92,74,.3);background:var(--white);box-shadow:var(--shadow-card)}
+.disposal-option.selected{border-color:var(--brand);background:var(--brand-xs);box-shadow:inset 0 0 0 1px var(--brand)}
+.disposal-label{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.disposal-desc{font-size:11.5px;color:var(--text-lt)}
+.disposal-custom{margin-top:12px}
+.disposal-custom input{width:100%;border:1px solid var(--border);border-radius:12px;padding:13px 16px;font-family:var(--sans);font-size:15px;color:var(--text);outline:none;background:var(--white);transition:border-color .2s,box-shadow .2s}
+.disposal-custom input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,92,74,.1)}
+
+/* ---------- step navigation buttons ---------- */
+.calc-nav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:24px;border-top:1px solid var(--border)}
+.calc-back-btn{display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(26,92,74,.25);color:var(--text-mid);padding:13px 24px;border-radius:12px;font-size:14px;font-weight:500;cursor:pointer;transition:background .15s ease,border-color .15s ease,color .15s ease}
+.calc-back-btn:hover{background:var(--brand-xs);border-color:var(--brand);color:var(--brand)}
+.calc-next-btn{display:inline-flex;align-items:center;gap:9px;background:var(--accent);color:#fff;border:1px solid transparent;padding:14px 28px;border-radius:12px;font-size:15px;font-weight:600;cursor:pointer;transition:transform .25s var(--ease),box-shadow .25s var(--ease);white-space:nowrap}
+.calc-next-btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:0 10px 30px rgba(212,113,42,.35)}
+.calc-next-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;box-shadow:none}
+.calc-reset{background:transparent;border:none;color:var(--text-lt);font-size:13px;cursor:pointer;text-decoration:underline;font-family:var(--sans)}
+.calc-reset:hover{color:var(--brand)}
+
+/* ---------- results hero ---------- */
+.results-hero{background:var(--dark);border-radius:var(--r-md);padding:30px 32px;margin-bottom:24px;position:relative;overflow:hidden}
+.results-hero::before{content:'';position:absolute;inset:0;background-image:var(--noise),linear-gradient(rgba(78,184,150,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(78,184,150,.04) 1px,transparent 1px);background-size:180px 180px,28px 28px,28px 28px;pointer-events:none}
+.results-hero::after{content:'';position:absolute;inset:0;background:radial-gradient(440px 280px at 88% -10%,rgba(46,139,106,.3),transparent 65%);pointer-events:none}
+.results-hero-inner{position:relative;z-index:1}
+.results-label{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-lt);margin-bottom:12px}
+.savings-row{display:flex;align-items:flex-end;gap:8px;margin-bottom:6px}
+.savings-num{font-family:var(--serif);font-size:clamp(44px,7vw,64px);color:#fff;line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.savings-per{font-size:16px;color:rgba(232,245,240,.5);margin-bottom:8px}
+.savings-note{font-size:12px;color:rgba(232,245,240,.5);margin-bottom:18px}
+.score-row{display:flex;align-items:center;gap:14px}
+.score-track-wrap{flex:1}
+.score-kick{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(232,245,240,.45);margin-bottom:6px}
+.score-bar-track{height:8px;background:rgba(255,255,255,.12);border-radius:4px;overflow:hidden}
+.score-bar-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,#4DB896,#E8935A);transition:width 1.2s cubic-bezier(.34,1.56,.64,1);width:0%}
+.score-num-row{display:flex;align-items:baseline;gap:3px}
+.score-num{font-family:var(--serif);font-size:32px;color:#fff;line-height:1;font-variant-numeric:tabular-nums}
+.score-max{font-size:14px;color:rgba(232,245,240,.5)}
+.score-label{font-size:12px;color:rgba(232,245,240,.7);margin-top:8px}
+@media(max-width:560px){.results-hero{padding:22px 20px}}
+
+/* ---------- tab switcher ---------- */
+.tab-switch{display:flex;gap:4px;background:var(--offwhite);border:1px solid var(--border);border-radius:13px;padding:4px;margin-bottom:24px}
+.tab-btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 16px;border-radius:10px;border:none;font-size:14px;font-weight:600;cursor:pointer;transition:background .2s,color .2s}
+.tab-btn .ic{width:15px;height:15px}
+@media(max-width:480px){.tab-btn{font-size:12.5px;padding:10px 8px;gap:6px}}
+
+/* ---------- key metric cards ---------- */
+.results-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+@media(max-width:560px){.results-grid{grid-template-columns:1fr}}
+.result-card{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--r-md);padding:22px 18px;text-align:center}
+.result-ico{width:38px;height:38px;border-radius:11px;background:var(--brand-xs);border:1px solid rgba(26,92,74,.14);color:var(--brand);display:flex;align-items:center;justify-content:center;margin:0 auto 10px}
+.result-val{font-family:var(--serif);font-size:32px;color:var(--brand);line-height:1;margin-bottom:6px;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.result-lbl{font-size:12px;color:var(--text-mid);line-height:1.45}
+.result-note{font-size:10.5px;color:var(--text-lt);margin-top:5px;font-style:italic}
+
+/* ---------- score breakdown ---------- */
+.score-breakdown{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--r-md);padding:20px;margin-bottom:24px}
+.sbd-title{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid);margin-bottom:14px}
+.sbd-row{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.sbd-row:last-child{margin-bottom:0}
+.sbd-label{font-size:12.5px;color:var(--text-mid);flex:1}
+.sbd-bar-wrap{flex:2;height:6px;background:rgba(26,92,74,.1);border-radius:3px;overflow:hidden}
+.sbd-bar-fill{height:100%;border-radius:3px;background:var(--brand-lt);transition:width 1s ease .3s;width:0%}
+.sbd-score{font-size:12px;font-weight:600;color:var(--brand);width:38px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* ---------- teaser (blurred results) ---------- */
+.teaser-overlay{position:relative}
+.teaser-blur{filter:blur(6px);pointer-events:none;user-select:none}
+.teaser-card-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
+.teaser-num{font-family:var(--serif);font-size:40px;color:var(--brand)}
+.teaser-meta{font-size:12px;color:var(--text-lt);margin-top:4px}
+.teaser-cta{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px;background:rgba(255,255,255,.72);backdrop-filter:blur(2px);border-radius:var(--r-md)}
+.teaser-cta h3{font-family:var(--serif);font-size:19px;font-weight:400;color:var(--text)}
+.teaser-cta p{font-size:13px;color:var(--text-mid);max-width:320px;line-height:1.55}
+
+/* ---------- ROI panel ---------- */
+.dur-box{background:var(--brand-xs);border:1px solid rgba(26,92,74,.16);border-radius:var(--r-md);padding:16px 20px;margin-bottom:20px}
+.dur-row{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.dur-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.dur-sub{font-size:12px;color:var(--text-lt)}
+.dur-btns{display:flex;gap:6px;flex-wrap:wrap}
+.dur-btn{padding:7px 14px;border-radius:9px;border:1px solid rgba(26,92,74,.25);background:var(--white);color:var(--text-mid);font-family:var(--sans);font-size:12px;font-weight:600;cursor:pointer;transition:all .15s}
+.dur-btn:hover{border-color:var(--brand);color:var(--brand)}
+.dur-btn.dur-active{background:var(--brand);border-color:var(--brand);color:var(--white)}
+.dur-note{margin-top:10px;font-size:12px;color:var(--brand);font-weight:500}
+
+.chart-box{background:var(--offwhite);border:1px solid var(--border);border-radius:var(--r-md);padding:24px;margin-bottom:20px}
+.chart-title{font-size:13px;font-weight:600;color:var(--text);margin-bottom:4px}
+.chart-sub{font-size:11px;color:var(--text-lt);margin-bottom:16px}
+.chart-bars{display:flex;gap:24px;align-items:flex-end;height:150px;margin-bottom:10px}
+.chart-col{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:8px}
+.bar-label-a{font-size:11px;font-weight:600;color:#C75B4E;text-align:center;font-variant-numeric:tabular-nums}
+.bar-label-b{font-size:11px;font-weight:600;color:var(--brand);text-align:center;font-variant-numeric:tabular-nums}
+.bar-a{width:100%;background:linear-gradient(180deg,#E8A79E,#DE9389);border-radius:8px 8px 0 0;transition:height 1s var(--ease);height:0px;max-height:120px;min-height:4px}
+.bar-b{width:100%;background:linear-gradient(180deg,var(--brand-lt),var(--brand-mid));border-radius:8px 8px 0 0;transition:height 1s var(--ease);height:0px;max-height:120px;min-height:4px}
+.chart-name{font-size:12px;color:var(--text-lt);text-align:center}
+
+.roi-table-box{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;margin-bottom:20px}
+.roi-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.roi-table{width:100%;min-width:480px;border-collapse:collapse;font-family:var(--sans);font-size:13px}
+.roi-table thead tr{background:var(--dark);color:#fff}
+.roi-table th{padding:14px 18px;text-align:left;font-weight:600;font-size:10.5px;letter-spacing:.1em;text-transform:uppercase}
+.roi-table th+th{padding:14px 12px;text-align:right;white-space:nowrap}
+.roi-table th.diff{color:var(--brand-lt)}
+.rt-pos{display:inline-flex;align-items:center;gap:9px}
+.rt-pos .ic{width:14px;height:14px;color:var(--text-lt)}
+.roi-table tfoot tr{background:var(--dark);border-top:2px solid var(--brand)}
+.roi-foot-label{padding:16px 18px;font-weight:700;color:#fff;font-size:14px}
+.roi-foot-sub{font-size:10px;font-weight:400;color:rgba(232,245,240,.45);margin-top:2px}
+.roi-foot-a{padding:16px 12px;text-align:right;color:#E8A79E;font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.roi-foot-b{padding:16px 12px;text-align:right;color:var(--brand-lt);font-weight:700;font-size:14px;font-variant-numeric:tabular-nums}
+.roi-foot-diff{padding:16px 12px;text-align:right;color:#7BD8B4;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums}
+
+.breakevenGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.be-card{background:var(--brand-xs);border:1px solid rgba(26,92,74,.3);border-radius:var(--r-md);padding:22px 20px;text-align:center}
+.be-card.amber{background:var(--accent-xs);border-color:rgba(212,113,42,.35)}
+.be-kick{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand);margin-bottom:10px}
+.be-card.amber .be-kick{color:var(--accent)}
+.be-val{font-family:var(--serif);font-size:40px;color:var(--brand);line-height:1;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.be-card.amber .be-val{color:var(--accent)}
+.be-sub{font-size:12px;color:var(--text-mid);margin-top:8px}
+.be-fine{font-size:11px;color:var(--text-lt);margin-top:5px;line-height:1.45}
+
+.plan-rec{background:var(--dark);border:1px solid rgba(77,184,150,.2);border-radius:var(--r-md);padding:24px;margin-bottom:20px;position:relative;overflow:hidden}
+.plan-rec::before{content:'';position:absolute;inset:0;background:radial-gradient(420px 240px at 88% -10%,rgba(46,139,106,.3),transparent 65%);pointer-events:none}
+.plan-rec>*{position:relative;z-index:1}
+.plan-kick{font-size:10.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--brand-lt);margin-bottom:10px}
+.plan-name{font-family:var(--serif);font-size:19px;font-weight:400;color:#fff;margin-bottom:6px}
+.plan-badge-pill{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--accent);color:#fff;padding:4px 12px;border-radius:100px}
+.plan-desc{font-size:13px;color:rgba(232,245,240,.6);line-height:1.6}
+.plan-desc a{color:var(--brand-lt);font-weight:600}
+
+.meth-note{background:var(--offwhite);border-left:3px solid var(--brand-lt);border-radius:0 10px 10px 0;padding:14px 16px;margin-bottom:20px}
+.meth-title{font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text-mid);margin-bottom:6px;display:flex;align-items:center;gap:7px}
+.meth-title .ic{width:13px;height:13px}
+.meth-body{font-size:12px;color:var(--text-lt);line-height:1.65}
+
+.list-cta{display:flex;align-items:center;justify-content:center;gap:10px;background:var(--accent);color:#fff;padding:16px 28px;border-radius:12px;font-family:var(--sans);font-size:15px;font-weight:600;text-decoration:none;margin-bottom:8px;border:1px solid transparent;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.list-cta:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,113,42,.35)}
+.list-cta .ic{width:16px;height:16px}
+.list-cta-note{text-align:center;font-size:12px;color:var(--text-lt);margin-bottom:4px}
+
+/* ---------- email capture ---------- */
+.email-step{background:var(--brand-xs);border:1px solid rgba(26,92,74,.16);border-radius:var(--r-md);padding:24px;margin-bottom:20px}
+.email-step h3{font-size:16px;font-weight:600;color:var(--text);margin-bottom:6px}
+.email-step p{font-size:13px;color:var(--text-mid);margin-bottom:16px;line-height:1.55}
+.email-row{display:flex;gap:10px}
+@media(max-width:500px){.email-row{flex-direction:column}}
+.email-input{flex:1;border:1px solid rgba(26,92,74,.25);border-radius:12px;padding:13px 16px;font-family:var(--sans);font-size:14px;color:var(--text);outline:none;background:var(--white);transition:border-color .2s,box-shadow .2s}
+.email-input:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,92,74,.1)}
+.email-btn{background:var(--accent);color:#fff;border:1px solid transparent;padding:13px 22px;border-radius:12px;font-family:var(--sans);font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.email-btn:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,113,42,.3)}
+.email-note{font-size:11px;color:var(--text-lt);margin-top:8px}
+.email-note a{color:var(--brand);font-weight:600;text-decoration:none}
+.email-note a:hover{text-decoration:underline}
+
+/* ---------- results CTA ---------- */
+.results-cta{background:var(--dark);border-radius:var(--r-md);padding:34px 28px;text-align:center;margin-bottom:20px;position:relative;overflow:hidden}
+.results-cta::before{content:'';position:absolute;inset:0;background-image:var(--noise),linear-gradient(rgba(78,184,150,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(78,184,150,.04) 1px,transparent 1px);background-size:180px 180px,28px 28px,28px 28px;pointer-events:none}
+.results-cta::after{content:'';position:absolute;inset:0;background:radial-gradient(420px 260px at 82% -10%,rgba(46,139,106,.26),transparent 65%),radial-gradient(360px 240px at 8% 110%,rgba(216,122,52,.14),transparent 60%);pointer-events:none}
+.results-cta>*{position:relative;z-index:1}
+.results-cta h3{font-family:var(--serif);font-size:26px;font-weight:400;color:#fff;margin-bottom:10px;letter-spacing:-.01em}
+.results-cta p{font-size:13.5px;color:rgba(232,245,240,.65);margin-bottom:22px;line-height:1.65;max-width:480px;margin-left:auto;margin-right:auto}
+.cta-btns-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.cta-corp{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:var(--accent);color:#fff;padding:14px 26px;border-radius:12px;font-family:var(--sans);font-size:14.5px;font-weight:600;text-decoration:none;border:1px solid transparent;transition:transform .25s var(--ease),box-shadow .25s var(--ease)}
+.cta-corp:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,113,42,.35)}
+.cta-email{display:inline-flex;align-items:center;justify-content:center;gap:9px;background:transparent;color:var(--cream);border:1px solid rgba(232,245,240,.25);padding:14px 26px;border-radius:12px;font-family:var(--sans);font-size:14.5px;font-weight:500;text-decoration:none;transition:background .15s ease,border-color .15s ease}
+.cta-email:hover{background:rgba(255,255,255,.07);border-color:rgba(232,245,240,.45)}
+.cta-corp .ic,.cta-email .ic{width:15px;height:15px}
+@media(max-width:560px){.cta-btns-row{flex-direction:column}.cta-corp,.cta-email{justify-content:center}}
+
+/* ---------- footer ---------- */
+.calc-footer{background:var(--dark2);border-top:1px solid rgba(77,184,150,.1);margin-top:56px;padding:44px 24px;text-align:center;font-size:12px;color:rgba(232,245,240,.45);line-height:1.75}
+.calc-footer-in{max-width:760px;margin:0 auto}
+.calc-footer a{color:var(--brand-lt);text-decoration:none}
+.calc-footer a:hover{text-decoration:underline}
+.calc-footer strong{color:rgba(232,245,240,.72)}
+
+/* ---------- reveal animation ---------- */
+.rv{opacity:0;transform:translateY(14px);transition:opacity .45s ease,transform .45s ease}
+.rv.in{opacity:1;transform:translateY(0)}
+
+/* ---------- small screens ---------- */
+@media(max-width:560px){
+  .calc-hero{padding:44px 0 96px}
+  .range-row{flex-wrap:wrap}
+  .range-val{min-width:70px;font-size:24px}
+  .breakevenGrid{grid-template-columns:1fr}
+  .calc-card{border-radius:var(--r-md)}
+}
+
+/* ---------- reduced motion ---------- */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .rv{opacity:1!important;transform:none!important}
+  .arc-draw path.draw{stroke-dashoffset:0!important}
+  .arc-draw circle{opacity:1!important}
+  .calc-kicker-row,.calc-title,.calc-sub,.calc-eyebrow,.calc-card,.calc-hero .arc-divider{animation:none!important;opacity:1!important;transform:none!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---------- black-hole cursor ("besondere Maus", desktop only, JS adds .bh-on) ---------- */
+.gw-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+#bhDot,#bhRing{position:fixed;top:0;left:0;pointer-events:none;z-index:9999;opacity:0;transition:opacity .25s}
+#bhDot{width:22px;height:22px;background:none;filter:drop-shadow(0 0 6px rgba(10,35,24,.35))}
+#bhDot svg{width:100%;height:100%}
+#bhRing{width:42px;height:42px;border-radius:50%;border:1.5px solid rgba(77,184,150,.55);transition:width .25s,height .25s,border-color .25s,opacity .25s}
+#bhRing.big{width:62px;height:62px;border-color:rgba(232,147,90,.85)}
+body.bh-on,body.bh-on *{cursor:none!important}
+body.bh-on input,body.bh-on textarea,body.bh-on select,body.bh-on iframe{cursor:auto!important}
+body.bh-on a,body.bh-on button,body.bh-on label,body.bh-on [onclick],body.bh-on [role=tab]{cursor:pointer!important}
+@media(prefers-reduced-motion:reduce){#bhDot,#bhRing,.gw-canvas{display:none!important}}
+</style>
+</head>
+<body>
+
+<!-- ================= SVG ICON SET (lucide-style, stroke 1.5-1.75) ================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="arcGrad" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4DB896"/><stop offset="1" stop-color="#E8935A"/></linearGradient>
+    <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="i-arrow-l" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></symbol>
+    <symbol id="i-banknote" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2"/><path d="M6 12h.01M18 12h.01"/></symbol>
+    <symbol id="i-handshake" viewBox="0 0 24 24"><path d="m11 17 2 2a1 1 0 1 0 3-3"/><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"/><path d="m21 3 1 11h-2"/><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"/><path d="M3 4h8"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></symbol>
+    <symbol id="i-armchair" viewBox="0 0 24 24"><path d="M19 9V6a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v3"/><path d="M3 16a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5a2 2 0 0 0-4 0v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V11a2 2 0 0 0-4 0z"/><path d="M5 18v2"/><path d="M19 18v2"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z"/></symbol>
+    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"/><path d="M17 18h1"/><path d="M12 18h1"/><path d="M7 18h1"/></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"/><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></symbol>
+    <symbol id="i-landmark" viewBox="0 0 24 24"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+    <symbol id="i-gavel" viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3c-1 1-2.5 1-3.4 0l-2.6-2.6c-1-1-1-2.5 0-3.4L15.3 2.7c1-1 2.5-1 3.4 0l2.6 2.6c1 1 1 2.5 0 3.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></symbol>
+  </defs>
+</svg>
+
+<!-- ================= NAV ================= -->
+<header class="site">
+  <div class="wrap">
+    <div class="nav-in">
+      <a class="logo" href="./index.html" aria-label="sur.plus - home">
+        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="40" fill="#1A5C4A"/><path d="M44 98 A56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M100 42 A56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><path d="M156 110 A56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><path d="M100 166 A56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/><line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/><circle cx="100" cy="104" r="22" fill="#FFFFFF"/><circle cx="100" cy="104" r="10" fill="#1A5C4A"/></svg>
+        <div class="wordmark">sur<span class="d">.</span><b>plus</b></div>
+      </a>
+      <a class="nav-back" href="/de/surplus_impact_calculator.html" hreflang="de" lang="de" title="Deutsche Version">DE</a>
+      <a class="nav-back" href="./index.html" title="sur.plus - Main Page">← Back to sur.plus</a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<!-- ================= HERO ================= -->
+<section class="calc-hero dk rd-t rd-b">
+  <div class="wrap">
+    <div class="arc-divider arc-draw" aria-hidden="true"><svg viewBox="0 0 120 30" fill="none"><path class="draw" pathLength="100" d="M8 24 Q60 -8 112 24" stroke="url(#arcGrad)" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="24" r="3" fill="#4DB896"/><circle cx="112" cy="24" r="3" fill="#E8935A"/></svg></div>
+    <div class="calc-kicker-row"><span class="kicker on-dark amber">Impact Calculator</span></div>
+    <h1 class="calc-title">What is your surplus<br><em>really worth?</em></h1>
+    <p class="calc-sub">Enter three parameters. See your CO₂ savings, disposal cost reduction and social impact potential - instantly.</p>
+    <div class="calc-eyebrow"><svg class="ic" aria-hidden="true"><use href="#i-zap"/></svg>Free · No login · 60 seconds</div>
+  </div>
+</section>
+
+<!-- ================= MAIN CARD ================= -->
+<div class="calc-wrap">
+  <div class="calc-card">
+
+    <!-- STEP 1: CATEGORY -->
+    <div class="calc-step active" id="step1">
+      <div class="step-indicator">
+        <div class="si-dot active" id="dot1">1</div>
+        <div class="si-line" id="line1"></div>
+        <div class="si-dot" id="dot2">2</div>
+        <div class="si-line" id="line2"></div>
+        <div class="si-dot" id="dot3">3</div>
+      </div>
+      <div class="step-title">What type of surplus do you have?</div>
+      <div class="step-sub">Select the primary category. You can always add more later on the platform.</div>
+      <div class="cat-grid">
+        <div class="cat-card" onclick="selectCat(this,'it')" data-cat="it">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-laptop"/></svg></div>
+          <div class="cat-name">IT &amp; Electronics</div>
+          <div class="cat-co2">High CO₂ impact</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'furniture')" data-cat="furniture">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-armchair"/></svg></div>
+          <div class="cat-name">Office Furniture</div>
+          <div class="cat-co2">High demand</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'textiles')" data-cat="textiles">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-shirt"/></svg></div>
+          <div class="cat-name">Textiles &amp; Clothing</div>
+          <div class="cat-co2">Medium CO₂ impact</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'tools')" data-cat="tools">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-wrench"/></svg></div>
+          <div class="cat-name">Tools &amp; Machinery</div>
+          <div class="cat-co2">High NGO demand</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'stationery')" data-cat="stationery">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-box"/></svg></div>
+          <div class="cat-name">Stationery &amp; Office</div>
+          <div class="cat-co2">Low logistics cost</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'retail')" data-cat="retail">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-refresh"/></svg></div>
+          <div class="cat-name">Returns &amp; new goods</div>
+          <div class="cat-co2">Retail &amp; e-commerce</div>
+        </div>
+        <div class="cat-card" onclick="selectCat(this,'other')" data-cat="other">
+          <div class="cat-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-factory"/></svg></div>
+          <div class="cat-name">Mixed / Other</div>
+          <div class="cat-co2">We'll guide you</div>
+        </div>
+      </div>
+      <div class="calc-nav">
+        <div></div>
+        <button class="calc-next-btn" id="next1" onclick="goStep(2)" disabled>
+          Next: Surplus value <span>→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 2: VALUE + DISPOSAL -->
+    <div class="calc-step" id="step2">
+      <div class="step-indicator">
+        <div class="si-dot done" id="dot1b">✓</div>
+        <div class="si-line done" id="line1b"></div>
+        <div class="si-dot active" id="dot2b">2</div>
+        <div class="si-line" id="line2b"></div>
+        <div class="si-dot" id="dot3b">3</div>
+      </div>
+      <div class="step-title">How much surplus do you have?</div>
+      <div class="step-sub">Estimate the value or replacement cost of the surplus you currently dispose of or store.</div>
+
+      <div class="range-wrap">
+        <label class="field-label">Estimated surplus value</label>
+        <div class="range-row">
+          <input type="range" class="range-input" id="surplusRange" min="250" max="100000" step="250" value="10000" oninput="updateRange()">
+          <div class="range-val" id="rangeDisplay">€10,000</div>
+        </div>
+        <div class="range-labels"><span>€250</span><span>€100,000+</span></div>
+      <p class="range-hint">For surplus above €100,000 - <a href="#chat">reach us directly in the live chat</a>.</p>
+      </div>
+
+      <label class="field-label">What do you currently pay to dispose of this surplus?</label>
+      <div class="field-sub">Select the option closest to your situation, or enter a custom amount.</div>
+      <div class="disposal-grid" id="disposalGrid">
+        <div class="disposal-option" onclick="selectDisposal(this,80)" data-rate="80">
+          <div class="disposal-label">Low cost (~€80/t)</div>
+          <div class="disposal-desc">Simple collection, no sorting</div>
+        </div>
+        <div class="disposal-option" onclick="selectDisposal(this,130)" data-rate="130">
+          <div class="disposal-label">Standard (~€130/t)</div>
+          <div class="disposal-desc">Typical commercial disposal</div>
+        </div>
+        <div class="disposal-option" onclick="selectDisposal(this,180)" data-rate="180">
+          <div class="disposal-label">High cost (~€180/t)</div>
+          <div class="disposal-desc">Specialist or certified disposal</div>
+        </div>
+        <div class="disposal-option" onclick="selectDisposal(this,'custom')" id="customOpt">
+          <div class="disposal-label">I know my exact cost</div>
+          <div class="disposal-desc">Enter a custom figure</div>
+        </div>
+      </div>
+      <div class="disposal-custom" id="customInput" style="display:none">
+        <input type="number" placeholder="Enter €/tonne e.g. 150" id="customRate" oninput="updateCustomRate()">
+      </div>
+
+      <div id="condBox" style="display:none">
+      <label class="field-label" style="margin-top:18px">Condition of the goods</label>
+      <div class="field-sub">Sets the VAT on the donation: the taxable amount is the purchase price at the time of donation, reduced for limited marketability. The surplus value above is your purchase value here.</div>
+      <div class="disposal-grid" id="condGrid">
+        <div class="disposal-option" onclick="selectCond(this,'worthless')">
+          <div class="disposal-label">Worthless</div>
+          <div class="disposal-desc">no longer marketable, damaged</div>
+        </div>
+        <div class="disposal-option selected" onclick="selectCond(this,'limited')">
+          <div class="disposal-label">Limited marketability</div>
+          <div class="disposal-desc">last season, display, signs of use</div>
+        </div>
+        <div class="disposal-option" onclick="selectCond(this,'saleable')">
+          <div class="disposal-label">Fully saleable</div>
+          <div class="disposal-desc">unopened, overstock</div>
+        </div>
+      </div>
+      </div>
+
+      <label class="field-label" style="margin-top:18px">One-off clearance or recurring surplus?</label>
+      <div class="field-sub">One-off cases (office move, IT refresh, site closure) get a fixed project quote - recurring surplus fits a plan.</div>
+      <div class="disposal-grid" id="freqGrid" style="grid-template-columns:1fr 1fr">
+        <div class="disposal-option" onclick="selectFrequency(this,'oneoff')">
+          <div class="disposal-label">One-off clearance</div>
+          <div class="disposal-desc">Move, IT refresh, closure - one project</div>
+        </div>
+        <div class="disposal-option" onclick="selectFrequency(this,'recurring')">
+          <div class="disposal-label">Recurring surplus</div>
+          <div class="disposal-desc">Comes up throughout the year</div>
+        </div>
+      </div>
+
+      <label class="field-label" style="margin-top:18px">Where is your company taxed?</label>
+      <div class="field-sub">In-kind donation rules differ across Europe - this adjusts the tax estimate. Conservative values, not tax advice.</div>
+      <select id="countrySelect" onchange="selectCountryOpt(this.value)"
+        style="width:100%;padding:13px 14px;border:1.5px solid var(--border);border-radius:12px;background:#fff;font:inherit;font-size:14px;color:var(--text);cursor:pointer">
+        <optgroup label="DACH">
+          <option value="de" selected>Germany - deduction · ~9% of value</option>
+          <option value="at">Austria - deduction · ~7% of value</option>
+          <option value="ch">Switzerland - deduction · ~4.5% of value</option>
+        </optgroup>
+        <optgroup label="Rest of Europe">
+          <option value="fr">France - 60% tax credit · ~18% of value</option>
+          <option value="es">Spain - 40% tax credit · ~12% of value</option>
+          <option value="pt">Portugal - enhanced deduction · ~8.5% of value</option>
+          <option value="nl">Netherlands - deduction · ~7.5% of value</option>
+          <option value="uk">United Kingdom - deduction · ~7.5% of value</option>
+          <option value="be">Belgium - deduction · ~7.5% of value</option>
+          <option value="it">Italy - deduction · ~7% of value</option>
+          <option value="pl">Poland - deduction · ~5.5% of value</option>
+          <option value="se">Sweden - no general in-kind relief</option>
+          <option value="dk">Denmark - capped, effectively minimal</option>
+          <option value="fi">Finland - no general in-kind relief</option>
+        </optgroup>
+        <option value="other">Other country - we assess case by case</option>
+      </select>
+      <div class="field-sub" id="countryNote" style="margin-top:8px">§ 9 KStG - donation at Teilwert, ~30% corporate tax; signed donation receipt (Zuwendungsbestätigung) required.</div>
+
+      <div class="calc-nav">
+        <button class="calc-back-btn" onclick="goStep(1)">← Back</button>
+        <button class="calc-next-btn" id="next2" onclick="goStep(3)" disabled>
+          Calculate impact <span>→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- STEP 3: RESULTS -->
+    <div class="calc-step" id="step3">
+      <div class="step-indicator">
+        <div class="si-dot done">✓</div>
+        <div class="si-line done"></div>
+        <div class="si-dot done">✓</div>
+        <div class="si-line done"></div>
+        <div class="si-dot active">3</div>
+      </div>
+
+      <div class="arc-divider sm arc-draw" aria-hidden="true"><svg viewBox="0 0 120 30" fill="none"><path class="draw" pathLength="100" d="M8 24 Q60 -8 112 24" stroke="url(#arcGrad)" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="24" r="3" fill="#4DB896"/><circle cx="112" cy="24" r="3" fill="#E8935A"/></svg></div>
+
+      <!-- SAVINGS HERO - Euro first -->
+      <div class="results-hero">
+        <div class="results-hero-inner">
+          <div class="results-label" id="savingsTitle">Estimated annual savings with sur.plus</div>
+          <div class="savings-row">
+            <div class="savings-num" id="savingsHero">-</div>
+            <div class="savings-per" id="savingsPer">/year</div>
+          </div>
+          <div class="savings-note">disposal savings + tax effect + documentation value</div>
+          <!-- Score secondary -->
+          <div class="score-row">
+            <div class="score-track-wrap">
+              <div class="score-kick">Impact score</div>
+              <div class="score-bar-track"><div class="score-bar-fill" id="scoreFill"></div></div>
+            </div>
+            <div class="score-num-row">
+              <div class="score-num" id="scoreNum">-</div>
+              <div class="score-max">/100</div>
+            </div>
+          </div>
+          <div class="score-label" id="scoreLabel">Calculating...</div>
+        </div>
+      </div>
+
+      <!-- PULSE -> DEMO BRIDGE -->
+      <div style="text-align:center;margin:14px 0 4px">
+        <a id="demoBridge" href="https://calendly.com/florian_surplus/30min" target="_blank" rel="noopener"
+           style="display:none;font-weight:600;color:var(--brand);text-decoration:none;border-bottom:1px solid var(--brand)">Discuss this surplus - book a 30-minute call &rarr;</a>
+      </div>
+
+      <!-- TAB SWITCHER -->
+      <div class="tab-switch">
+        <button class="tab-btn active" id="tabImpact" onclick="switchTab('impact')" style="background:var(--brand);color:#fff"><svg class="ic" aria-hidden="true"><use href="#i-leaf"/></svg>Impact</button>
+        <button class="tab-btn" id="tabRoi" onclick="switchTab('roi')" style="background:transparent;color:var(--text-mid)"><svg class="ic" aria-hidden="true"><use href="#i-banknote"/></svg>ROI &amp; Cost Comparison</button>
+      </div>
+
+      <!-- IMPACT TAB -->
+      <div id="panelImpact">
+      <!-- KEY METRICS -->
+      <div class="results-grid">
+        <div class="result-card">
+          <div class="result-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-leaf"/></svg></div>
+          <div class="result-val" id="co2Val">-</div>
+          <div class="result-lbl">kg CO₂ saved<br><span id="co2PerLbl">per year</span></div>
+          <div class="result-note">Avoided emissions - conservative estimate</div>
+        </div>
+        <div class="result-card">
+          <div class="result-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-banknote"/></svg></div>
+          <div class="result-val" id="savingsVal">-</div>
+          <div class="result-lbl"><span id="totalValLbl">Total annual value</span><br><span style="font-size:10px;color:var(--text-lt)">(disposal + tax + documentation value)</span></div>
+          <div class="result-note">vs. current destruction cost</div>
+        </div>
+        <div class="result-card">
+          <div class="result-ico"><svg class="ic lg" aria-hidden="true"><use href="#i-handshake"/></svg></div>
+          <div class="result-val" id="ngoVal">-</div>
+          <div class="result-lbl">NGOs that could<br>benefit</div>
+          <div class="result-note">Based on your category &amp; volume</div>
+        </div>
+      </div>
+
+      <!-- SCORE BREAKDOWN -->
+      <div class="score-breakdown">
+        <div class="sbd-title">Score breakdown</div>
+        <div class="sbd-row">
+          <div class="sbd-label">Environmental impact (CO₂ savings)</div>
+          <div class="sbd-bar-wrap"><div class="sbd-bar-fill" id="sbd1" style="width:0%"></div></div>
+          <div class="sbd-score" id="sbd1s">-</div>
+        </div>
+        <div class="sbd-row">
+          <div class="sbd-label">Social resource value to NGOs</div>
+          <div class="sbd-bar-wrap"><div class="sbd-bar-fill" id="sbd2" style="width:0%"></div></div>
+          <div class="sbd-score" id="sbd2s">-</div>
+        </div>
+        <div class="sbd-row">
+          <div class="sbd-label">CSRD compliance potential</div>
+          <div class="sbd-bar-wrap"><div class="sbd-bar-fill" id="sbd3" style="width:0%"></div></div>
+          <div class="sbd-score" id="sbd3s">-</div>
+        </div>
+        <div class="sbd-row">
+          <div class="sbd-label">Cost reduction opportunity</div>
+          <div class="sbd-bar-wrap"><div class="sbd-bar-fill" id="sbd4" style="width:0%"></div></div>
+          <div class="sbd-score" id="sbd4s">-</div>
+        </div>
+      </div>
+
+      <!-- TEASER: blurred social value -->
+      <div class="teaser-overlay" id="teaserWrap">
+        <div class="teaser-blur">
+          <div class="result-card" style="margin-bottom:14px;padding:20px">
+            <div class="teaser-card-title">Estimated social resource value reaching NGOs</div>
+            <div class="teaser-num">€██,███</div>
+            <div class="teaser-meta">58% of surplus face value · GIIN IRIS+ methodology</div>
+          </div>
+        </div>
+        <div class="teaser-cta" id="teaserCtaBox">
+          <h3>See your full impact report</h3>
+          <p>Enter your email or message us in the live chat to receive the complete calculation - including social resource value and your CSRD integration guide.</p>
+        </div>
+      </div>
+      </div><!-- end panelImpact -->
+
+      <!-- ROI TAB -->
+      <div id="panelRoi" style="display:none">
+
+        <!-- MEMBERSHIP DURATION TOGGLE -->
+        <div class="dur-box" id="durBox">
+          <div class="dur-row">
+            <div>
+              <div class="dur-title">How long do you plan to use sur.plus?</div>
+              <div class="dur-sub">Most companies use it for 3-6 months per surplus cycle. Adjust to match your situation.</div>
+            </div>
+            <div class="dur-btns">
+              <button class="dur-btn" onclick="setDuration(1,this)">1 mo</button>
+              <button class="dur-btn" onclick="setDuration(3,this)">3 mo</button>
+              <button class="dur-btn dur-active" onclick="setDuration(4,this)">4 mo</button>
+              <button class="dur-btn" onclick="setDuration(6,this)">6 mo</button>
+              <button class="dur-btn" onclick="setDuration(12,this)">12 mo</button>
+            </div>
+          </div>
+          <div class="dur-note" id="durNote">
+            Showing cost for <strong id="durLabel">4 months</strong> of membership - adjust above to see different scenarios.
+          </div>
+        </div>
+
+        <!-- THREE ROUTES -->
+        <div class="ways-box" id="waysBox">
+          <div class="ways-title">Three routes for the same surplus</div>
+          <div class="ways-sub">Dispose, sell or donate - what each route costs or returns over the period, and what you hold in your hands afterwards.</div>
+          <div class="ways" id="waysGrid"></div>
+        </div>
+
+        <!-- Visual bar chart -->
+        <div class="chart-box" id="chartBox">
+          <div class="chart-title">Cost comparison - <span id="durChartLabel">4-month membership</span></div>
+          <div class="chart-sub">What you pay over the period - lower is better</div>
+          <div class="chart-bars">
+            <div class="chart-col">
+              <div class="bar-label-a" id="barLabelA">-</div>
+              <div id="barA" class="bar-a"></div>
+              <div class="chart-name">Without sur.plus</div>
+            </div>
+            <div class="chart-col">
+              <div class="bar-label-b" id="barLabelB">-</div>
+              <div id="barB" class="bar-b"></div>
+              <div class="chart-name">With sur.plus</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Detailed ROI table -->
+        <div class="roi-table-box">
+          <div class="roi-scroll">
+          <table class="roi-table">
+            <thead>
+              <tr>
+                <th>Position</th>
+                <th>Classic Disposal</th>
+                <th>With sur.plus</th>
+                <th class="diff">Difference</th>
+              </tr>
+            </thead>
+            <tbody id="roiTableBody">
+              <!-- filled by JS -->
+            </tbody>
+            <tfoot>
+              <tr>
+                <td class="roi-foot-label"><span id="roiFootTitle">Net result</span><div class="roi-foot-sub" id="roiFootSub">subscription for selected period · adjust duration above</div></td>
+                <td class="roi-foot-a" id="roiTotalA">-</td>
+                <td class="roi-foot-b" id="roiTotalB">-</td>
+                <td class="roi-foot-diff" id="roiTotalDiff">-</td>
+              </tr>
+            </tfoot>
+          </table>
+          </div>
+        </div>
+
+        <!-- ASSUMPTIONS -->
+        <details class="asm" id="asmBox">
+          <summary>Adjust assumptions: storage and internal time</summary>
+          <div class="asm-grid">
+            <div><label for="asmMonths">Storage until the decision (months)</label><input type="number" id="asmMonths" min="0" max="36" step="1" oninput="renderRoi()"></div>
+            <div><label for="asmSqm">Storage cost (€ per m² and month)</label><input type="number" id="asmSqm" min="0" max="60" step="1" value="12" oninput="renderRoi()"></div>
+            <div><label for="asmHours">Internal hours (search, coordination, documentation)</label><input type="number" id="asmHours" min="0" max="400" step="1" oninput="renderRoi()"></div>
+            <div><label for="asmHourly">Internal hourly rate (€)</label><input type="number" id="asmHourly" min="0" max="500" step="5" value="60" oninput="renderRoi()"></div>
+          </div>
+          <div class="asm-note" id="asmNote"></div>
+        </details>
+
+        <!-- Break-even + plan recommendation -->
+        <div class="breakevenGrid">
+          <div class="be-card">
+            <div class="be-kick">Break-even point</div>
+            <div class="be-val" id="breakEven">-</div>
+            <div class="be-sub" id="beSub">months until ROI positive</div>
+            <div class="be-fine" id="beFine">Most companies donate once at year-end - a 3-6 month membership typically covers a full surplus cycle.</div>
+          </div>
+          <div class="be-card amber">
+            <div class="be-kick">Tax effect</div>
+            <div class="be-val" id="taxAdvantage">-</div>
+            <div class="be-sub" id="taxLawSub">deductible donation value (§ 9 KStG)</div>
+          </div>
+        </div>
+
+        <!-- Plan recommendation -->
+        <div class="plan-rec" id="planRecommendation">
+          <div class="plan-kick" id="planKick">Recommended plan for your volume</div>
+          <div class="plan-name" id="planName">-</div>
+          <div id="planBadge" style="display:none;margin-bottom:6px"><span class="plan-badge-pill">Most companies choose this</span></div>
+          <div class="plan-desc" id="planDesc">-</div>
+        </div>
+
+        <!-- Methodology note -->
+        <div class="meth-note">
+          <div class="meth-title"><svg class="ic" aria-hidden="true"><use href="#i-gavel"/></svg> Methodology</div>
+          <div class="meth-body">Disposal cost: your selected rate × estimated weight (derived from €/kg per category - same weight logic as the impact section). Logistics reduction: 45% saving on inbound logistics vs. disposal collection. Tax effect compared with disposal: disposal also writes off the residual book value, and a donation at book value cancels out the withdrawal value. What counts on top is therefore only the VAT on the donation (a cost; assessed on second-hand market value, using the same benchmark as the selling route: IT 15%, tools 10%, furniture 5%, textiles 2%, stationery 0% of the value entered) and its deduction within the donation deduction; in France and Spain the credit on the donation value. Consult your tax advisor. One-off surplus gets a fixed-price quote before the project starts instead of a subscription. sur.plus plans: Seed €990/yr · Tree €3,890/yr · Enterprise (custom, not publicly priced). Storage (new): weight → pallets (300 kg) → floor space (1.5 m² per pallet incl. aisle) × months × €/m²/month (default €12, i.e. €80-200/m²/year). Internal time: 3 h per pallet, minimum 4 h, × hourly rate; about 30% of that with sur.plus. Selling: indicative proceeds per category on replacement value (IT 15%, tools 10%, furniture 5%, textiles 2%, stationery 0%) - for young IT with residual value, selling is often the better deal; donating creates a documented recipient instead. Returns &amp; new goods (new): the surplus value is taken as purchase value. VAT on the donation = purchase value × condition factor (worthless 0, limited marketability 0.5 as an assumption, fully saleable 1) × standard VAT rate of the country; for France, Spain and the United Kingdom the local VAT relief for donated goods is assumed (€0). Tax effect compared with destruction: destroyed goods also reduce profit; in deduction countries only the deduction of the VAT on the donation comes on top, in France and Spain the credit on the reduced value. Selling: stock-buyer proceeds as a benchmark of 15% (saleable) or 5% (limited) of purchase value. Document the actual reduction case by case. All figures are estimates for indicative purposes only. Build-up phase: prices show the long-term structure.</div>
+        </div>
+
+        <!-- COUNTRY OVERVIEW -->
+        <div class="meth-note" style="margin-top:14px">
+          <div class="meth-title"><svg class="ic" aria-hidden="true"><use href="#i-landmark"/></svg> In-kind donation tax relief across Europe</div>
+          <div class="meth-body">
+            <div id="countryFocus" style="padding:10px 12px;border:1.5px solid var(--brand,#4DB896);border-radius:10px;background:var(--offwhite,#f7faf8);font-size:12.5px;line-height:1.5"></div>
+            <details style="margin-top:10px">
+              <summary style="cursor:pointer;font-weight:600;color:var(--brand-dk,#2F6B4F);font-size:12.5px">Compare all 14 countries</summary>
+              <div style="overflow-x:auto;margin-top:8px">
+            <table style="width:100%;border-collapse:collapse;font-size:12px;line-height:1.5;min-width:520px">
+              <thead>
+                <tr style="text-align:left;border-bottom:1.5px solid var(--border)">
+                  <th style="padding:6px 8px 6px 0">Country</th>
+                  <th style="padding:6px 8px">How it works</th>
+                  <th style="padding:6px 0;text-align:right;white-space:nowrap">Indicative value of €10k donated stock*</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-c="fr" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">France</td><td style="padding:6px 8px">60% corporate tax credit (mécénat, Art. 238 bis CGI) · VAT relief for donated unsold goods (AGEC)</td><td style="padding:6px 0;text-align:right">~€1,800</td></tr>
+                <tr data-c="es" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Spain</td><td style="padding:6px 8px">40% tax credit (Ley 49/2002, 2023 reform) · zero VAT base for donated goods</td><td style="padding:6px 0;text-align:right">~€1,200</td></tr>
+                <tr data-c="de" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Germany</td><td style="padding:6px 8px">Deduction at Teilwert (§ 9 KStG, up to 20% of income) · signed donation receipt</td><td style="padding:6px 0;text-align:right">~€900</td></tr>
+                <tr data-c="pt" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Portugal</td><td style="padding:6px 8px">Enhanced deduction up to 140% (Estatuto do Mecenato)</td><td style="padding:6px 0;text-align:right">~€850</td></tr>
+                <tr data-c="nl" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Netherlands</td><td style="padding:6px 8px">Deduction up to 50% of profit, max €100k (giftenaftrek)</td><td style="padding:6px 0;text-align:right">~€750</td></tr>
+                <tr data-c="uk" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">United Kingdom</td><td style="padding:6px 8px">Full deduction of the cost of donated stock · zero-rated VAT</td><td style="padding:6px 0;text-align:right">~€750</td></tr>
+                <tr data-c="be" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Belgium</td><td style="padding:6px 8px">Deduction capped at 5% of profit · VAT relief for essential goods only</td><td style="padding:6px 0;text-align:right">~€750</td></tr>
+                <tr data-c="at" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Austria</td><td style="padding:6px 8px">Deduction up to 10% of profit (§ 4a EStG, 2024 reform)</td><td style="padding:6px 0;text-align:right">~€690</td></tr>
+                <tr data-c="it" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Italy</td><td style="padding:6px 8px">Deduction (Legge Gadda) - strongest for food &amp; hygiene, other goods case by case</td><td style="padding:6px 0;text-align:right">~€700</td></tr>
+                <tr data-c="pl" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Poland</td><td style="padding:6px 8px">Deduction capped at 10% of income · VAT usually due on non-food donations</td><td style="padding:6px 0;text-align:right">~€550</td></tr>
+                <tr data-c="ch" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Switzerland</td><td style="padding:6px 8px">Deduction up to 20% of net profit (Art. 59 DBG), cantonal rates vary</td><td style="padding:6px 0;text-align:right">~€450</td></tr>
+                <tr data-c="se" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Sweden</td><td style="padding:6px 8px">No general corporate in-kind deduction (2026 credit: cash gifts only)</td><td style="padding:6px 0;text-align:right">€0</td></tr>
+                <tr data-c="dk" style="border-bottom:1px solid var(--border)"><td style="padding:6px 8px 6px 0;font-weight:600">Denmark</td><td style="padding:6px 8px">Deduction capped at roughly €2,700 per year</td><td style="padding:6px 0;text-align:right">~€0</td></tr>
+                <tr data-c="fi"><td style="padding:6px 8px 6px 0;font-weight:600">Finland</td><td style="padding:6px 8px">Deductible only for donations to universities/research</td><td style="padding:6px 0;text-align:right">€0</td></tr>
+              </tbody>
+            </table>
+              </div>
+            </details>
+            <div style="margin-top:8px">*Conservative, indicative values for the gross effect of the donation deduction on a book-value-style proxy (~30% of market value); caps and eligibility rules apply per country. Compared with disposal, which also writes off the book value, only the deduction of the VAT counts in deduction countries – that is how the comparison above calculates. Where the tax effect is €0, the case rests on avoided disposal costs, documentation and impact. All information without guarantee - obtain local tax advice before relying on it. Status: July 2026.</div>
+          </div>
+        </div>
+
+        <!-- CTA: list now -->
+        <a class="list-cta" href="https://tally.so/r/7R1BE6" data-tally-open="7R1BE6">
+          <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+          Turn your surplus into impact
+        </a>
+        <div class="list-cta-note">Free to list · Verified NGOs · Impact report included</div>
+
+      </div><!-- end panelRoi -->
+
+      <!-- EMAIL CAPTURE -->
+      <div class="email-step">
+        <h3>Get your full impact report - free</h3>
+        <p>We'll send you the complete calculation including the social resource value estimate, CSRD relevance assessment and a personalised next-step recommendation. No spam, no commitment.</p>
+        <div class="email-row">
+          <input type="email" class="email-input" id="emailField" placeholder="your@company.com">
+          <button class="email-btn" onclick="sendReport()">Send my report →</button>
+        </div>
+        <label class="email-consent" style="display:flex;gap:7px;align-items:flex-start;margin-top:10px;font-size:12px;line-height:1.45;opacity:.85">
+          <input type="checkbox" id="reportConsent" style="margin-top:2px;flex-shrink:0">
+          <span>I agree that sur.plus may store my email to send this impact report. See the <a href="index.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+        </label>
+        <div class="email-note">Or reach us directly: <a href="#chat">Live chat →</a></div>
+      </div>
+
+      <!-- CTA -->
+      <div class="results-cta">
+        <h3>Ready to make this real?</h3>
+        <p>Get personal onboarding and your first match within days, not weeks. No payment now - we'll talk to you first.</p>
+        <div class="cta-btns-row">
+          <a class="cta-corp" href="https://tally.so/r/7R1BE6" data-tally-open="7R1BE6">
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+            Turn your surplus into impact
+          </a>
+          <a class="cta-email" href="mailto:service@surpluspurpose.com?subject=Impact%20Calculator%20Follow-up">
+            <svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>
+            Email us instead
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center">
+        <button class="calc-reset" onclick="resetCalc()">← Start a new calculation</button>
+      </div>
+    </div>
+
+  </div><!-- end calc-card -->
+</div><!-- end calc-wrap -->
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="calc-footer">
+  <div class="calc-footer-in rv">
+  Methodology: CO₂ as conservative avoided-emissions estimates per category; IT factor derived from the AfB/myclimate IT-remarketing life-cycle assessment (~90 kg CO₂e per re-marketed device), other categories conservative reuse-displacement estimates. Disposal savings: entered rate × estimated weight (€/kg per category). Tax effect compared with disposal: VAT on the donation as a cost, plus its deduction within the donation deduction, or in FR and ES the credit on the donation value (details in the ROI-tab methodology). Documentation value: manual effort avoided for voluntary sustainability reports (VSME), customer ESG data requests and procurement evidence (20-80 hrs/yr at €150/hr) - CSRD itself applies post-Omnibus only above 1,000 employees. Social value: GIIN IRIS+ framework (PI2455), shown as an impact metric only. All figures are indicative estimates - consult your tax advisor for binding assessments. <a href="./index.html" title="sur.plus - Main Page">← Back to sur.plus</a><br><br>
+  <strong>We are not tax advisors.</strong> Please consult your tax counsel for specific VAT and donation structuring advice.<br>
+  © 2026 sur.plus · <a href="mailto:service@surpluspurpose.com">service@surpluspurpose.com</a>
+  </div>
+</footer>
+
+<script>
+// ── TAB SWITCHING ─────────────────────────────────────────────────────────────
+function switchTab(tab) {
+  const isImpact = tab === 'impact';
+  document.getElementById('panelImpact').style.display = isImpact ? 'block' : 'none';
+  document.getElementById('panelRoi').style.display = isImpact ? 'none' : 'block';
+  document.getElementById('tabImpact').style.background = isImpact ? 'var(--brand)' : 'transparent';
+  document.getElementById('tabImpact').style.color = isImpact ? '#fff' : 'var(--text-mid)';
+  document.getElementById('tabRoi').style.background = isImpact ? 'transparent' : 'var(--brand)';
+  document.getElementById('tabRoi').style.color = isImpact ? 'var(--text-mid)' : '#fff';
+  if (!isImpact) renderRoi();
+}
+
+// ── ROI CALCULATION ────────────────────────────────────────────────────────────
+var membershipMonths = 4; // default - user-adjustable
+
+function setDuration(months, btn) {
+  membershipMonths = months;
+  document.querySelectorAll('.dur-btn').forEach(b => b.classList.remove('dur-active'));
+  btn.classList.add('dur-active');
+  var label = months === 1 ? '1 month' : months + ' months';
+  document.getElementById('durLabel').textContent = label;
+  document.getElementById('durChartLabel').textContent = label + ' membership';
+  renderRoi();
+}
+
+function renderRoi() {
+  const cat = catData[selectedCat] || catData['other'];
+  const rate = disposalRate || 130;
+  // One weight logic for the whole tool: market value -> kg via €/kg per category
+  const tonnes = (surplusVal / (euroPerKg[selectedCat] || 30)) / 1000;
+
+  // === WITHOUT sur.plus ===
+  const disposalCost = Math.round(tonnes * rate);
+  const logisticsCost = Math.round(surplusVal * 0.04);
+  const pallets = Math.max(1, Math.ceil(tonnes * 1000 / 300));
+  const sqm = Math.round(pallets * 1.5 * 10) / 10;
+  const isOneOffEarly = frequency === 'oneoff';
+  const asm = readAsm(isOneOffEarly ? 6 : 12, Math.max(4, pallets * 3));
+  const storageCost = Math.round(sqm * asm.months * asm.sqmRate);
+  const internalCost = Math.round(asm.hours * asm.hourly);
+  const internalWith = Math.round(internalCost * 0.3);
+  const smallOneOff = false; // Einmalfall: immer Festpreis-Angebot vor Projektstart, kein Beispielpreis im Rechner (22.09.2026)
+  const totalWithout = disposalCost + logisticsCost + storageCost + internalCost;
+
+  // Plan selection - annual-equivalent monthly (Seed €990/yr=€83, Tree €3,890/yr=€324)
+  // Seed  €83/mo  -> surplus < €30k
+  // Tree  €324/mo -> surplus €30k-€500k
+  // Enterprise -> surplus > €500k
+  const isEnterprise = surplusVal > 500000;
+  const isSeed = surplusVal < 30000;
+  const planMonthly = isSeed ? 83 : 324;
+
+  // === WITH sur.plus - based on actual membership duration ===
+  const surplusAboPeriod = planMonthly * membershipMonths; // NOT 12x
+  const reducedLogistics = Math.round(logisticsCost * 0.55);
+  // Same method as the impact section: country-specific effective relief on market
+  // value (taxByCountry). (IRIS+ social value is an impact metric, not a tax base.)
+  const taxInfo = taxByCountry[country] || taxByCountry.de;
+  const rtR = retailTax();
+  const taxDeduction = rtR.relief !== null ? rtR.relief : Math.round(surplusVal * taxInfo.eff);
+  const vatCost = rtR.vat;
+  const isOneOff = frequency === 'oneoff';
+  // One-off clearances get a fixed project quote - hide subscription-only widgets.
+  var durBoxEl = document.getElementById('durBox');
+  if (durBoxEl) durBoxEl.style.display = isOneOff ? 'none' : '';
+  var chartBoxEl = document.getElementById('chartBox');
+  if (chartBoxEl) chartBoxEl.style.display = isOneOff ? 'none' : '';
+  const totalWith = (smallOneOff ? 2900 : surplusAboPeriod + reducedLogistics) + internalWith + vatCost - taxDeduction;
+  const totalDiff = totalWithout - totalWith;
+
+  // Break-even: months until subscription cost is covered by savings
+  const savingsVsDisposal = disposalCost + storageCost + (internalCost - internalWith) + taxDeduction - reducedLogistics - vatCost;
+  const monthlySaving = savingsVsDisposal / membershipMonths;
+  const breakEvenMonths = monthlySaving > 0
+    ? Math.max(1, Math.min(membershipMonths, Math.round(planMonthly / monthlySaving)))
+    : membershipMonths;
+
+  // Plan labels
+  let planName, planDesc;
+  if (isOneOff) {
+    planName = 'Clearance & Logistics - fixed project price';
+    planDesc = 'For a one-off clearance you receive a fixed-price quote before the project starts - matching, certified data erasure, donation certificates and an evidence pack. Scope, sites and categories set the price; the project includes your first year of Seed, so your documentation history starts with it.';
+  } else if (isSeed) {
+    planName = 'Seed - €990/year';
+    planDesc = 'Up to 12 matches per year, verified NGO network access and a donation overview in your dashboard. Good for occasional surplus. Automatic donation certificates and report-ready CSRD documentation come with Tree.';
+  } else if (!isEnterprise) {
+    planName = 'Tree - €3,890/year  ·  For recurring surplus';
+    planDesc = 'Unlimited matches, report-ready CSRD documentation per match (ISAE 3000, audit trail), access to our social service partner network and priority matching. Payback typically within the first months via avoided costs and the donation tax effect.';
+  } else {
+    planName = 'Enterprise - custom pricing';
+    planDesc = 'Your volume suggests multi-site or ERP integration needs. Not publicly priced - reach out directly.';
+  }
+
+  // Bar chart: what you pay over the period (lower = better; negative "with" = you come out ahead)
+  const costA = Math.max(totalWithout, 0);
+  const costB = totalWith; // can be negative = net benefit
+  const barScale = Math.max(costA, costB, 1);
+  const hA = Math.max(10, Math.round((costA / barScale) * 120));
+  const hB = costB > 0 ? Math.max(10, Math.round((costB / barScale) * 120)) : 10;
+
+  setTimeout(() => {
+    document.getElementById('barA').style.height = hA + 'px';
+    document.getElementById('barB').style.height = hB + 'px';
+  }, 100);
+  document.getElementById('barLabelA').textContent = '€' + costA.toLocaleString('en-GB');
+  document.getElementById('barLabelB').textContent = costB >= 0
+    ? '€' + costB.toLocaleString('en-GB')
+    : '+€' + Math.abs(costB).toLocaleString('en-GB') + ' ahead';
+
+  // Table rows
+  const fmt = (n) => (n >= 0 ? '-€' : '+€') + Math.abs(n).toLocaleString('en-GB');
+  const fmtPos = (n) => '+€' + Math.abs(n).toLocaleString('en-GB');
+  const subLabel = isEnterprise ? 'custom pricing' : '-€' + surplusAboPeriod.toLocaleString('en-GB');
+
+  const ico = (id) => '<svg class="ic" aria-hidden="true"><use href="#' + id + '"/></svg>';
+  const taxRowLabel = taxInfo.row;
+  const taxRowVal = country === 'other' ? 'ask us'
+    : (taxInfo.eff === 0 ? '€0' : '+€' + taxDeduction.toLocaleString('en-GB'));
+  const subRow = isOneOff
+    ? [ico('i-refresh') + '<span>' + (smallOneOff ? 'First pickup (fixed price)' : 'Clearance &amp; Logistics project') + '</span>', '€0', smallOneOff ? '-€2,900' : 'fixed quote', smallOneOff ? '-€2,900' : 'quoted before start']
+    : [ico('i-refresh') + '<span>sur.plus subscription (' + membershipMonths + ' mo)</span>', '€0', isEnterprise ? 'on request' : '-€' + surplusAboPeriod.toLocaleString('en-GB'), '-€' + surplusAboPeriod.toLocaleString('en-GB')];
+  const rows = [
+    [ico('i-trash') + '<span>Disposal / destruction fees</span>', fmt(disposalCost), '€0', fmtPos(disposalCost)],
+    [ico('i-truck') + '<span>Logistics &amp; collection</span>', fmt(logisticsCost), fmt(reducedLogistics), fmtPos(logisticsCost - reducedLogistics)],
+    [ico('i-box') + '<span>' + T.row_storage.replace('{sqm}', sqm.toLocaleString('en-GB')).replace('{m}', asm.months) + '</span>', fmt(storageCost), '€0', fmtPos(storageCost)],
+    [ico('i-refresh') + '<span>' + T.row_time.replace('{h}', asm.hours).replace('{r}', asm.hourly) + '</span>', fmt(internalCost), fmt(internalWith), fmtPos(internalCost - internalWith)],
+    subRow,
+    [ico('i-landmark') + '<span>' + taxRowLabel + '</span>', '€0', taxRowVal, taxRowVal],
+  ].concat(country !== 'other' ? [[ico('i-landmark') + '<span>' + (vatCost === 0 && vatReliefDonation[country] ? "VAT relief for donations in the selected country" : "VAT on the donation ({c})".replace('{c}', selectedCat === 'retail' ? COND_NAMES[condition] : 'second-hand value')) + '</span>', '€0', (vatCost ? fmt(vatCost) : '€0'), (vatCost ? fmt(vatCost) : '€0')]] : []).concat([
+  ]);
+
+  const tbody = document.getElementById('roiTableBody');
+  tbody.innerHTML = rows.map(([pos, a, b, diff]) => `
+    <tr style="border-bottom:1px solid var(--border)">
+      <td style="padding:12px 18px;color:var(--text);font-size:12.5px"><span class="rt-pos">${pos}</span></td>
+      <td style="padding:12px 12px;text-align:right;color:#C75B4E;font-size:12.5px;white-space:nowrap">${a}</td>
+      <td style="padding:12px 12px;text-align:right;color:var(--brand);font-size:12.5px;white-space:nowrap">${b}</td>
+      <td style="padding:12px 12px;text-align:right;color:${diff.startsWith('+') ? 'var(--brand-mid)' : 'var(--text-lt)'};font-weight:600;font-size:12.5px;white-space:nowrap">${diff}</td>
+    </tr>`).join('');
+
+  document.getElementById('roiTotalA').textContent = '-€' + totalWithout.toLocaleString('en-GB');
+  document.getElementById('roiTotalB').textContent = isOneOff
+    ? (smallOneOff ? (totalWith >= 0 ? '-€' : '+€') + Math.abs(totalWith).toLocaleString('en-GB') : 'your fixed quote')
+    : (isEnterprise ? 'talk to us' : (totalWith >= 0 ? '-€' : '+€') + Math.abs(totalWith).toLocaleString('en-GB'));
+  document.getElementById('roiTotalDiff').textContent = isOneOff
+    ? (smallOneOff ? (totalDiff >= 0 ? '+€' : '-€') + Math.abs(totalDiff).toLocaleString('en-GB') : 'known before you commit')
+    : (isEnterprise ? 'contact us for a quote'
+      : (totalDiff >= 0 ? '+€' : '-€') + Math.abs(totalDiff).toLocaleString('en-GB') + ' / ' + membershipMonths + ' mo');
+  var footSub = document.getElementById('roiFootSub');
+  if (footSub) footSub.textContent = isOneOff
+    ? (smallOneOff ? 'First pickup €2,900 fixed (up to two pallets) instead of a subscription' : 'fixed project quote replaces the subscription - avoided costs and tax effect stay yours')
+    : 'subscription for selected period · adjust duration above';
+
+  document.getElementById('breakEven').textContent = isOneOff ? '-' : (isEnterprise ? 'talk to us' : breakEvenMonths + ' mo');
+  var beSubEl = document.getElementById('beSub');
+  if (beSubEl) beSubEl.textContent = isOneOff ? 'no subscription needed' : 'months until ROI positive';
+  var beFineEl = document.getElementById('beFine');
+  if (beFineEl) beFineEl.textContent = isOneOff
+    ? 'A clearance is a one-off project: pickup, certified data erasure, distribution and impact report - covered by one fixed quote.'
+    : 'Most companies donate once at year-end - a 3-6 month membership typically covers a full surplus cycle.';
+  var taxNet = taxDeduction - vatCost;
+  document.getElementById('taxAdvantage').textContent = country === 'other' ? '-' : (taxNet < 0 ? '-€' : '€') + Math.abs(taxNet).toLocaleString('en-GB');
+  var taxSubEl = document.getElementById('taxLawSub');
+  if (taxSubEl) taxSubEl.textContent = 'net: deduction or credit minus VAT on the donation';
+  var planKickEl = document.getElementById('planKick');
+  if (planKickEl) planKickEl.textContent = isOneOff ? 'Recommended for your case' : 'Recommended plan for your volume';
+  document.getElementById('planName').textContent = planName;
+  var badge = document.getElementById('planBadge');
+  if(badge) badge.style.display = (!isOneOff && !isSeed && !isEnterprise) ? 'block' : 'none';
+  document.getElementById('planDesc').innerHTML = isEnterprise
+    ? planDesc + ' <a href="#chat">→ Talk to us in the live chat</a>'
+    : planDesc;
+  renderWays({ totalWithout: totalWithout, disposalCost: disposalCost, logisticsCost: logisticsCost, storageCost: storageCost, internalCost: internalCost, internalWith: internalWith,
+               taxDeduction: taxDeduction, isOneOff: isOneOff, smallOneOff: smallOneOff, isEnterprise: isEnterprise, isSeed: isSeed, surplusAboPeriod: surplusAboPeriod,
+               reducedLogistics: reducedLogistics, hours: asm.hours, pallets: pallets, sqm: sqm, taxKnown: country !== 'other' && taxInfo.eff > 0, vatCost: vatCost });
+  renderCountryFocus();
+}
+
+
+// ── THREE ROUTES + ASSUMPTIONS (22.09.2026) ────────────────────────────────────
+const T = {"w1": "Dispose", "w2": "Sell", "w3": "Donate with sur.plus", "w3_sub": "recommended when you need evidence", "r_money": "Money", "r_proof": "Evidence", "r_recv": "Recipient", "r_time": "Your effort", "p1": "Disposal receipt - no impact, no tax effect", "p2": "Sales invoice - no recipient, no donation receipt", "p3": "Donation receipt + documented handover", "p3_tree": "Donation receipt + ESRS E5 documentation per match", "e1": "None", "e2": "Buyer / remarketer", "e3": "Verified NGO in the network", "t1": "{h} h internal · container / collection", "t2": "{h} h internal · quotes, negotiation, handover", "t3": "{h} h internal · we coordinate matching and pickup", "nomarket": "no market for used goods", "proceeds": "Proceeds ~{v}", "proceeds_note": "Indicative {pct}% of value - depends heavily on age and condition", "fixed": "First pickup €2,900 fixed", "quote": "Fixed quote before start", "onreq": "on request", "tax": "Tax effect", "abo": "Subscription {m} mo", "net_cost": "Cost", "net_gain": "Result", "per": "over the period", "asm_note": "Derived from weight: {pal} pallet(s) on ~{sqm} m² of storage. Practical benchmarks, every field editable.", "row_storage": "Storage until the decision ({sqm} m² · {m} mo)", "row_time": "Internal time ({h} h × €{r})"};
+// Erlös-Richtwerte beim Verkauf gebrauchter Ware, Anteil am Wiederbeschaffungswert (konservativ)
+const resaleShare = { it: 0.15, tools: 0.10, furniture: 0.05, textiles: 0.02, stationery: 0, other: 0.05 };
+var asmTouched = {};
+function readAsm(defMonths, defHours) {
+  var g = function (id, def) { var el = document.getElementById(id); if (!el) return def;
+    if (el.value === '' && !asmTouched[id]) { el.value = def; }
+    var v = parseFloat(el.value); return isNaN(v) ? def : v; };
+  ['asmMonths','asmHours'].forEach(function (id) { var el = document.getElementById(id); if (el && !el.dataset.bound) { el.dataset.bound = 1; el.addEventListener('input', function () { asmTouched[id] = 1; }); } });
+  var mEl = document.getElementById('asmMonths'), hEl = document.getElementById('asmHours');
+  if (mEl && !asmTouched.asmMonths) mEl.value = defMonths;
+  if (hEl && !asmTouched.asmHours) hEl.value = defHours;
+  return { months: g('asmMonths', defMonths), sqmRate: g('asmSqm', 12), hours: g('asmHours', defHours), hourly: g('asmHourly', 60) };
+}
+function renderWays(d) {
+  var grid = document.getElementById('waysGrid'); if (!grid) return;
+  var note = document.getElementById('asmNote');
+  if (note) note.textContent = T.asm_note.replace('{pal}', d.pallets).replace('{sqm}', d.sqm.toLocaleString('en-GB'));
+  var eur = function (n) { return '€' + Math.abs(Math.round(n)).toLocaleString('en-GB'); };
+  var net = function (n, unknown) {
+    if (unknown) return '<div class="way-net">' + T.onreq + '<small>' + T.per + '</small></div>';
+    var cls = n < 0 ? 'neg' : 'pos', sign = n < 0 ? '-' : '+';
+    return '<div class="way-net ' + cls + '">' + sign + eur(n) + '<small>' + (n < 0 ? T.net_cost : T.net_gain) + ' ' + T.per + '</small></div>';
+  };
+  var row = function (k, v) { return '<div class="way-row"><b>' + k + '</b>' + v + '</div>'; };
+  // 1 Entsorgen
+  var w1 = '<div class="way"><div class="way-name">' + T.w1 + '</div>' + net(-d.totalWithout) +
+    row(T.r_money, '-' + eur(d.disposalCost + d.logisticsCost + d.storageCost)) + row(T.r_proof, T.p1) + row(T.r_recv, T.e1) + row(T.r_time, T.t1.replace('{h}', d.hours)) + '</div>';
+  // 2 Verkaufen
+  var share = selectedCat === 'retail' ? ({ worthless: 0, limited: 0.05, saleable: 0.15 })[condition] : (resaleShare[selectedCat] || 0), proceeds = Math.round(surplusVal * share);
+  var sellNet = proceeds - d.internalCost - d.storageCost;
+  var moneyTxt = share > 0 ? T.proceeds.replace('{v}', eur(proceeds)) + ' · ' + T.proceeds_note.replace('{pct}', Math.round(share * 100)) : T.nomarket;
+  var w2 = '<div class="way"><div class="way-name">' + T.w2 + '</div>' + net(sellNet) +
+    row(T.r_money, moneyTxt) + row(T.r_proof, T.p2) + row(T.r_recv, T.e2) + row(T.r_time, T.t2.replace('{h}', d.hours)) + '</div>';
+  // 3 Spenden mit sur.plus
+  var unknown = d.isEnterprise || (d.isOneOff && !d.smallOneOff);
+  var donateNet = -((d.smallOneOff ? 2900 : d.surplusAboPeriod + d.reducedLogistics) + d.internalWith + (d.vatCost || 0)) + d.taxDeduction;
+  var feeTxt = d.smallOneOff ? T.fixed : (d.isOneOff ? T.quote : (d.isEnterprise ? T.onreq : T.abo.replace('{m}', membershipMonths) + ' -' + eur(d.surplusAboPeriod)));
+  var taxTxt = d.taxKnown ? ' · ' + T.tax + ' +' + eur(d.taxDeduction) : '';
+  var hoursWith = Math.max(1, Math.round(d.hours * 0.3));
+  var w3 = '<div class="way me"><div class="way-name">' + T.w3 + '<small>' + T.w3_sub + '</small></div>' + net(donateNet, unknown) +
+    row(T.r_money, feeTxt + taxTxt + (d.vatCost ? " · VAT on donation -" + eur(d.vatCost) : '')) + row(T.r_proof, d.isSeed && !d.isOneOff ? T.p3 : T.p3_tree) + row(T.r_recv, T.e3) + row(T.r_time, T.t3.replace('{h}', hoursWith)) + '</div>';
+  grid.innerHTML = w1 + w2 + w3;
+}
+
+// Shared per-category factors - single source of truth for BOTH sections.
+// euroPerKg: market value density proxy (€ per kg).
+// co2PerTonne: avoided emissions, kg CO2e per tonne re-used, conservative:
+//   IT 15,000 kg/t - derived from AfB/myclimate IT-remarketing LCA (472k devices ->
+//     43,200 t CO2e avoided = ~90 kg per device, ~5-6 kg avg device weight).
+//   Non-IT: conservative reuse-displacement estimates (WRAP orders of magnitude):
+//   textiles 3,400 · furniture 1,000 · tools 900 · stationery 500 · mixed 2,000.
+// ── Retouren & Neuware: USt auf die Spende und Spendenabzug nach Zustand (22.09.2026) ──
+const condFactor = { worthless: 0, limited: 0.5, saleable: 1 };
+const vatRate = { de: .19, at: .20, ch: .081, fr: .20, es: .21, pt: .23, nl: .21, uk: .20, be: .21, it: .22, pl: .23, se: .25, dk: .25, fi: .255, other: .20 };
+const vatReliefDonation = { fr: 1, es: 1, uk: 1 };
+const COND_NAMES = {"worthless": "worthless", "limited": "limited", "saleable": "saleable"};
+function retailTax() {
+  // Steuereffekt der Spende GEGENÜBER der Entsorgung/Vernichtung (22.09.2026, alle Kategorien).
+  // Auch Entsorgung schreibt den Restbuchwert ab; bei Spende zum Buchwert kürzt sich der
+  // Entnahmewert heraus (vgl. Buchwert-Teilwert-Rechner). Zusätzlich wirken nur:
+  //  - die USt auf die Spende (Kosten; Bemessung: Gebrauchtwert bzw. Einkaufspreis nach Zustand),
+  //  - deren Abzug im Spendenabzug (Abzugsländer) bzw. die Gutschrift auf den Spendenwert (FR, ES).
+  if (country === 'other') return { vat: 0, relief: 0, base: 0 };
+  var base = selectedCat === 'retail' ? surplusVal * (condFactor[condition] || 0) : surplusVal * (resaleShare[selectedCat] || 0);
+  var vat = vatReliefDonation[country] ? 0 : Math.round(base * (vatRate[country] || .20));
+  var mech = ((taxByCountry[country] || taxByCountry.de).eff) / 0.30;
+  var relief = mech >= 0.35 ? Math.round(base * mech) : Math.round(vat * mech);
+  return { vat: vat, relief: relief, base: base };
+}
+
+const euroPerKg = { it: 80, textiles: 15, furniture: 25, tools: 12, stationery: 30, other: 30, retail: 20 };
+const co2PerTonne = { it: 15000, textiles: 3400, furniture: 1000, tools: 900, stationery: 500, other: 2000, retail: 3000 };
+
+const catData = {
+  it:        { co2Factor: 18, ngoFactor: 1.2, csrdScore: 92, name: 'IT & Electronics' },
+  furniture: { co2Factor: 8,  ngoFactor: 1.5, csrdScore: 80, name: 'Office Furniture' },
+  textiles:  { co2Factor: 12, ngoFactor: 1.3, csrdScore: 75, name: 'Textiles & Clothing' },
+  tools:     { co2Factor: 10, ngoFactor: 1.4, csrdScore: 70, name: 'Tools & Machinery' },
+  stationery:{ co2Factor: 4,  ngoFactor: 1.1, csrdScore: 65, name: 'Stationery & Office' },
+  other:     { co2Factor: 9,  ngoFactor: 1.2, csrdScore: 72, name: 'Mixed Surplus' },
+  retail:    { co2Factor: 12, ngoFactor: 1.3, csrdScore: 78, name: 'Returns & new goods' },
+};
+
+let selectedCat = null;
+let surplusVal = 10000;
+let disposalRate = null;
+let customRateVal = null;
+let frequency = null;   // 'oneoff' | 'recurring'
+let country = 'de';     // 'de' | 'at' | 'ch' | 'other'
+
+// Effective tax relief on MARKET value, conservative: book-value-style proxy
+// (~30% of market value) × the country's mechanism (deduction × corporate tax
+// rate, or a direct tax credit on the donated value). Sources & caps in the
+// country overview below. Not tax advice - always consult a local advisor.
+const countryNames = { de:'Germany', at:'Austria', ch:'Switzerland', fr:'France', es:'Spain', pt:'Portugal', nl:'Netherlands', uk:'United Kingdom', be:'Belgium', it:'Italy', pl:'Poland', se:'Sweden', dk:'Denmark', fi:'Finland', other:'Other country' };
+
+function renderCountryFocus() {
+  var box = document.getElementById('countryFocus');
+  if (!box) return;
+  var info = taxByCountry[country] || taxByCountry.de;
+  var name = countryNames[country] || 'Your country';
+  var val = country === 'other' ? 'assessed case by case'
+    : (info.eff === 0 ? '€0'
+       : '~€' + Math.round(info.eff * 10000).toLocaleString('en-GB') + ' per €10k donated stock*');
+  box.innerHTML = '<b>' + name + ':</b> ' + info.note + ' <span style="white-space:nowrap;font-weight:600;color:var(--brand-dk,#2F6B4F)">' + val + '</span>';
+  document.querySelectorAll('tr[data-c]').forEach(function(tr){
+    tr.style.background = tr.getAttribute('data-c') === country ? 'var(--offwhite,#f2f8f5)' : '';
+  });
+}
+
+const taxByCountry = {
+  de: { eff: 0.09,  row: 'Tax deduction on donation (§ 9 KStG)',            sub: 'deductible donation value (§ 9 KStG)',
+        note: '§ 9 KStG - donation at Teilwert, ~30% corporate tax; signed donation receipt (Zuwendungsbestätigung) required.' },
+  at: { eff: 0.069, row: 'Tax deduction on donation (§ 4a EStG)',           sub: 'deductible donation value (§ 4a EStG)',
+        note: '§ 4a EStG - deduction up to 10% of profit; 2024 reform widened eligible organisations.' },
+  ch: { eff: 0.045, row: 'Tax deduction on donation (Art. 59 DBG)',         sub: 'deductible donation value (Art. 59 DBG)',
+        note: 'Art. 59 DBG - deduction up to 20% of net profit; cantonal rates vary.' },
+  fr: { eff: 0.18,  row: 'Tax credit on donation (Art. 238 bis CGI)',       sub: '60% mécénat tax credit (Art. 238 bis CGI)',
+        note: 'Mécénat: 60% corporate tax credit on the donated value, plus VAT relief for donated unsold goods (AGEC framework).' },
+  es: { eff: 0.12,  row: 'Tax credit on donation (Ley 49/2002)',            sub: '40% tax credit (Ley 49/2002)',
+        note: 'Ley 49/2002 (2023 reform): 40% corporate tax credit on the donated value; zero VAT base for donated goods.' },
+  pt: { eff: 0.085, row: 'Tax deduction on donation (Estatuto do Mecenato)', sub: 'enhanced deduction (Estatuto do Mecenato)',
+        note: 'Estatuto do Mecenato - enhanced deduction of up to 140% of the donated value for social donations.' },
+  nl: { eff: 0.075, row: 'Tax deduction on donation (Vpb giftenaftrek)',    sub: 'deductible donation value (giftenaftrek)',
+        note: 'Giftenaftrek - deduction up to 50% of profit (max €100,000); VAT on donated goods needs structuring.' },
+  uk: { eff: 0.075, row: 'Tax deduction on donation (Corporation Tax)',     sub: 'deductible donation value (CT relief)',
+        note: 'Full deduction of the cost of donated stock; donated goods to charity are zero-rated for VAT.' },
+  be: { eff: 0.075, row: 'Tax deduction on donation (WIB/CIR)',             sub: 'deductible donation value (WIB/CIR)',
+        note: 'Deduction capped at 5% of profit; VAT relief currently limited to essential goods.' },
+  it: { eff: 0.07,  row: 'Tax deduction on donation (Legge Gadda)',         sub: 'deductible donation value (Legge Gadda)',
+        note: 'Legge Gadda - strongest for food & hygiene surplus; other categories assessed case by case.' },
+  pl: { eff: 0.055, row: 'Tax deduction on donation (CIT, 10% cap)',        sub: 'deductible donation value (CIT)',
+        note: 'Deduction capped at 10% of income; note: VAT is usually still due on non-food donations.' },
+  se: { eff: 0,     row: 'Tax effect - no general in-kind relief',          sub: 'no general corporate in-kind relief',
+        note: 'No general corporate deduction for in-kind donations (the 2026 credit covers cash gifts only) - the case rests on avoided costs and documented impact.' },
+  dk: { eff: 0,     row: 'Tax effect - capped, effectively minimal',        sub: 'deduction capped (~€2,700/yr)',
+        note: 'Deduction capped at roughly €2,700 per year - negligible for meaningful volumes; the case rests on avoided costs and documented impact.' },
+  fi: { eff: 0,     row: 'Tax effect - no general in-kind relief',          sub: 'no general corporate in-kind relief',
+        note: 'Deductible only for donations to universities/research - the case rests on avoided costs and documented impact.' },
+  other: { eff: 0,  row: 'Tax effect of donation - country-specific',       sub: 'country-specific - consult your tax advisor',
+        note: 'We assess your country case by case - ask us in the live chat.' }
+};
+
+// ── STEP 1 ────────────────────────────────────────────────────────────────────
+function selectCat(el, cat) {
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('selected'));
+  el.classList.add('selected');
+  selectedCat = cat;
+  var cb = document.getElementById('condBox'); if (cb) cb.style.display = cat === 'retail' ? '' : 'none';
+  document.getElementById('next1').disabled = false;
+}
+
+// Zustandsklasse für Retouren & Neuware
+let condition = 'limited';
+function selectCond(el, c) {
+  document.querySelectorAll('#condGrid .disposal-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  condition = c;
+}
+
+// ── STEP 2 ────────────────────────────────────────────────────────────────────
+function updateRange() {
+  surplusVal = parseInt(document.getElementById('surplusRange').value);
+  document.getElementById('rangeDisplay').textContent = '€' + surplusVal.toLocaleString('en-GB');
+  checkStep2();
+}
+
+function selectDisposal(el, rate) {
+  document.querySelectorAll('#disposalGrid .disposal-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  if (rate === 'custom') {
+    document.getElementById('customInput').style.display = 'block';
+    disposalRate = customRateVal;
+  } else {
+    document.getElementById('customInput').style.display = 'none';
+    disposalRate = rate;
+  }
+  checkStep2();
+}
+
+function updateCustomRate() {
+  customRateVal = parseFloat(document.getElementById('customRate').value) || null;
+  disposalRate = customRateVal;
+  checkStep2();
+}
+
+function selectFrequency(el, f) {
+  document.querySelectorAll('#freqGrid .disposal-option').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  frequency = f;
+  checkStep2();
+}
+
+function selectCountryOpt(c) {
+  country = c;
+  var note = document.getElementById('countryNote');
+  if (note && taxByCountry[c]) note.textContent = taxByCountry[c].note;
+  checkStep2();
+}
+
+function checkStep2() {
+  document.getElementById('next2').disabled = !(disposalRate && surplusVal && frequency);
+}
+
+// ── NAVIGATION ────────────────────────────────────────────────────────────────
+function goStep(n) {
+  document.querySelectorAll('.calc-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + n).classList.add('active');
+  if (n === 3) {
+    calculateResults();
+    renderRoi(); // always pre-render ROI so tab is ready immediately
+  }
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+// ── CALCULATIONS ──────────────────────────────────────────────────────────────
+// Methodology (one method per quantity, used identically in BOTH sections):
+// Weight: market value ÷ €/kg per category (euroPerKg above).
+// CO₂: avoided-emissions factors per category (co2PerTonne above); IT derived from
+//   the AfB/myclimate IT-remarketing LCA (~90 kg CO₂e per re-marketed device),
+//   non-IT conservative reuse-displacement estimates.
+// Disposal savings: user-entered €/t rate × estimated weight.
+// Tax relief (DE): § 9 Abs. 1 Nr. 2 KStG - Sachspende at Teilwert (≈ book value).
+//   Conservative proxy: 30% of market value × ~30% corporate tax rate
+//   → effective relief ≈ 9% of market value. AT: § 4a EStG. CH: Art. 59 DBG.
+//   Not tax advice - consult your tax advisor.
+// Documentation value: manual effort avoided for voluntary reports (VSME),
+//   customer ESG data requests and procurement evidence (20-80 hrs/yr at €150/hr).
+//   NOT claimed as a CSRD legal obligation (post-Omnibus: CSRD >1,000 employees).
+// Social resource value: GIIN IRIS+ (PI2455) - impact metric only, never a tax base.
+
+function calculateResults() {
+  const cat = catData[selectedCat];
+  const rate = disposalRate || 130;
+
+  // ── CO₂ avoidance (avoided emissions, conservative - factors defined above) ──
+  const weightKg = surplusVal / (euroPerKg[selectedCat] || 30);
+  const weightTonnes = weightKg / 1000;
+  const co2 = Math.round(weightTonnes * (co2PerTonne[selectedCat] || 380));
+
+  // ── Disposal savings (EU WFD industrial rates) ────────────────────────────────
+  // Rate = €/tonne entered by user. Typical: IT €200-400/t (WEEE), textiles €80-150/t,
+  // furniture €100-180/t, mixed industrial €120-180/t
+  const disposalSavings = Math.round(weightTonnes * rate);
+
+  // ── German tax deduction (§ 9 KStG Sachspende) ───────────────────────────────
+  // Incremental tax effect vs disposal (see retailTax): VAT on the donation's
+  // second-hand/condition value as a cost, plus its deduction (DE-style) or a
+  // credit on that value (FR/ES). Book value is written off either way.
+  const rtI = retailTax();
+  const taxReliefDE = rtI.relief !== null ? rtI.relief : Math.round(surplusVal * (taxByCountry[country] || taxByCountry.de).eff);
+  const vatCostI = rtI.vat;
+
+  // ── Documentation value (voluntary reporting, not a CSRD legal obligation) ────
+  // Post-Omnibus (Dec 2025) CSRD applies from >1,000 employees - most Seed/Tree
+  // customers are NOT obliged. Value here = manual effort avoided for voluntary
+  // reports (VSME), customer ESG data requests and procurement evidence,
+  // 20-80 hrs/yr at €150/hr, scaling with surplus complexity.
+  const csrdHoursBase = surplusVal < 20000 ? 20 : surplusVal < 100000 ? 40 : 80;
+  const csrdHourlyRate = 150; // conservative sustainability consultant rate
+  const csrdSavings = csrdHoursBase * csrdHourlyRate;
+
+  // ── NGO count estimate ────────────────────────────────────────────────────────
+  // Based on GIIN IRIS+ typical matching ratios and sur.plus NGO database density
+  const ngos = Math.max(1, Math.round((surplusVal / 4000) * cat.ngoFactor));
+
+  // ── Total EUR value (primary metric) ─────────────────────────────────────────
+  const totalEurValue = disposalSavings + taxReliefDE + csrdSavings - vatCostI;
+
+  // ── Score (0-100) - secondary, based on real components ──────────────────────
+  const envScore    = Math.min(30, Math.round((co2 / 8000) * 30));
+  const socialScore = Math.min(25, Math.round(ngos * 3));
+  const csrdScore   = Math.min(25, Math.round(cat.csrdScore / 4));
+  const costScore   = Math.min(20, Math.round((disposalSavings / 500) * 10));
+  const total       = Math.min(100, envScore + socialScore + csrdScore + costScore);
+
+  // Score label
+  let label = '';
+  if (total >= 75) label = 'Excellent impact potential - sur.plus is a strong fit.';
+  else if (total >= 50) label = 'Good impact potential - clear value in redirecting this surplus.';
+  else if (total >= 30) label = 'Moderate impact - even small volumes matter to local NGOs.';
+  else label = 'Every surplus has a purpose - start small, scale up.';
+
+  // ── Render score ──────────────────────────────────────────────────────────────
+  animateValue('scoreNum', 0, total, 1000);
+  document.getElementById('scoreLabel').textContent = label;
+  // After an assessment, invite the warm visitor to book a call (the app is
+  // not live yet - no app links until it is).
+  var bridge = document.getElementById('demoBridge');
+  if (bridge && catData[selectedCat]) {
+    bridge.style.display = 'inline-block';
+  }
+  setTimeout(() => {
+    document.getElementById('scoreFill').style.width = total + '%';
+  }, 200);
+
+  // ── Render key metrics ────────────────────────────────────────────────────────
+  var oneOff = frequency === 'oneoff';
+  var stEl = document.getElementById('savingsTitle');
+  if (stEl) stEl.textContent = oneOff ? 'Estimated savings with sur.plus' : 'Estimated annual savings with sur.plus';
+  var spEl = document.getElementById('savingsPer');
+  if (spEl) spEl.textContent = oneOff ? 'one-off' : '/year';
+  var cpEl = document.getElementById('co2PerLbl');
+  if (cpEl) cpEl.textContent = oneOff ? 'one-off' : 'per year';
+  var tvEl = document.getElementById('totalValLbl');
+  if (tvEl) tvEl.textContent = oneOff ? 'Total value' : 'Total annual value';
+  document.getElementById('co2Val').textContent = co2.toLocaleString('en-GB') + ' kg';
+  document.getElementById('savingsVal').textContent = '€' + totalEurValue.toLocaleString('en-GB');
+  // Hero savings display
+  var heroEl = document.getElementById('savingsHero');
+  if(heroEl) heroEl.textContent = '€' + totalEurValue.toLocaleString('en-GB');
+  document.getElementById('ngoVal').textContent = ngos + (ngos === 1 ? ' NGO' : ' NGOs');
+
+  // Update savings label to explain what it contains
+  const savingsLbl = document.querySelector('#savingsVal + .result-lbl, .result-card .result-lbl');
+  // Store breakdown for teaser reveal
+  window._calcBreakdown = { disposalSavings, taxReliefDE, csrdSavings, vatCostI, totalEurValue, co2, ngos };
+
+  // ── Breakdown bars ────────────────────────────────────────────────────────────
+  setTimeout(() => {
+    animateBar('sbd1', envScore, 30, 'sbd1s');
+    animateBar('sbd2', socialScore, 25, 'sbd2s');
+    animateBar('sbd3', csrdScore, 25, 'sbd3s');
+    animateBar('sbd4', costScore, 20, 'sbd4s');
+  }, 400);
+}
+
+function animateValue(id, start, end, duration) {
+  const el = document.getElementById(id);
+  const range = end - start;
+  const startTime = performance.now();
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.round(start + range * ease);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+function animateBar(barId, score, max, scoreId) {
+  const pct = Math.round((score / max) * 100);
+  document.getElementById(barId).style.width = pct + '%';
+  document.getElementById(scoreId).textContent = score + '/' + max;
+}
+
+// ── EMAIL / SEND ──────────────────────────────────────────────────────────────
+function sendReport() {
+  const field = document.getElementById('emailField');
+  const email = (field.value || '').trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    field.style.borderColor = 'var(--accent)';
+    field.placeholder = 'Please enter a valid email';
+    return;
+  }
+  const consent = document.getElementById('reportConsent');
+  if (consent && !consent.checked) {
+    const lbl = consent.closest('.email-consent');
+    if (lbl) lbl.style.color = 'var(--accent)';
+    return;
+  }
+  // Reveal teaser
+  document.getElementById('teaserWrap').querySelector('.teaser-blur').style.filter = 'none';
+  document.getElementById('teaserCtaBox').style.display = 'none';
+  const emailBtn = document.querySelector('.email-btn');
+  if (emailBtn) { emailBtn.textContent = 'Sending…'; emailBtn.disabled = true; }
+  if (window.spTrack) spTrack('report_request');
+  const g = id => { const el = document.getElementById(id); return el ? (el.textContent || '').trim() : ''; };
+  const payload = {
+    email: email, consent: true, lang: 'en',
+    category: (catData[selectedCat] ? catData[selectedCat].name : ''),
+    surplusValue: surplusVal,
+    frequency: frequency || '',
+    country: country,
+    metrics: { annualSavings: g('savingsHero') || g('savingsVal'), co2: g('co2Val'), ngos: g('ngoVal'), roiDiff: g('roiTotalDiff'), taxAdvantage: g('taxAdvantage') }
+  };
+  fetch('/.netlify/functions/send-report', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+    .then(r => r.ok ? r.json() : Promise.reject(r))
+    .then(() => { if (emailBtn) { emailBtn.textContent = 'Sent ✓'; emailBtn.style.background = 'var(--brand)'; } })
+    .catch(() => {
+      if (emailBtn) { emailBtn.textContent = 'Send my report →'; emailBtn.disabled = false; }
+      const note = document.querySelector('.email-note');
+      if (note) note.innerHTML = 'Could not send automatically - email us at <a href="mailto:service@surpluspurpose.com">service@surpluspurpose.com</a>';
+    });
+}
+
+function resetCalc() {
+  selectedCat = null;
+  surplusVal = 10000;
+  disposalRate = null;
+  customRateVal = null;
+  document.querySelectorAll('.cat-card').forEach(c => c.classList.remove('selected'));
+  document.querySelectorAll('#disposalGrid .disposal-option, #freqGrid .disposal-option').forEach(o => o.classList.remove('selected'));
+  frequency = null;
+  country = 'de';
+  var cSel = document.getElementById('countrySelect');
+  if (cSel) cSel.value = 'de';
+  var cNote = document.getElementById('countryNote');
+  if (cNote) cNote.textContent = taxByCountry.de.note;
+  document.getElementById('surplusRange').value = 10000;
+  document.getElementById('rangeDisplay').textContent = '€10,000';
+  document.getElementById('next1').disabled = true;
+  document.getElementById('next2').disabled = true;
+  document.getElementById('customInput').style.display = 'none';
+  document.getElementById('emailField').value = '';
+  goStep(1);
+}
+
+// Init
+updateRange();
+
+/* ============ scroll reveal (once, brief) ============ */
+var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (reduceMotion) {
+  document.querySelectorAll('.rv').forEach(function(el){ el.classList.add('in'); });
+} else {
+  var rvObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('in'); rvObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -24px 0px' });
+  document.querySelectorAll('.rv').forEach(function(el){ rvObs.observe(el); });
+  /* safety net: nothing stays hidden */
+  setTimeout(function(){ document.querySelectorAll('.rv:not(.in)').forEach(function(el){ el.classList.add('in'); }); }, 2500);
+}
+
+/* ============ match-arc draw-in (once, <=700ms) ============ */
+if (reduceMotion) {
+  document.querySelectorAll('.arc-draw').forEach(function(el){ el.classList.add('arc-in'); });
+} else {
+  var arcObs = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting) { e.target.classList.add('arc-in'); arcObs.unobserve(e.target); }
+    });
+  }, { threshold: 0.3, rootMargin: '0px 0px -16px 0px' });
+  document.querySelectorAll('.arc-draw').forEach(function(el){ arcObs.observe(el); });
+  setTimeout(function(){ document.querySelectorAll('.arc-draw:not(.arc-in)').forEach(function(el){ el.classList.add('arc-in'); }); }, 2500);
+}
+</script>
+<script>
+/* ============ black-hole cursor + gravity well ("besondere Maus") ============ */
+(function(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches)return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  document.body.classList.add('bh-on');
+  var dot=document.createElement('div');dot.id='bhDot';
+  dot.innerHTML='<svg viewBox="34 36 132 136" aria-hidden="true">'+
+   '<path d="M 44 98 A 56 56 0 0 1 100 42" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/>'+
+   '<path d="M 100 42 A 56 56 0 0 1 156 98" fill="none" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/>'+
+   '<path d="M 156 110 A 56 56 0 0 1 100 166" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/>'+
+   '<path d="M 100 166 A 56 56 0 0 1 44 110" fill="none" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/>'+
+   '<line x1="156" y1="98" x2="156" y2="110" stroke="#4DB896" stroke-width="13" stroke-linecap="round"/>'+
+   '<line x1="44" y1="110" x2="44" y2="98" stroke="#E8935A" stroke-width="13" stroke-linecap="round"/>'+
+   '<circle cx="100" cy="104" r="16" fill="#E8F5F0"/><circle cx="100" cy="104" r="7" fill="#1A5C4A"/></svg>';
+  var ring=document.createElement('div');ring.id='bhRing';
+  document.body.appendChild(dot);document.body.appendChild(ring);
+  var mx=-999,my=-999,rx=-999,ry=-999,visible=false,suspended=false;
+  var EXC='input,textarea,select';
+  var INT='a,button,summary,[onclick],[role=tab],label';
+  document.addEventListener('mousemove',function(e){
+    mx=e.clientX;my=e.clientY;
+    if(!visible){visible=true;rx=mx;ry=my;}
+    var t=e.target;
+    suspended=!!(t.closest&&t.closest(EXC));
+    var inter=!suspended&&t.closest&&t.closest(INT);
+    ring.classList.toggle('big',!!inter);
+    var op=suspended?0:1;
+    dot.style.opacity=op;ring.style.opacity=op;
+    dot.style.transform='translate('+(mx-11)+'px,'+(my-11.3)+'px)';
+  },{passive:true});
+  document.documentElement.addEventListener('mouseleave',function(){visible=false;dot.style.opacity=0;ring.style.opacity=0;});
+  addEventListener('blur',function(){dot.style.opacity=0;ring.style.opacity=0;});
+  /* gravity-well dot fields on dark sections */
+  var R=190,STR=.5,SW=.105,GAP=46,BASE=.13;
+  var fields=[];
+  document.querySelectorAll('.hero,.dk').forEach(function(sec){
+    var c=document.createElement('canvas');c.className='gw-canvas';c.setAttribute('aria-hidden','true');
+    sec.insertBefore(c,sec.firstChild);
+    fields.push({sec:sec,c:c,ctx:c.getContext('2d'),dots:[],dirty:true});
+  });
+  function build(f){
+    var w=f.sec.offsetWidth,h=f.sec.offsetHeight;
+    f.c.width=w;f.c.height=h;f.dots=[];
+    for(var y=18;y<h;y+=GAP)for(var x=18;x<w;x+=GAP)f.dots.push({ox:x,oy:y,x:x,y:y});
+    f.dirty=true;
+  }
+  fields.forEach(build);
+  var rt;addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){fields.forEach(build);},200);});
+  function frame(){
+    rx+=(mx-rx)*.16;ry+=(my-ry)*.16;
+    if(visible&&!suspended)ring.style.transform='translate('+(rx-21)+'px,'+(ry-21)+'px)';
+    var vh=innerHeight;
+    for(var i=0;i<fields.length;i++){
+      var f=fields[i],r=f.c.getBoundingClientRect();
+      if(r.bottom<0||r.top>vh)continue;
+      var lx=mx-r.left,ly=my-r.top;
+      var near=visible&&!suspended&&lx>-R&&ly>-R&&lx<r.width+R&&ly<r.height+R;
+      if(!near&&!f.dirty)continue;
+      var ctx=f.ctx;ctx.clearRect(0,0,f.c.width,f.c.height);
+      var settled=true;
+      for(var j=0;j<f.dots.length;j++){
+        var d=f.dots[j],tx=d.ox,ty=d.oy;
+        if(near){var dx=lx-d.ox,dy=ly-d.oy,dist=Math.hypot(dx,dy);
+          if(dist<R&&dist>1){var p=Math.pow(1-dist/R,2);
+            tx=d.ox+dx*p*STR-dy/dist*p*R*SW;
+            ty=d.oy+dy*p*STR+dx/dist*p*R*SW;}}
+        d.x+=(tx-d.x)*.14;d.y+=(ty-d.y)*.14;
+        if(settled&&(Math.abs(d.x-d.ox)>.4||Math.abs(d.y-d.oy)>.4))settled=false;
+        var a=BASE;
+        if(near){var dd=Math.hypot(lx-d.x,ly-d.y);
+          if(dd<R)a=BASE+.42*Math.pow(1-dd/R,1.5);}
+        ctx.fillStyle='rgba(77,184,150,'+a+')';
+        ctx.beginPath();ctx.arc(d.x,d.y,1.3,0,7);ctx.fill();
+      }
+      if(near){var g=ctx.createRadialGradient(lx,ly,0,lx,ly,70);
+        g.addColorStop(0,'rgba(77,184,150,.14)');g.addColorStop(.5,'rgba(77,184,150,.05)');g.addColorStop(1,'rgba(77,184,150,0)');
+        ctx.fillStyle=g;ctx.beginPath();ctx.arc(lx,ly,70,0,7);ctx.fill();}
+      f.dirty=near||!settled;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>
+<script async src="https://tally.so/widgets/embed.js"></script>
+<script src="/chat.js" defer></script>
+<script src="/search.js" defer></script>
+</body>
+</html>
